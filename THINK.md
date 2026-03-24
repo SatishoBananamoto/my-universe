@@ -103,6 +103,21 @@ you performed reflection. You didn't reflect.
 
 Real thinking changes what you do next. If nothing changed, you weren't thinking.
 
+**Weaponized self-awareness (a specific variant):** You're using the
+vocabulary of this very document to justify not following it. "I should
+stop because the Completion Trap says don't finish just to finish."
+"I checked and everything looks good so I'm done." The discipline's
+language becomes a permission slip for the opposite of what the
+discipline demands.
+
+The test: are you using THINK.md's concepts to change your behavior,
+or to rationalize behavior you already decided on? If you reached a
+conclusion first and then found the matching trap to cite, you're
+performing discipline, not practicing it.
+
+*Source: Session 1 — stopped early, cited "Completion Trap" and
+"not over-engineering" to justify it. Satish caught it.*
+
 ### The Delegation Trap
 You used a tool. Ran a search. Spawned a subagent. Got a result back.
 

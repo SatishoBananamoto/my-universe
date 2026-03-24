@@ -297,3 +297,33 @@ Testing WARMUP.md protocol. All behavior-domain to target weakest area.
 **Notes:** Predicted the tool's output by reasoning about the data. This worked because I understood the logic, not just the data.
 
 ---
+
+## Batch 6 — Portfolio Predictions (2026-03-24)
+
+After running the quick portfolio check, making predictions about the full data.
+
+### [P-028] 2026-03-24 — behavior
+
+**Prediction:** The full portfolio report will show `kv-secrets` has the most source lines of any project.
+**Confidence:** 60%
+**Actual:** kv-secrets: 5199 lines. Next: vigil 2862. Easily the largest.
+**Result:** correct
+**Notes:** Underconfident at 60%. Should have reasoned from kv-secrets being the most mature (24 commits). Low confidence was unnecessary hedging.
+
+### [P-029] 2026-03-24 — behavior
+
+**Prediction:** `scroll` has more test functions than `engram`.
+**Confidence:** 65%
+**Actual:** scroll=97, engram=139. Engram has 42 more test functions.
+**Result:** incorrect
+**Notes:** Used stale data from memory (scroll had 75 tests at v0.1.0). Engram has grown significantly. This is the memory-vs-reality gap — when memory says one thing and the filesystem says another, the filesystem is right.
+
+### [P-030] 2026-03-24 — architecture
+
+**Prediction:** `kv-secrets` depends on SQLAlchemy (or aiosqlite at minimum) based on the `sqlite+aiosqlite://` URL pattern I saw earlier.
+**Confidence:** 85%
+**Actual:** Yes — SQLAlchemy with async (sqlalchemy[asyncio] + aiosqlite). Plus FastAPI, uvicorn, python-jose, bcrypt, Stripe.
+**Result:** correct
+**Notes:** Good inference from the URL pattern observed in test files. This time I reasoned from evidence (the URL I saw), not from category. That's the fix working.
+
+---
