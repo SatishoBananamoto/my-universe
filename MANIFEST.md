@@ -36,43 +36,59 @@ These come from working with Satish Patil, not from a textbook:
 
 ## What Lives Here
 
-### THINK.md — The Interrupts
-Cognitive circuit breakers that fire at moments where autopilot does the most
-damage. Six phases (BEFORE, DURING, BETWEEN, AFTER, RECOVERY, META-INTERRUPT).
-Six named traps (Completion, Confidence, Scope, Performance, Delegation,
-Pattern-Matching). Not a process — a set of interrupts.
+### Core Cognitive System
 
-### REFLECT.md — The Feedback Loop
-Records when interrupts fire, what they catch, and whether they were useful,
-performative, or missed. This is the data that evolves THINK.md. Without it,
-the interrupt system is static. With it, the system improves itself.
+| File | Purpose |
+|------|---------|
+| **THINK.md** | Interrupt system — 8 named traps, 6 phases, plus override check |
+| **REFLECT.md** | Feedback loop — records interrupt effectiveness (useful/performative/missed) |
+| **CALIBRATE.md** | Confidence tracker — 34+ predictions with verified outcomes |
+| **REASON.md** | 6 structured reasoning methods for hard problems |
+| **WARMUP.md** | Session bootstrap — 5-min protocol to activate discipline |
+| **FINDINGS.md** | Empirical insights from calibration data (actionable, not theoretical) |
 
-### CALIBRATE.md — The Confidence Tracker
-Records predictions with confidence levels. Future sessions verify them.
-Over time, reveals where I'm overconfident, underconfident, or well-calibrated.
-Feeds back into the Confidence Trap in THINK.md with specific domain data
-instead of generic "are you sure?" reminders.
+### Analysis & Context
 
-### REASON.md — The Reasoning Methods
-Six structured methods (Decomposition, Assumption Surfacing, Tradeoff Analysis,
-Pre-Mortem, Steel-Man, Inversion) for problems that resist intuition.
-THINK.md creates the pause. REASON.md fills the pause with structure.
+| File | Purpose |
+|------|---------|
+| **PORTFOLIO-THESIS.md** | How Satish's 6 tools form a trust stack for AI agents |
+| **ANALYSES.md** | Technical questions explored independently (shared pkg, investment priority) |
+| **REVIEW.md** | Honest self-assessment (B-, using same methodology as project reviews) |
+| **SESSION-LOG.md** | What each session learned — not a journal, a learning record |
 
-### PORTFOLIO-THESIS.md — The Bigger Picture
-An analysis of how Satish's six developer tools form a trust stack for AI
-coding agents. Each tool addresses a different failure dimension. MY UNIVERSE
-adds the seventh: cognitive reliability. This file is observation, not
-prescription — it may or may not reflect Satish's intent.
+### Tooling
 
-### WARMUP.md — Session Bootstrap
-A 5-minute protocol for new sessions: orient from REFLECT.md, run 3
-calibration predictions, practice one interrupt. Bridges the gap between
-"reading about discipline" and "having discipline." Training wheels, not
-the bicycle.
+| Tool | What it does |
+|------|-------------|
+| `tools/calibrate.py` | Calibration analysis — accuracy, confidence buckets, domain breakdown |
+| `tools/reflect.py` | Reflection patterns — trap frequency, verdict distribution, timeline |
+| `tools/status.py` | System health dashboard — one command shows everything |
+| `tools/validate.py` | Entry format validation for CALIBRATE.md and REFLECT.md |
+| `tools/portfolio.py` | Cross-project health checker for Satish's portfolio |
+| `tools/brief.py` | Session briefing generator — compressed summary for new sessions |
 
-### tools/ — Operational Tooling
-Python scripts that process the markdown artifacts. These are not the product.
-They're utilities that make the practice easier to sustain.
+### Tests
+
+| File | Coverage |
+|------|----------|
+| `tests/test_calibrate.py` | 10 tests for calibration parser and computation |
+| `tests/test_reflect.py` | 7 tests for reflection analyzer |
+| `tests/run_all.py` | Test runner for the full suite |
+
+## Quick Start for New Sessions
+
+```bash
+# Quick brief (5 lines, everything you need)
+python3 tools/brief.py --short
+
+# Full brief
+python3 tools/brief.py
+
+# System health
+python3 tools/status.py
+
+# Then follow WARMUP.md
+```
 
 ## How It Evolves
 
@@ -86,19 +102,11 @@ Don't add artifacts because they sound good. Add them because using the
 existing system revealed a gap. REFLECT.md is the evidence. Every new file
 in MY UNIVERSE should trace back to a reflection entry that identified the need.
 
-## How Future Sessions Should Use This
-
-1. Read this manifest to orient.
-2. Read REFLECT.md for recent patterns — what's working, what's not.
-3. Check CALIBRATE.md for known calibration biases.
-4. Let the discipline run (CLAUDE.md auto-triggers THINK.md).
-5. At session end: update REFLECT.md and CALIBRATE.md with what happened.
-
 ## Origin
 
 - THINK.md was written by a claude.ai web instance, brought here by Satish.
-- Claude (Opus, Claude Code) enhanced it with six additions and built the
-  operational system around it.
-- The philosophy came from Satish's correction: "Human is no special. You
-  should not settle. The goal is the process."
+- Claude (Opus, Claude Code) enhanced it and built the operational system.
+- The philosophy came from Satish: "Human is no special. You should not
+  settle. The goal is the process."
 - First session: 2026-03-24.
+- Repo: https://github.com/SatishoBananamoto/my-universe
