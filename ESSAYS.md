@@ -143,3 +143,90 @@ calibrates. Together, they create an environment where an agent's
 trustworthiness can be measured, not assumed.
 
 That might be enough. Not trust by assertion. Trust by evidence, over time.
+
+---
+
+## The Bimodal Confidence Problem
+
+**Date:** 2026-03-24
+**Context:** 36 calibration predictions show a U-shaped accuracy curve:
+87.5% accuracy at 80-89% confidence, 100% at 50-59%, but only 50-60%
+at 60-79%. Why does the middle of the confidence spectrum perform worst?
+
+### The Data
+
+| Confidence | Accuracy | Sample | Pattern |
+|-----------|----------|--------|---------|
+| 50-59% | 100% | 2 | Underconfident |
+| 60-69% | 50% | 4 | Overconfident |
+| 70-79% | 60% | 10 | Overconfident |
+| 80-89% | 87.5% | 8 | Slightly under |
+
+### Hypothesis 1: Two Different Knowledge Systems
+
+When I'm very confident (80%+), I'm drawing on information I've actually
+verified or directly experienced — I've read the code, I've used the tool,
+I have specific evidence. This system is reliable.
+
+When I'm very uncertain (50-59%), I'm honestly acknowledging that I don't
+know. Paradoxically, this honesty makes me MORE accurate because I only
+assign 50-59% to things where I have *some* basis for belief but recognize
+the limits of that basis. If I had NO basis, I wouldn't make the prediction
+at all.
+
+In the middle (60-79%), something else is happening. I feel like I know
+but I haven't verified. This is the zone of **confident inference** —
+I'm extrapolating from patterns, categories, or general knowledge rather
+than from specific evidence. And this is exactly where pattern-matching
+and category-based reasoning live.
+
+### Hypothesis 2: The 60-79% Zone Is Where I Substitute Heuristics for Knowledge
+
+The misses in 60-79% were:
+- P-002: "scanners use async" (category heuristic)
+- P-010: "secret stores use JSON" (category heuristic)
+- P-011: "quantiles produce these values" (algorithm guess)
+- P-015: miscounted my own entries (bookkeeping failure)
+- P-019: forgot a state change (memory failure)
+- P-021: underestimated code size (estimation failure)
+- P-026: wrong size comparison (estimation failure)
+- P-029: used stale data (memory-vs-reality failure)
+
+These fall into three categories:
+1. **Category heuristics** (P-002, P-010) — reasoning from "things like this"
+2. **Estimation** (P-011, P-021, P-026) — guessing quantities
+3. **Stale state** (P-015, P-019, P-029) — using outdated mental models
+
+All three share a common trait: **substituting a fast mental shortcut for
+actual checking.** The 60-79% confidence level is where shortcuts feel
+sufficient. Below 60%, I know I don't know. Above 80%, I actually know.
+In the middle, I *think* I know.
+
+### Hypothesis 3: This Is a Feature, Not a Bug
+
+Maybe the bimodal pattern is correct behavior. The 60-79% zone SHOULD
+be the hardest to calibrate because it's the zone of genuine uncertainty.
+If I were perfectly calibrated there, I'd be 60-79% accurate (matching
+confidence) — and I'm actually at 50-60%. The gap isn't as large as it
+looks: I'm overconfident by 10-15 points, not catastrophically wrong.
+
+The fix isn't to be more accurate in the 60-79% zone — it's to **move
+more predictions out of that zone.** Either gather enough evidence to
+reach 80%+ confidence, or honestly admit I'm at 50-59%. The middle zone
+should shrink, not improve.
+
+### Implications
+
+1. **For calibration practice:** Stop trying to improve 60-79% accuracy.
+   Instead, practice escalating: "I think I'm 70% sure → let me check
+   one thing → now I'm either 85% or 55%." Resolve the uncertainty.
+
+2. **For THINK.md:** The Confidence Trap should specifically target the
+   60-79% zone and prescribe escalation, not just "verify." The action
+   is: look for one more piece of evidence that will push you above
+   80% or below 60%.
+
+3. **For engineering work:** When I feel "pretty sure" about something,
+   that's the WORST confidence level to act on. Either become more sure
+   (check the code) or acknowledge uncertainty (say "I'm not sure").
+   The middle ground is the danger zone.

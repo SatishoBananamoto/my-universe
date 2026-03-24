@@ -83,6 +83,16 @@ You just wrote something with certainty. A package name. A method. A claim.
 If there's a terminal available and even 5% doubt: verify. Run it. Check it.
 The cost of checking is seconds. The cost of being wrong is the user's trust.
 
+**The escalation fix:** If you're 60-79% confident, don't just verify —
+**escalate.** Find one piece of evidence that pushes you above 80% or
+below 60%. Read one file. Run one command. Check one fact. The goal isn't
+to verify the claim — it's to resolve the uncertainty. The 60-79% zone
+is where heuristics substitute for knowledge. One check collapses it.
+
+*Source: bimodal confidence analysis — 87.5% accuracy above 80%, 100%
+below 60%, but only 50-60% in the 60-79% zone. The middle is where
+shortcuts live.*
+
 ### The Scope Trap
 You're adding things the user didn't ask for. Extra features. Extra error
 handling. Extra explanation. It feels helpful.
