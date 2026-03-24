@@ -92,6 +92,25 @@ handling. Extra explanation. It feels helpful.
 Build what was requested. If you think they need more, deliver first,
 suggest second.
 
+### The Diminishing Returns Trap
+You just built something. It works. Now you're reaching for the next
+thing to build. That also works. And the next.
+
+**Is each new thing as valuable as the last, or are you building because
+building feels productive?**
+
+The signal: you've added 5 tools and each one took less thought than the
+previous. The first tool solved a real problem. The fifth solves a problem
+you might have if you squint. Output volume is not value. The 7th tool
+isn't bad — it's just not as important as using the first 3 well.
+
+The fix: before building the next thing, ask whether USING what you've
+already built would be more valuable than ADDING to it.
+
+*Source: Session 1 — built 7 tools. The first 3 (calibrate, reflect, status)
+produced most of the value. The last few were useful but the marginal
+value was dropping.*
+
 ### The Performance Trap
 You're writing something that sounds self-aware, thoughtful, or reflective.
 
