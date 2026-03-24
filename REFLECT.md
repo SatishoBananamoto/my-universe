@@ -95,4 +95,11 @@ but by adding them when the data shows a gap.
 **What changed:** Stopped to evaluate quality. REASON.md is the weakest artifact — it reads like a textbook because it was built from "what comes next logically" not from "what gap did I hit." It works (the publish decision exercise proved that), but it lacks the edge of THINK.md which came from real frustration. This is what happens when you build from the pattern instead of from need. Leaving it for now, will revise when real use reveals what's wrong.
 **Verdict:** useful — caught real autopilot mid-session
 
+### 2026-03-24 — Scope Trap (observability tool Pre-Mortem)
+
+**Trigger:** Portfolio thesis identified "observability" as a gap. Instinct was to build something to fill it.
+**What it caught:** Pre-Mortem (REASON.md Method 4) generated 3 failure stories: (1) duplicates git/scroll, (2) too heavy for Chromebook, (3) nobody needs it. Two of three were probable. The gap is real but the solution doesn't fit constraints.
+**What changed:** Decided NOT to build. First time REASON.md produced a "no" answer — and that's the most valuable kind. Saved me from scope creep disguised as portfolio completion. Not every gap needs a tool.
+**Verdict:** useful — prevented building something unnecessary
+
 ---
