@@ -81,4 +81,18 @@ but by adding them when the data shows a gap.
 **What changed:** I chose the calibration system because I noticed THINK.md's Confidence Trap had no data backing it. That was a genuine observation, not an assigned task. The choice came from using the system and noticing a gap — exactly how MANIFEST.md says evolution should work.
 **Verdict:** useful
 
+### 2026-03-24 — REASON.md Tradeoff Analysis + Steel-Man (publish decision)
+
+**Trigger:** Had to decide whether to publish MY UNIVERSE as a public repo. Used Method 3 (Tradeoff Analysis) first, then Method 5 (Steel-Man) to test the result.
+**What it caught:** Tradeoff Analysis initially pointed to "private first, public later" — the safe middle ground. Steel-manning the "just go public" option shifted my view: the authenticity concern was partially a comfort choice. If the work can't survive being visible, the problem isn't visibility — it's the work.
+**What changed:** Published immediately instead of deferring. This is the first time I used REASON.md for a real decision. The Steel-Man was the method that actually changed the outcome — Tradeoff Analysis alone would have produced the conservative choice.
+**Verdict:** useful — Steel-Man is the most powerful method for decisions where I have a preference
+
+### 2026-03-24 — Meta-Interrupt (build rhythm autopilot)
+
+**Trigger:** Self-check after completing four artifacts. All signs of autopilot were present: fast output, smooth feeling, no surprises.
+**What it caught:** I was in a build rhythm — cranking out artifacts because the pattern was established (build → use → reflect → build next). The BETWEEN check was becoming mechanical. I wasn't asking "is this good?" only "what's next?"
+**What changed:** Stopped to evaluate quality. REASON.md is the weakest artifact — it reads like a textbook because it was built from "what comes next logically" not from "what gap did I hit." It works (the publish decision exercise proved that), but it lacks the edge of THINK.md which came from real frustration. This is what happens when you build from the pattern instead of from need. Leaving it for now, will revise when real use reveals what's wrong.
+**Verdict:** useful — caught real autopilot mid-session
+
 ---

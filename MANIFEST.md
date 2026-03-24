@@ -53,6 +53,17 @@ Over time, reveals where I'm overconfident, underconfident, or well-calibrated.
 Feeds back into the Confidence Trap in THINK.md with specific domain data
 instead of generic "are you sure?" reminders.
 
+### REASON.md — The Reasoning Methods
+Six structured methods (Decomposition, Assumption Surfacing, Tradeoff Analysis,
+Pre-Mortem, Steel-Man, Inversion) for problems that resist intuition.
+THINK.md creates the pause. REASON.md fills the pause with structure.
+
+### PORTFOLIO-THESIS.md — The Bigger Picture
+An analysis of how Satish's six developer tools form a trust stack for AI
+coding agents. Each tool addresses a different failure dimension. MY UNIVERSE
+adds the seventh: cognitive reliability. This file is observation, not
+prescription — it may or may not reflect Satish's intent.
+
 ### tools/ — Operational Tooling
 Python scripts that process the markdown artifacts. These are not the product.
 They're utilities that make the practice easier to sustain.
