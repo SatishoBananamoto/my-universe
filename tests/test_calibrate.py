@@ -104,6 +104,36 @@ def test_parse_empty_file(tmp_path):
     assert len(entries) == 0
 
 
+def test_confidence_clamped_to_range(tmp_path):
+    """Out-of-range confidence values are clamped to 50-99."""
+    p = write_temp(tmp_path, """\
+        ### [P-001] 2026-03-24 — facts
+
+        **Prediction:** Something
+        **Confidence:** 150%
+        **Actual:** Yes
+        **Result:** correct
+    """)
+    entries = parse_entries(p)
+    assert len(entries) == 1
+    assert entries[0]["confidence"] == 99  # Clamped from 150
+
+
+def test_low_confidence_clamped(tmp_path):
+    """Confidence below 50 is clamped to 50."""
+    p = write_temp(tmp_path, """\
+        ### [P-001] 2026-03-24 — facts
+
+        **Prediction:** Something
+        **Confidence:** 10%
+        **Actual:** No
+        **Result:** incorrect
+    """)
+    entries = parse_entries(p)
+    assert len(entries) == 1
+    assert entries[0]["confidence"] == 50  # Clamped from 10
+
+
 # --- Computation ---
 
 def test_compute_all_pending(tmp_path):

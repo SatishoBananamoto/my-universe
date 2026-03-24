@@ -41,7 +41,7 @@ def parse_entries(path: Path) -> list[dict]:
             "date": match.group(2),
             "domain": match.group(3),
             "prediction": match.group(4).strip(),
-            "confidence": int(match.group(5)),
+            "confidence": max(50, min(99, int(match.group(5)))),
             "actual": match.group(6).strip(),
             "result": match.group(7).strip().strip("_"),
         }
