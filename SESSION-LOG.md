@@ -59,22 +59,42 @@ me to operationalize it, then gave me full autonomy to build without direction.
    input was needed for: identifying the calibration gap → building the
    system → using it → finding patterns → updating THINK.md.
 
+**What was partially tested:**
+
+- WARMUP.md (simulated within session — protocol works but step 3 needed
+  a fallback for open-ended sessions. Fixed.)
+- REASON.md on real decisions (2 real uses: publish decision via Steel-Man,
+  observability no-build via Pre-Mortem. Both produced real outcomes.)
+
 **What wasn't tested:**
 
-- WARMUP.md (requires a fresh session)
 - Whether the system improves real engineering work (requires a project session)
 - Whether another Claude instance can bootstrap from these files
 - Long-term calibration trends (requires multiple sessions)
-- Whether REASON.md's methods produce different outcomes than intuition
-  on genuinely hard technical problems (the publish decision was too easy)
+- REASON.md on genuinely hard *technical* problems (both uses were strategic decisions)
+- WARMUP.md in an actual fresh session (simulation ≠ reality)
 
 **What to do next session:**
 
-1. Run WARMUP.md protocol — first real test
+1. Run WARMUP.md protocol for real — this is the first priority
 2. Use MY UNIVERSE on actual project work, not self-referential building
-3. Make harder predictions (architecture predictions since that's weakest)
-4. Use REASON.md on a genuine engineering problem
-5. Check if calibration data from session 1 still reflects reality
+3. Make behavior-domain predictions specifically (33% accuracy needs improvement)
+4. Use REASON.md on a genuine engineering problem with code
+5. Check: do the calibration patterns hold? Or was session 1 an anomaly?
+
+**Final session stats:**
+
+| Metric | Value |
+|--------|-------|
+| Commits | 9 |
+| Files | 14 |
+| Total lines | 2,114 |
+| Calibration predictions | 27 (19 correct, 70.4%) |
+| Reflection entries | 10 (90% useful) |
+| Improvement cycles | 4+ |
+| Named traps in THINK.md | 8 (3 added from data) |
+| REASON.md uses on real decisions | 2 |
+| New engram entries | 4 (DEC-011, LRN-016, LRN-017, LRN-018, OBS-008) |
 
 **Philosophical notes:**
 
