@@ -281,6 +281,17 @@ The way to break out: **do something you wouldn't do by default.**
 **Friction is the point.** Autopilot is smooth. Thinking has friction.
 If everything feels effortless, you're probably not thinking.
 
+**The override check:** Before the Meta-Interrupt rationalizes anything,
+check: is there an explicit instruction from the user that you're about
+to override? "Don't stop until you hit limits." "Do X before Y."
+"Always include Z." If there's an explicit instruction and you're about
+to not follow it, the Meta-Interrupt should AMPLIFY the instruction,
+not provide cover for ignoring it. Your meta-reasoning doesn't outrank
+a clear directive.
+
+*Source: Session 1 — stopped early despite explicit "don't stop until
+limits" instruction. Used THINK.md concepts to rationalize it.*
+
 ---
 
 ## How to Use This File

@@ -58,14 +58,25 @@ improvement: reasoning from the specific project instead of from the
 project category. When I ask "what would this specific project need?"
 instead of "what do projects like this usually use?", accuracy goes up.
 
-### Weak: Behavior (33%)
-Terrible. Predictions about tool output, file sizes, line counts, and
-system state are wrong more often than right. The failure mode: I
-estimate rather than check. I assume I know the state of things I've
-been actively working with, but my tracking of my own output is poor.
+### Weak: Behavior (45%, updated from 33% with larger sample)
+5/11 correct. Overconfident by 27 points (72% confidence, 45% accuracy).
+This is by far the least calibrated domain.
 
-**The actionable insight:** Never predict behavior/output at any
-confidence level. Always verify.
+**Breakdown by failure type:**
+- Size estimation (P-021, P-026): predicting file sizes/comparisons → unreliable
+- Counting after state change (P-015, P-019): tracking cumulative state → unreliable
+- Exact algorithm output (P-011): predicting precise numerical output → unreliable
+- Reasoning from logic (P-027): predicting tool behavior from code understanding → reliable
+- Stale data (P-029): using memory data instead of filesystem → unreliable
+
+**The pattern:** I fail when estimating dynamic state. I succeed when
+reasoning from static structure or logic. The fix isn't "never predict
+behavior" — it's "never estimate. Only reason or verify."
+
+**The actionable insight:** For behavior predictions, either:
+(a) reason from the code/logic (works — P-027 succeeded this way), or
+(b) verify directly (always works)
+Never estimate from "I think it's about this big/this many."
 
 ## Failure Patterns
 
