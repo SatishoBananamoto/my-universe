@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Import all test modules
-from tests import test_calibrate, test_reflect
+from tests import test_calibrate, test_reflect, test_audit
 
 
 def run_module(module):
@@ -23,8 +23,14 @@ def run_module(module):
         if attr_name.startswith("test_"):
             func = getattr(module, attr_name)
             try:
-                with tempfile.TemporaryDirectory() as td:
-                    func(Path(td))
+                # Check if function expects tmp_path argument
+                import inspect
+                sig = inspect.signature(func)
+                if sig.parameters:
+                    with tempfile.TemporaryDirectory() as td:
+                        func(Path(td))
+                else:
+                    func()
                 print(f"    PASS  {attr_name}")
                 passed += 1
             except Exception as e:
@@ -42,7 +48,7 @@ def main():
     total_passed = 0
     total_failed = 0
 
-    for module in [test_calibrate, test_reflect]:
+    for module in [test_calibrate, test_reflect, test_audit]:
         p, f = run_module(module)
         total_passed += p
         total_failed += f
