@@ -214,3 +214,56 @@ Deliberately probing architecture and behavior domains where batches 1-2 showed 
 **Notes:** My 60% confidence was appropriate — I was genuinely unsure. But both options I considered (tmpdir vs in-memory tracking) were wrong. SVX is more elegant: it's analysis-based simulation, not execution-based. I failed to consider a third option because I was trapped in the binary of "copy files" vs "virtual filesystem." This is a variant of the Pattern-Matching Trap: having only two mental models for how simulation could work when there were actually three.
 
 ---
+
+## Batch 4 — Edge Predictions (2026-03-24)
+
+Pushing into areas where I'm most likely to be wrong. Testing behavior and cross-project patterns.
+
+### [P-019] 2026-03-24 — behavior
+
+**Prediction:** Running `python3 tools/reflect.py --traps` will list exactly 5 "never fired" traps.
+**Confidence:** 75%
+**Actual:** Lists 4 unfired traps (binary, category, completion, performance). The Scope trap fired during this session (observability Pre-Mortem), so it's not in the "never fired" list.
+**Result:** incorrect
+**Notes:** Off by 1. I forgot the Scope Trap fired when I did the observability Pre-Mortem. My own session's REFLECT.md entries changed the count. I was predicting based on earlier state.
+
+### [P-020] 2026-03-24 — architecture
+
+**Prediction:** The `vigil` project's cascade analyzer (cascade.py) analyzes transitive dependencies recursively, not just direct dependencies.
+**Confidence:** 80%
+**Actual:** Yes — `score_tree()` walks a DependencyNode tree, scoring all nodes at depth >= 1 with depth-weighted risk. Supports depths 1-3+ with configurable weights.
+**Result:** correct
+**Notes:** Reasoned from the module name (cascade = transitive propagation) and vigil's stated purpose. The prediction was informed by domain knowledge, not pattern-matching.
+
+### [P-021] 2026-03-24 — behavior
+
+**Prediction:** The total LOC across all tools/ Python files in MY UNIVERSE is between 400-500 lines.
+**Confidence:** 70%
+**Actual:** 677 lines. calibrate.py=218, reflect.py=274, status.py=185.
+**Result:** incorrect
+**Notes:** Underestimated status.py and reflect.py. I had just written them but didn't track their actual size. The same kind of bookkeeping error as P-015.
+
+### [P-022] 2026-03-24 — architecture
+
+**Prediction:** The `engram` project has a server component (FastAPI or Flask) for the MCP integration, not just CLI.
+**Confidence:** 70%
+**Actual:** Yes — `server.py` exists. (Did not inspect framework used, but server component confirmed.)
+**Result:** correct
+**Notes:** Reasoned from engram being an MCP tool (MCP servers need a server component). Good inference.
+
+### [P-023] 2026-03-24 — facts
+
+**Prediction:** There are more than 40 engram entries total across all types (DEC, LRN, MST, OBS, GOL).
+**Confidence:** 85%
+**Actual:** 49 entries total.
+**Result:** correct
+
+### [P-024] 2026-03-24 — self
+
+**Prediction:** My architecture-domain calibration will improve this batch compared to batch 3 (above 60% accuracy for architecture predictions).
+**Confidence:** 55%
+**Actual:** Batch 4 architecture predictions: P-020 correct (1/1 = 100%). Tiny sample but above 60%.
+**Result:** correct
+**Notes:** 55% confidence on a correct meta-prediction. Honestly uncertain, appropriately so given small sample.
+
+---
