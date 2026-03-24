@@ -327,3 +327,42 @@ After running the quick portfolio check, making predictions about the full data.
 **Notes:** Good inference from the URL pattern observed in test files. This time I reasoned from evidence (the URL I saw), not from category. That's the fix working.
 
 ---
+
+## Batch 7 — Estimation vs Reasoning (2026-03-24)
+
+Testing the hypothesis: reasoning from logic succeeds, estimation fails.
+Pairs of predictions — one reasoned, one estimated.
+
+### [P-031] 2026-03-24 — behavior
+
+**Prediction:** (REASONING) Running `python3 tools/validate.py` will exit with code 0 (because I just ran it and all entries were valid, and I haven't added malformed entries since).
+**Confidence:** 95%
+**Actual:** Exit 0. All entries still valid.
+**Result:** correct
+**Notes:** Pure reasoning — I knew the state and nothing changed. High confidence justified.
+
+### [P-032] 2026-03-24 — behavior
+
+**Prediction:** (ESTIMATION) The THINK.md file now has between 300-310 lines.
+**Confidence:** 65%
+**Actual:** 309 lines. Within predicted range.
+**Result:** correct
+**Notes:** Estimation with a range (10 lines) succeeded. Previous estimation failures used point estimates or narrow comparisons. Wider ranges may be the fix for estimation — acknowledge uncertainty in the prediction itself.
+
+### [P-033] 2026-03-24 — behavior
+
+**Prediction:** (REASONING) `python3 tools/calibrate.py --domain architecture` will show accuracy above 60% because I know I improved from batch 2 onwards.
+**Confidence:** 80%
+**Actual:** 75% accuracy (6/8 correct). Well above 60%.
+**Result:** correct
+**Notes:** Reasoned from known trend + data. Threshold was conservative (60% when actual was 75%).
+
+### [P-034] 2026-03-24 — behavior
+
+**Prediction:** (ESTIMATION) The total number of files in MY UNIVERSE (excluding .git and __pycache__) is between 18-22.
+**Confidence:** 70%
+**Actual:** 21 files. Within range.
+**Result:** correct
+**Notes:** Range estimation (5-wide) succeeded. Both estimation predictions this batch used ranges. Both succeeded. Previous failures used point estimates or comparisons. Revised hypothesis: estimation fails on POINT estimates, succeeds on RANGE estimates with appropriate width.
+
+---

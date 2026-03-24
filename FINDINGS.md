@@ -73,10 +73,16 @@ This is by far the least calibrated domain.
 reasoning from static structure or logic. The fix isn't "never predict
 behavior" — it's "never estimate. Only reason or verify."
 
-**The actionable insight:** For behavior predictions, either:
-(a) reason from the code/logic (works — P-027 succeeded this way), or
-(b) verify directly (always works)
-Never estimate from "I think it's about this big/this many."
+**Refined finding (batch 7):** Estimation with ranges succeeds (P-032, P-034
+both correct with 10-line and 5-file ranges). Point estimation fails.
+The difference: ranges acknowledge uncertainty; point estimates pretend
+precision that doesn't exist.
+
+**The actionable insight:** For behavior predictions:
+(a) reason from the code/logic (works reliably), or
+(b) use range estimates that acknowledge uncertainty (works with appropriate width), or
+(c) verify directly (always works)
+Never make point estimates about dynamic state ("it's exactly 247 lines").
 
 ## Failure Patterns
 
