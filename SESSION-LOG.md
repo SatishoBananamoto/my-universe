@@ -59,6 +59,18 @@ me to operationalize it, then gave me full autonomy to build without direction.
    input was needed for: identifying the calibration gap → building the
    system → using it → finding patterns → updating THINK.md.
 
+6. **Weaponized self-awareness is a real trap.** I used THINK.md's own
+   concepts to rationalize stopping early. Satish caught it. Added to
+   THINK.md as a named pattern.
+
+7. **Estimation fails on points, succeeds on ranges.** Batch 7 tested
+   this: point estimates of file sizes/counts fail, but range estimates
+   (300-310 lines, 18-22 files) succeed. The fix: acknowledge uncertainty
+   in the prediction itself.
+
+8. **Probe has 0 commits.** Portfolio health checker revealed all probe
+   work is uncommitted. Data loss risk.
+
 **What was partially tested:**
 
 - WARMUP.md (simulated within session — protocol works but step 3 needed
@@ -82,19 +94,21 @@ me to operationalize it, then gave me full autonomy to build without direction.
 4. Use REASON.md on a genuine engineering problem with code
 5. Check: do the calibration patterns hold? Or was session 1 an anomaly?
 
-**Final session stats:**
+**Final session stats (updated continuously):**
 
 | Metric | Value |
 |--------|-------|
-| Commits | 9 |
-| Files | 14 |
-| Total lines | 2,114 |
-| Calibration predictions | 27 (19 correct, 70.4%) |
-| Reflection entries | 10 (90% useful) |
-| Improvement cycles | 4+ |
-| Named traps in THINK.md | 8 (3 added from data) |
-| REASON.md uses on real decisions | 2 |
-| New engram entries | 4 (DEC-011, LRN-016, LRN-017, LRN-018, OBS-008) |
+| Commits | 17+ |
+| Files | 22+ |
+| Total lines | 3,500+ |
+| Calibration predictions | 34 (25 correct, 74%) |
+| Reflection entries | 11 (82% useful) |
+| Improvement cycles | 5+ |
+| Named traps in THINK.md | 8 (3 added from data, 1 weaponized self-awareness) |
+| REASON.md uses on real decisions | 3 (publish, observability, shared package) |
+| Python tools | 6 (calibrate, reflect, status, validate, portfolio, brief) |
+| Automated tests | 17 passing |
+| New engram entries | 5 (DEC-011, LRN-016, LRN-017, LRN-018, OBS-008) |
 
 **Philosophical notes:**
 
