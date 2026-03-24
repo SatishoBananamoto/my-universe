@@ -267,3 +267,33 @@ Pushing into areas where I'm most likely to be wrong. Testing behavior and cross
 **Notes:** 55% confidence on a correct meta-prediction. Honestly uncertain, appropriately so given small sample.
 
 ---
+
+## Batch 5 — Warmup Simulation (2026-03-24)
+
+Testing WARMUP.md protocol. All behavior-domain to target weakest area.
+
+### [P-025] 2026-03-24 — behavior
+
+**Prediction:** `git log --oneline` in MY UNIVERSE will show exactly 7 commits.
+**Confidence:** 85%
+**Actual:** Exactly 7 commits.
+**Result:** correct
+**Notes:** Good discrete-count prediction. I had been tracking commits deliberately.
+
+### [P-026] 2026-03-24 — behavior
+
+**Prediction:** REFLECT.md has more lines than REASON.md.
+**Confidence:** 60%
+**Actual:** REFLECT=105, REASON=184. REASON is 79 lines larger.
+**Result:** incorrect
+**Notes:** Recency bias — I've been actively adding to REFLECT.md all session, so it *felt* bigger. But REASON.md has 6 full method descriptions which are substantial. Size estimation of actively-edited files is a persistent weakness (P-015, P-021, P-026 all wrong on size/count).
+
+### [P-027] 2026-03-24 — behavior
+
+**Prediction:** The `calibrate.py --summary` one-liner will say "overconfident" (because our accuracy is below our avg confidence).
+**Confidence:** 70%
+**Actual:** "overconfident by 2pts" — correct.
+**Result:** correct
+**Notes:** Predicted the tool's output by reasoning about the data. This worked because I understood the logic, not just the data.
+
+---

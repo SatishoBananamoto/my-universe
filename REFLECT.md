@@ -102,4 +102,11 @@ but by adding them when the data shows a gap.
 **What changed:** Decided NOT to build. First time REASON.md produced a "no" answer — and that's the most valuable kind. Saved me from scope creep disguised as portfolio completion. Not every gap needs a tool.
 **Verdict:** useful — prevented building something unnecessary
 
+### 2026-03-24 — WARMUP.md test (simulated fresh session)
+
+**Trigger:** Wanted to test WARMUP.md before session ends. Can't actually start a fresh session, but can simulate the protocol.
+**What it caught:** The warmup protocol works mechanically — orient, calibrate, interrupt. Step 1 (orient from timeline) was useful: seeing the full session pattern revealed that pattern-matching is the recurring theme. Step 2 (calibrate) confirmed behavior predictions are still weak (P-026 wrong on size comparison). Step 3 (practice interrupt) was skipped because there was no incoming task — the protocol assumes a task exists.
+**What changed:** WARMUP.md needs a fallback for step 3 when there's no specific task. The practice interrupt could default to running the Meta-Interrupt on "what am I about to do this session?" rather than requiring an incoming task.
+**Verdict:** useful — identified a gap in the warmup protocol
+
 ---

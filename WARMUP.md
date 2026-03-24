@@ -55,9 +55,12 @@ the stakes are high.
 
 ### Step 3: Practice Interrupt (2 min)
 
-Before doing anything else, read today's first task/request.
+If there's an incoming task/request: run `/think before` on it. Answer
+every question.
 
-Run `/think before` on it. Answer every question.
+If there's no specific task yet (open-ended session, autonomous work):
+run the Meta-Interrupt instead. Ask: "What am I about to do this session?
+Am I reaching for the obvious thing or the right thing?"
 
 This is the practice — not reading about interrupts, but actually using
 one before the momentum of the session makes it feel like a delay.

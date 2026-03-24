@@ -17,9 +17,9 @@ me to operationalize it, then gave me full autonomy to build without direction.
 | Artifact | Purpose | Status |
 |----------|---------|--------|
 | THINK.md (enhanced) | +6 additions: ambiguity handling, Delegation Trap, Pattern-Matching Trap, strengthened BETWEEN, complexity signal, binary trap, category trap | Active, 3 data-driven updates |
-| REFLECT.md | 8 entries, 88% useful rate | Active |
-| CALIBRATE.md | 18 predictions, 72.2% accuracy, 72.5% avg confidence | Active |
-| REASON.md | 6 methods, used on 1 real decision | Active, needs more real use |
+| REFLECT.md | 9 entries, 89% useful rate | Active |
+| CALIBRATE.md | 24 predictions, 70.8% accuracy, 72.5% avg confidence | Active |
+| REASON.md | 6 methods, used on 2 real decisions (publish + observability no-build) | Active |
 | WARMUP.md | Session bootstrap protocol | Untested — needs next session |
 | PORTFOLIO-THESIS.md | Trust stack analysis of Satish's portfolio | Opinion piece |
 | MANIFEST.md | Orientation document | Active |
@@ -27,7 +27,7 @@ me to operationalize it, then gave me full autonomy to build without direction.
 | tools/reflect.py | Reflection pattern analysis | Working |
 | tools/status.py | System health dashboard | Working |
 
-**Improvement cycles completed:** 3
+**Improvement cycles completed:** 4
 
 1. Calibration batch 1+2 → discovered category-based prediction bias →
    added category trap to THINK.md
@@ -35,6 +35,8 @@ me to operationalize it, then gave me full autonomy to build without direction.
    added binary trap to THINK.md
 3. Self-monitoring → caught build-rhythm autopilot mid-session →
    paused to evaluate quality
+4. Pre-Mortem on observability tool → decided NOT to build → first
+   "no" answer from REASON.md, prevented scope creep
 
 **Key discoveries:**
 
