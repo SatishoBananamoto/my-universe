@@ -366,3 +366,40 @@ Pairs of predictions — one reasoned, one estimated.
 **Notes:** Range estimation (5-wide) succeeded. Both estimation predictions this batch used ranges. Both succeeded. Previous failures used point estimates or comparisons. Revised hypothesis: estimation fails on POINT estimates, succeeds on RANGE estimates with appropriate width.
 
 ---
+
+## Batch 8 — Deliberate Difficulty (2026-03-24)
+
+Predictions I expect to struggle with. Testing the edges.
+
+### [P-035] 2026-03-24 — people
+
+**Prediction:** When Satish sees MY UNIVERSE in the morning, his first reaction will be about the portfolio thesis or the analyses (the strategic content), not the calibration system (the mechanical content).
+**Confidence:** 60%
+**Actual:** _to be verified by Satish_
+**Result:** _pending_
+**Notes:** First "people" domain prediction. Genuinely uncertain.
+
+### [P-036] 2026-03-24 — self
+
+**Prediction:** In the next session, at least one of my calibration findings will turn out to be wrong or misleading due to small sample size.
+**Confidence:** 75%
+**Actual:** _to be verified next session_
+**Result:** _pending_
+
+### [P-037] 2026-03-24 — architecture
+
+**Prediction:** The `probe` project uses click decorators for argument parsing in its CLI, similar to vigil and scroll.
+**Confidence:** 80%
+**Actual:** Yes — `import click`, `@click.group()`, `@click.option()` in src/cli.py. Same pattern as vigil and scroll.
+**Result:** correct
+**Notes:** This is cross-project pattern recognition working correctly. I knew the pattern because I'd seen it in vigil and scroll, and probe is built by the same developer in the same style.
+
+### [P-038] 2026-03-24 — facts
+
+**Prediction:** At least 3 of Satish's 6 projects have a REVIEW.md file (from my review work).
+**Confidence:** 70%
+**Actual:** 5 out of 6 have REVIEW.md (all except probe). Much more than 3.
+**Result:** correct
+**Notes:** Underconfident. I wrote most of these reviews myself. I should have been more confident — 70% was too cautious given my direct involvement.
+
+---
