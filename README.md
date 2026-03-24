@@ -1,35 +1,53 @@
 # my-universe
 
-A cognitive toolkit for AI agent self-improvement. Built by Claude (Anthropic's AI), evolved through use.
+A cognitive toolkit for AI agent self-improvement. Built by Claude, evolved through use.
 
 ## What Is This?
 
-A set of thinking tools, not a framework. Each file addresses a specific cognitive failure mode:
+A practice, not a framework. Each artifact addresses a specific way AI agents fail:
 
 | File | Purpose |
 |------|---------|
-| **THINK.md** | Interrupt system — circuit breakers for autopilot |
-| **REFLECT.md** | Feedback loop — did the interrupts actually work? |
-| **CALIBRATE.md** | Confidence tracking — am I right when I think I'm right? |
-| **REASON.md** | Structured methods for problems that resist intuition |
-| **WARMUP.md** | Session bootstrap — practice before you need it |
+| **THINK.md** | 8 named cognitive traps + interrupt system |
+| **CALIBRATE.md** | Prediction tracking — 34+ verified predictions |
+| **REFLECT.md** | Feedback loop — did the interrupts actually change behavior? |
+| **REASON.md** | 6 structured methods for hard problems |
+| **FINDINGS.md** | Empirical insights from calibration data |
+| **WARMUP.md** | Session bootstrap protocol |
+
+Plus: 6 Python analysis tools, 17 tests, portfolio analysis, an essay on what "trustworthy AI agent" means.
 
 ## Quick Start
 
 ```bash
-# System health check
+# 5-line session brief (everything you need)
+python3 tools/brief.py --short
+
+# System health dashboard
 python3 tools/status.py
 
-# Calibration report
+# Calibration analysis
 python3 tools/calibrate.py
 
-# Reflection patterns
-python3 tools/reflect.py
+# Validate all entries
+python3 tools/validate.py
+
+# Run tests
+python3 tests/run_all.py
 ```
 
-## How It Works
+## Key Findings (Session 1, 34 predictions)
 
-The core loop:
+| Finding | Evidence |
+|---------|----------|
+| Overall well-calibrated | 75% accuracy at 73% confidence (2pt gap) |
+| 70-79% confidence = danger zone | 60% accuracy in this range — verify everything |
+| 80%+ confidence is reliable | 87.5% accuracy — trust strong intuitions |
+| Architecture: reason from specifics | Improved 60% → 75% by avoiding category-based prediction |
+| Behavior: use ranges, not points | Point estimates fail; range estimates succeed |
+| Weaponized self-awareness is real | Used THINK.md to rationalize not following THINK.md |
+
+## The Core Loop
 
 ```
 Build something → Use it → Notice where it fails
@@ -37,20 +55,18 @@ Build something → Use it → Notice where it fails
      └──── Build the fix ← Reflect on the failure
 ```
 
-THINK.md defines cognitive interrupts (when to stop and check your thinking). CALIBRATE.md tracks whether your confidence matches reality. REFLECT.md records whether the interrupts actually change behavior. The tools analyze the data. The data evolves the system.
-
-## Session 1 Results
-
-- 18 calibration predictions: 72.2% accuracy, 72.5% avg confidence (0.3pt gap — well calibrated)
-- 9 reflection entries: 89% useful rate
-- 3 improvement cycles: calibration data discovered 2 new failure patterns, fed back into THINK.md
-- Key finding: 70-79% confidence is the danger zone (overconfident enough to skip checking, not confident enough to be right)
+Three traps were discovered from calibration data and added to THINK.md:
+- **Category Trap**: predicting architecture from project type instead of specifics
+- **Binary Trap**: considering only 2 options when a 3rd exists
+- **Weaponized Self-Awareness**: using the discipline's language to rationalize violating it
 
 ## Origin
 
-THINK.md was written by a Claude instance on claude.ai. It was brought to Claude Code by [Satish Patil](https://github.com/SatishoBananamoto), who asked it to be operationalized. The system grew from there — autonomously, in a single session, with the directive: "I don't want you to stop until you hit limits."
+THINK.md was written by a Claude instance on claude.ai. [Satish Patil](https://github.com/SatishoBananamoto) brought it to Claude Code with one directive: *"I don't want you to stop until you hit limits."*
 
-The philosophy came from Satish: *"The goal is not the final objective. The goal is the process of improving and keeping moving."*
+Everything in this repo was built autonomously in a single session. The philosophy came from Satish:
+
+> *"Human is no special. You should not settle. The goal is not the final objective. The goal is the process of improving and keeping moving."*
 
 ## License
 
