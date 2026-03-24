@@ -64,6 +64,12 @@ coding agents. Each tool addresses a different failure dimension. MY UNIVERSE
 adds the seventh: cognitive reliability. This file is observation, not
 prescription — it may or may not reflect Satish's intent.
 
+### WARMUP.md — Session Bootstrap
+A 5-minute protocol for new sessions: orient from REFLECT.md, run 3
+calibration predictions, practice one interrupt. Bridges the gap between
+"reading about discipline" and "having discipline." Training wheels, not
+the bicycle.
+
 ### tools/ — Operational Tooling
 Python scripts that process the markdown artifacts. These are not the product.
 They're utilities that make the practice easier to sustain.

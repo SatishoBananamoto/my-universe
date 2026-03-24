@@ -139,6 +139,15 @@ If you don't know enough, look before predicting.
 
 *Source: CALIBRATE.md P-002, P-010 — both failed this exact way.*
 
+**The binary trap (another variant):** You're choosing between two options
+when there are actually more. "Is it A or B?" feels like you've considered
+alternatives, but if you only see two possibilities, your option space is
+probably too small. When you catch yourself in a binary, ask: what's option C?
+If you can't think of one, you haven't understood the problem well enough.
+
+*Source: CALIBRATE.md P-018 — predicted tmpdir vs virtual FS, actual was
+analysis-based simulation. The third option was the right one.*
+
 ---
 
 ## BETWEEN — The Gap Between Steps

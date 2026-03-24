@@ -160,3 +160,57 @@ New domain tags can be added when existing ones don't fit.
 **Notes:** Low confidence (55%) on a correct prediction. I was genuinely unsure — Pydantic would have been a reasonable choice for a persona engine. This was underconfident.
 
 ---
+
+## Batch 3 — Targeting Weak Spots (2026-03-24)
+
+Deliberately probing architecture and behavior domains where batches 1-2 showed weakness.
+
+### [P-013] 2026-03-24 — architecture
+
+**Prediction:** The `engram` project stores entries as individual files (one file per entry), not in a database or single JSON file.
+**Confidence:** 75%
+**Actual:** Yes — individual .md files: DEC-001.md, LRN-001.md, MST-001.md, OBS-001.md, GOL-001.md, etc. 47+ files total.
+**Result:** correct
+**Notes:** This aligned with DEC-001 in engram itself ("one file per entry"). My prediction was informed by having seen engram's design decisions in previous sessions.
+
+### [P-014] 2026-03-24 — architecture
+
+**Prediction:** The `scroll` project uses subprocess calls to `git log` rather than a Python git library (like gitpython) to read repository history.
+**Confidence:** 70%
+**Actual:** Yes — `subprocess.run(["git"...` in both git_reader.py and github_reader.py. No gitpython dependency.
+**Result:** correct
+**Notes:** Correct architecture prediction at 70%. I reasoned from Satish's preference for lightweight deps (Chromebook) rather than from the category. This is the right kind of reasoning.
+
+### [P-015] 2026-03-24 — behavior
+
+**Prediction:** Running `python3 tools/calibrate.py --domain codebase` will show 5 entries (P-001, P-002, P-005, P-007, P-012 are codebase-tagged).
+**Confidence:** 80%
+**Actual:** Shows 6 entries — I forgot P-008 (vigil LOC count) which is also codebase-tagged.
+**Result:** incorrect
+**Notes:** 80% confidence on a wrong answer. Simple counting error — I miscounted my own predictions. Overconfident about my own bookkeeping. Ironic that this happened while testing the calibration tool.
+
+### [P-016] 2026-03-24 — architecture
+
+**Prediction:** The `probe` project scans MCP server config files (JSON) rather than actually connecting to running MCP servers.
+**Confidence:** 65%
+**Actual:** Yes — has src/config.py for parsing configs, scanners analyze configuration files (filesystem, injection, secrets, transport scanners).
+**Result:** correct
+**Notes:** Appropriate confidence for a genuine uncertainty. I wasn't sure if probe was static analysis or runtime scanning. 65% was honest.
+
+### [P-017] 2026-03-24 — behavior
+
+**Prediction:** The `vigil` project has a CLI command that takes a package name and outputs a risk score or risk report.
+**Confidence:** 85%
+**Actual:** Yes — `@click.argument("package")` with options for detail, JSON output, and risk threshold. Classic CLI risk assessment interface.
+**Result:** correct
+**Notes:** High confidence justified — this is the core use case implied by "predictive risk intelligence."
+
+### [P-018] 2026-03-24 — architecture
+
+**Prediction:** The `svx` simulator works by creating a temporary copy of the filesystem (like a tmpdir or overlay) to run simulated operations against, rather than tracking changes in-memory.
+**Confidence:** 60%
+**Actual:** Neither. SVX uses a WorldSnapshot object and analyzes/predicts command outcomes through category-specific simulator functions (_simulate_git, _simulate_delete, etc.). No filesystem copy, no in-memory filesystem model. It reasons about what would happen by analyzing the command structure against the current state.
+**Result:** incorrect
+**Notes:** My 60% confidence was appropriate — I was genuinely unsure. But both options I considered (tmpdir vs in-memory tracking) were wrong. SVX is more elegant: it's analysis-based simulation, not execution-based. I failed to consider a third option because I was trapped in the binary of "copy files" vs "virtual filesystem." This is a variant of the Pattern-Matching Trap: having only two mental models for how simulation could work when there were actually three.
+
+---
