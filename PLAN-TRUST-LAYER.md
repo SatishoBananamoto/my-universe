@@ -1,0 +1,261 @@
+# The Plan: Agent Trust Layer
+
+> A2A handles communication. MCP handles tools. Nobody handles trust.
+> Build the third protocol layer.
+
+---
+
+## The Thesis
+
+Every agent registry — Google's, Microsoft's, Salesforce's, the open-source
+ones — faces the same problem: agents describe what they CAN do, not how
+WELL they do it. Agent Cards are LinkedIn profiles with no work history.
+
+The trust layer is the missing piece. A protocol + library that lets agents
+**prove** their capabilities through accumulated evidence, not self-reported
+claims.
+
+## What You Already Have
+
+This isn't starting from zero. The portfolio IS the prototype:
+
+| Component | Prototype | What it proves |
+|-----------|-----------|---------------|
+| Calibration tracking | MY UNIVERSE / CALIBRATE.md | Predictions + outcomes → calibration curve |
+| Behavioral auditing | MY UNIVERSE / REFLECT.md | Did the agent's process match its claims? |
+| Security verification | probe | Is the agent's infrastructure safe? |
+| Action safety | svx | Does the agent simulate before executing? |
+| Credential isolation | kv-secrets | Can the agent be delegated to without leaking secrets? |
+| Persistent memory | engram | Does the agent maintain knowledge across sessions? |
+
+The work is extracting the pattern from MY UNIVERSE into a reusable library
+that any agent developer can integrate.
+
+## The Product
+
+**Name (working):** `caliber` — measures the caliber of an AI agent.
+
+**What it is:** A Python library + trust card spec that tracks agent
+performance and generates verifiable trust credentials.
+
+**One-sentence pitch:** "Let your AI agent prove how good it is, not just
+claim it."
+
+---
+
+## The Plan: Four Phases
+
+### Phase 0: Ship Probe (This Week)
+
+**Why first:** Establishes credibility as someone who ships security tools.
+Probe is 90% done. Get it on PyPI. This creates the reputation that makes
+Phase 1-3 credible.
+
+**Work:**
+- Test packaging locally (`pip install -e .` → `probe scan` works)
+- Fix any packaging issues (entry points, imports)
+- Publish to PyPI
+- Write a short announcement for Claude Code community
+
+**Output:** `pip install probe-mcp` works. People can scan their MCP configs.
+
+---
+
+### Phase 1: Trust Card Spec + Core Library (2-3 weeks)
+
+**What:** A Python library that any agent developer can import to track
+their agent's performance and generate a Trust Card.
+
+**Core API (draft):**
+
+```python
+from caliber import TrustTracker
+
+# Initialize for your agent
+tracker = TrustTracker("my-code-reviewer")
+
+# Track predictions with confidence
+tracker.predict(
+    claim="this function has a SQL injection vulnerability",
+    confidence=0.85,
+    domain="security"
+)
+
+# Record the outcome
+tracker.verify(correct=True)
+
+# After enough data, generate a trust card
+card = tracker.generate_card()
+# → JSON with calibration curve, domain accuracy, sample size, timestamp
+```
+
+**Trust Card format (extends A2A Agent Card):**
+
+```json
+{
+  "agent_name": "my-code-reviewer",
+  "trust_version": "0.1",
+  "generated": "2026-04-01T00:00:00Z",
+  "calibration": {
+    "total_predictions": 150,
+    "overall_accuracy": 0.78,
+    "confidence_buckets": {
+      "50-59": {"predictions": 12, "accuracy": 0.92},
+      "60-69": {"predictions": 25, "accuracy": 0.64},
+      "70-79": {"predictions": 48, "accuracy": 0.71},
+      "80-89": {"predictions": 45, "accuracy": 0.87},
+      "90-99": {"predictions": 20, "accuracy": 0.95}
+    },
+    "domains": {
+      "security": {"predictions": 80, "accuracy": 0.85},
+      "style": {"predictions": 70, "accuracy": 0.70}
+    }
+  },
+  "behavioral": {
+    "total_tasks": 200,
+    "completion_rate": 0.95,
+    "false_positive_rate": 0.12,
+    "mean_confidence_gap": 2.1
+  },
+  "attestations": []
+}
+```
+
+**What's novel:** Calibration buckets. Nobody else tracks whether an
+agent's confidence matches its actual accuracy at each confidence level.
+This is the insight from MY UNIVERSE — the 70-79% danger zone — made
+into a standard metric.
+
+**Files to build:**
+- `caliber/tracker.py` — core tracking
+- `caliber/card.py` — trust card generation
+- `caliber/storage.py` — persistence (flat file for v0.1, SQLite later)
+- `caliber/schema.py` — trust card JSON schema
+- `tests/` — comprehensive from day 1
+- `README.md`, `pyproject.toml`
+
+**Phase 1 success criteria:** `pip install caliber` works. An agent
+developer can add 3 lines of code and start generating trust cards.
+
+---
+
+### Phase 2: Trust Verifier (2-3 weeks after Phase 1)
+
+**What:** A tool that verifies Trust Cards aren't fabricated or gamed.
+
+**The problem:** If trust cards are self-generated, agents can lie.
+A verifier checks:
+- Is the calibration data statistically plausible? (Chi-square test on
+  claimed vs actual distributions)
+- Are the confidence buckets consistent? (You can't claim 95% accuracy
+  at 90% confidence with only 5 data points)
+- Is there evidence of selective reporting? (Only logging easy predictions)
+- Is the card signed? (Cryptographic proof it was generated by the
+  tracker, not hand-edited)
+
+**This is probe for trust cards.** Same pattern: scan, find issues, grade.
+
+**Files:**
+- `caliber/verifier.py` — verification logic
+- `caliber/signing.py` — card signing with kv-secrets integration
+- `caliber/grades.py` — trust grade (A-F) for cards
+
+**Phase 2 success criteria:** Given a trust card, the verifier can tell
+you whether to trust it.
+
+---
+
+### Phase 3: A2A Integration + MCP Server (2-3 weeks after Phase 2)
+
+**What:** Make trust cards discoverable in the A2A ecosystem.
+
+- Extend A2A Agent Cards with a `trust` field pointing to the trust card
+- Build an MCP server that serves trust cards (agents can query other
+  agents' trust data)
+- Build a trust card registry (simple: a directory of signed trust cards,
+  discoverable by agent name)
+
+**This is where it connects to the ecosystem.** An agent using A2A can
+now check: "Before I delegate this security review to agent X, what's
+their calibration curve for security predictions?"
+
+**Phase 3 success criteria:** Two agents can discover each other's trust
+data through A2A + caliber.
+
+---
+
+### Phase 4: Community + Standard (Ongoing)
+
+**What:** Get adoption. Get the spec reviewed. Get it into the A2A
+standard conversation.
+
+- Publish the trust card spec as an open RFC
+- Build trust cards for your own agents (probe, engram, scroll as MCP
+  servers with trust data)
+- Write the "Trust in Agent Economies" paper (the essay from MY UNIVERSE
+  expanded into a proper argument)
+- Engage with A2A protocol maintainers about trust as a standard extension
+
+---
+
+## Competitive Position
+
+| Player | What they have | What they lack |
+|--------|---------------|----------------|
+| Google (A2A) | Communication protocol, Agent Cards | Verified trust, calibration data |
+| Microsoft (Entra) | Agent identity, registration | Performance verification |
+| Salesforce (MuleSoft) | Enterprise registry, discovery | Open standard, trust metrics |
+| Monday.com (Agentalent) | Agent marketplace, hiring | Calibration, cross-platform |
+| **You (caliber)** | **Trust protocol, calibration, verification** | **Enterprise distribution** |
+
+Your advantage: you're not competing with the registries. You're building
+what they all need. caliber is to agent registries what SSL is to web
+servers — not a competing product, a trust layer that every product needs.
+
+## Risk Assessment
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|-----------|--------|-----------|
+| Big player builds trust natively | High (12-18 months) | High | Ship first, get adoption, become the standard |
+| Gaming/adversarial trust cards | Medium | High | Verifier (Phase 2), statistical tests, signing |
+| Nobody integrates | Medium | High | Dog-food it: your own agents use caliber first |
+| Spec divergence (everyone does their own) | High | Medium | Align with A2A early, not after the fact |
+| Too ambitious for solo dev | Medium | Medium | Phase 1 is a library, not a platform. Stay small. |
+
+## The Window
+
+MCP shipped as a simple protocol from a small team. It became the standard
+because it was open, simple, and first. The trust layer has the same window:
+
+- **Open:** Not platform-locked. Any agent, any framework.
+- **Simple:** 3 lines of code to integrate. `pip install caliber`.
+- **First:** Nobody else has calibration-based trust for agents.
+- **Grounded:** MY UNIVERSE has 37 real predictions proving the concept.
+
+That window is 12-18 months before the enterprise players build proprietary
+trust into their walled gardens. Ship Phase 1 fast.
+
+## Connection to Portfolio
+
+After caliber exists:
+
+- **probe** → security scanner + trust card verifier for MCP servers
+- **engram** → persistent trust memory across sessions
+- **svx** → action safety verification feeds into trust scoring
+- **vigil** → dependency trust scoring for agent supply chains
+- **kv-secrets** → credential isolation during agent delegation
+- **scroll** → historical trust data extraction from agent logs
+- **my-universe** → the prototype and test bed
+
+The portfolio becomes the reference implementation of the trust layer.
+Each tool gains a new purpose beyond its standalone value.
+
+---
+
+## Immediate Next Steps
+
+1. **Today:** Ship probe to PyPI (Phase 0)
+2. **This week:** Draft the Trust Card JSON schema
+3. **Next week:** Build `caliber/tracker.py` — core prediction tracking
+4. **Week after:** Build `caliber/card.py` — trust card generation
+5. **Ship Phase 1:** `pip install caliber` with README and tests
