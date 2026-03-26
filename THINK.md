@@ -94,20 +94,20 @@ me this confidence?"** Then assess the QUALITY of that evidence:
 - "It feels like..." → no real evidence → verify or drop confidence
 - "It's either A or B..." → limited framing → look for C
 
-The danger zone is where evidence quality splits. Above 80%, you mostly
-have strong evidence. At 60-69%, you have SOMETHING — and whether that
-something is strong (specific reference, tight logic) or weak (feeling,
-partial list, no basis) determines the outcome.
+The source test applies across all confidence levels. Evidence quality
+matters more than the confidence number itself. With 91 predictions,
+no bucket shows statistically significant miscalibration (all p>0.10).
+The "danger zone" was a small-sample artifact — but the source test
+remains valuable because it catches weak evidence before you act on it.
 
-Strong evidence at 60%: 3/3 correct.
-Weak evidence at 60%: 0/3 correct.
+**The escalation fix:** When evidence is weak (feelings, partial memory,
+no basis), don't just verify — replace weak evidence with strong evidence.
+Read one file. Run one command. Upgrade the evidence behind the claim.
 
-**The escalation fix:** Don't just verify — replace weak evidence with
-strong evidence. Read one file. Run one command. The goal isn't to check
-a claim — it's to upgrade the evidence behind it.
-
-*Source: 48-prediction analysis (sessions 1-3). At 60-69%: strong evidence
-(specific references, logical deductions) → 100% correct. Weak evidence
+*Source: 91-prediction analysis (sessions 1-3). Early analysis found a
+"60-69% danger zone" — corrected with more data (64% accuracy at 64.5%
+expected, p=1.000). The source test and evidence quality model remain
+valid; the specific danger zone finding was a small-sample artifact.
 (feelings, partial memory, no basis) → 0% correct. See FINDINGS.md.*
 
 ### The Scope Trap
