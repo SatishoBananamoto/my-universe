@@ -748,6 +748,47 @@ Predictions about tools I've barely examined. Testing inference from names.
 
 ---
 
+## Session 3 — Git and Runtime Predictions (2026-03-26)
+
+### [P-079] 2026-03-26 — codebase
+**Prediction:** CALIBRATE.md is the most frequently changed file in git history.
+**Confidence:** 75%
+**Actual:** Yes — 9 commits. THINK.md second with 8.
+**Result:** correct
+
+### [P-080] 2026-03-26 — codebase
+**Prediction:** First commit message contains "initial" or "first."
+**Confidence:** 70%
+**Actual:** "Initial commit: cognitive toolkit for AI agent self-improvement"
+**Result:** correct
+
+### [P-081] 2026-03-26 — architecture
+**Prediction:** tools/__main__.py enables `python -m tools <command>`.
+**Confidence:** 70%
+**Actual:** Yes — full CLI dispatcher with subcommands for all tools.
+**Result:** correct
+
+### [P-082] 2026-03-26 — codebase
+**Prediction:** At least one commit authored by someone other than Co-Authored-By pattern.
+**Confidence:** 60%
+**Actual:** All 37 commits attributed to SatishoBananamoto. Co-Authored-By is in message body, not author field. Git config uses Satish's name for all commits.
+**Result:** incorrect
+**Notes:** Didn't understand git attribution model. Co-Authored-By doesn't change the commit author — it's just metadata.
+
+### [P-083] 2026-03-26 — behavior
+**Prediction:** `python -m tools` with no args shows help message, not error.
+**Confidence:** 65%
+**Actual:** Shows "MY UNIVERSE — Cognitive Toolkit" with usage instructions.
+**Result:** correct
+
+### [P-084] 2026-03-26 — behavior
+**Prediction:** validate.py finds at least one warning in current CALIBRATE.md.
+**Confidence:** 70%
+**Actual:** 4 issues — non-sequential IDs (predictions ordered by batch, not by ID).
+**Result:** correct
+
+---
+
 ## Session 3 — People Predictions (2026-03-26)
 
 Hardest domain. Zero verified predictions so far (P-035 still pending).
