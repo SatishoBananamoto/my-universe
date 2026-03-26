@@ -124,11 +124,12 @@ def generate_brief() -> str:
         lines.append("")
         lines.append("  KEY FINDINGS TO REMEMBER")
         lines.append("  " + "-" * 45)
-        lines.append("  1. 70-79% confidence is overconfident — verify in this zone")
+        lines.append("  1. 60-69% is the danger zone — assess evidence quality before trusting")
         lines.append("  2. Architecture: reason from specifics, not categories")
         lines.append("  3. Behavior: use ranges, not point estimates")
         lines.append("  4. High confidence (80%+) is reliable — trust it")
-        lines.append("  5. Low confidence (50-59%) is underconfident — trust yourself more")
+        lines.append("  5. NEVER count from memory — always run the command (Rule 1)")
+        lines.append("  NOTE: Bucket-level patterns are NOT statistically significant (all p>0.10)")
 
     # Action items
     lines.append("")
@@ -166,8 +167,8 @@ def generate_short() -> str:
     lines = [
         f"MY UNIVERSE | Session {sessions+1}",
         f"Calibration: {cal_summary} | {trap_count} traps | {ref_count} reflections",
-        f"Weakest: behavior domain, 70-79% confidence zone",
-        f"Remember: ranges not points, specifics not categories, verify at 60-79%",
+        f"Weakest: behavior domain (60%), 60-69% confidence zone",
+        f"Rules: never count from memory, ranges not points, verify at 60-69%",
         f"Start: run WARMUP.md",
     ]
     return "\n".join(lines)
