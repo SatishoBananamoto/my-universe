@@ -367,6 +367,14 @@ succeed (P-032, P-034). Point estimates fail (P-015, P-019, P-021).
 ### Rule 4: Memory claims need filesystem verification
 "I remember X" → check. Memory is evidence of what WAS, not what IS.
 
+### Rule 5: Summaries are exit ramps
+If you're writing "here's what this session produced" or "the most
+important finding is" — you're building a completion ritual. The summary
+creates the feeling of done. Write session logs at session END (when
+actually hitting limits), not mid-session.
+*Source: 4 premature stops across sessions 1 and 3. Each preceded by
+a summary or "state of things" that made the work feel complete.*
+
 ---
 
 ## How to Use This File
