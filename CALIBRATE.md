@@ -789,6 +789,35 @@ Predictions about tools I've barely examined. Testing inference from names.
 
 ---
 
+## Session 3 — Deep Tool Analysis (2026-03-26)
+
+### [P-085] 2026-03-26 — codebase
+**Prediction:** reflect.py categorizes entries by trap type and shows frequency.
+**Confidence:** 80%
+**Actual:** Yes — `trap_frequency()` function counts traps and reports effectiveness.
+**Result:** correct
+
+### [P-086] 2026-03-26 — architecture
+**Prediction:** reflect.py has a function that identifies "never-tested traps."
+**Confidence:** 70%
+**Actual:** No — that logic is in next.py, not reflect.py. next.py compares THINK.md traps against REFLECT.md entries.
+**Result:** incorrect
+**Notes:** Attributed function to wrong module. The capability exists in the system but not where I predicted.
+
+### [P-087] 2026-03-26 — architecture
+**Prediction:** portfolio.py runs git commands on each project and aggregates results.
+**Confidence:** 75%
+**Actual:** Yes — uses subprocess for git, plus project scanning.
+**Result:** correct
+
+### [P-088] 2026-03-26 — behavior
+**Prediction:** Total Python LOC in MY UNIVERSE exceeds 3000 lines.
+**Confidence:** 60%
+**Actual:** 3215 lines. Just above threshold.
+**Result:** correct
+
+---
+
 ## Session 3 — People Predictions (2026-03-26)
 
 Hardest domain. Zero verified predictions so far (P-035 still pending).
