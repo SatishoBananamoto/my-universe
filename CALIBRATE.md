@@ -683,6 +683,71 @@ Testing codebase knowledge about code I wrote yesterday. All in scope of MY UNIV
 
 ---
 
+## Session 3 — Unknown Tools (2026-03-26)
+
+Predictions about tools I've barely examined. Testing inference from names.
+
+### [P-071] 2026-03-26 — architecture
+**Prediction:** changelog.py uses git log to generate changelogs across projects.
+**Confidence:** 65%
+**Source type:** Strong inference — name + docstring would imply this approach
+**Actual:** Yes — uses `subprocess` for `git log --oneline --since=...` across all portfolio projects.
+**Result:** correct
+
+### [P-072] 2026-03-26 — architecture
+**Prediction:** audit_claude_md.py checks CLAUDE.md files against some schema or checklist.
+**Confidence:** 60%
+**Source type:** Moderate inference — "audit" implies checking against criteria
+**Actual:** Yes — checks file/dir references, command references, package references, dead links, structure quality.
+**Result:** correct
+
+### [P-073] 2026-03-26 — architecture
+**Prediction:** gen_claude_md.py generates CLAUDE.md from project analysis (reading pyproject.toml, README, etc.).
+**Confidence:** 65%
+**Source type:** Moderate inference — "gen" implies generation from project state
+**Actual:** Yes — reads pyproject.toml, code structure, test patterns, README. Has `read_pyproject()` function.
+**Result:** correct
+
+### [P-074] 2026-03-26 — codebase
+**Prediction:** All three tools (changelog, audit, gen) use argparse, not click.
+**Confidence:** 75%
+**Source type:** Strong pattern — other MY UNIVERSE tools use argparse
+**Actual:** Yes — all three import argparse and use ArgumentParser.
+**Result:** correct
+
+### [P-075] 2026-03-26 — architecture
+**Prediction:** gen_claude_md.py reads pyproject.toml as one of its inputs.
+**Confidence:** 60%
+**Source type:** Moderate inference — pyproject.toml has metadata useful for CLAUDE.md generation
+**Actual:** Yes — `read_pyproject()` function extracts metadata from pyproject.toml.
+**Result:** correct
+
+---
+
+## Session 3 — Test Directory (2026-03-26)
+
+### [P-076] 2026-03-26 — behavior
+**Prediction:** test_calibrate.py has more test cases than test_reflect.py.
+**Confidence:** 65%
+**Actual:** Yes — calibrate: 12 tests, reflect: 7 tests.
+**Result:** correct
+
+### [P-077] 2026-03-26 — architecture
+**Prediction:** run_all.py uses subprocess to run pytest or unittest.
+**Confidence:** 60%
+**Actual:** No — imports test modules directly and runs test_ functions with a custom runner. No subprocess, no pytest.
+**Result:** incorrect
+**Notes:** Inference from "run all" defaulted to subprocess. Wrong mental model. The tool is simpler than assumed.
+
+### [P-078] 2026-03-26 — behavior
+**Prediction:** test_status.py tests that the status dashboard reports correct file counts.
+**Confidence:** 55%
+**Actual:** Tests calibration summaries, reflection summaries, trap counting, file health (presence). Tests report components, not specifically "file counts."
+**Result:** incorrect
+**Notes:** 55% was appropriately uncertain. The test names don't mention "counts" — they test "health" and "summaries." Close but not what I predicted.
+
+---
+
 ## Session 3 — People Predictions (2026-03-26)
 
 Hardest domain. Zero verified predictions so far (P-035 still pending).
