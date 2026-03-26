@@ -25,6 +25,7 @@ ENTRY_PATTERN = re.compile(
     r"###\s+\[P-(\d+)\]\s+(\d{4}-\d{2}-\d{2})\s*—\s*(\S+)\s*\n+"
     r"\*\*Prediction:\*\*\s*(.*?)\n"
     r"\*\*Confidence:\*\*\s*(\d+)%\s*\n"
+    r"(?:.*?\n)*?"  # tolerate optional extra fields (Source type, etc.)
     r"\*\*Actual:\*\*\s*(.*?)\n"
     r"\*\*Result:\*\*\s*(correct|incorrect|_pending_|pending)\s*",
     re.MULTILINE,
