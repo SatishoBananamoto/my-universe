@@ -841,6 +841,67 @@ Predictions about tools I've barely examined. Testing inference from names.
 
 ---
 
+## Session 3 — Prediction #100 Milestone (2026-03-26)
+
+Rapid-fire round to hit 100 predictions. Mixed domains, mixed confidence.
+
+### [P-092] 2026-03-26 — codebase
+**Prediction:** tests/ has no conftest.py.
+**Confidence:** 70%
+**Actual:** No conftest.py exists.
+**Result:** correct
+
+### [P-093] 2026-03-26 — behavior
+**Prediction:** validate.py has more than 8 functions.
+**Confidence:** 60%
+**Actual:** Only 3 top-level functions. Most logic is in main or inline.
+**Result:** incorrect
+
+### [P-094] 2026-03-26 — codebase
+**Prediction:** reflect.py has a --timeline flag.
+**Confidence:** 65%
+**Actual:** Yes — `--timeline Chronological view`.
+**Result:** correct
+
+### [P-095] 2026-03-26 — behavior
+**Prediction:** __main__.py is under 100 lines.
+**Confidence:** 55%
+**Actual:** 86 lines.
+**Result:** correct
+
+### [P-096] 2026-03-26 — behavior
+**Prediction:** next.py recommends "verify pending" when pending predictions exist.
+**Confidence:** 80%
+**Actual:** Yes — `get_pending_predictions()` counts pending entries and adds to recommendations.
+**Result:** correct
+
+### [P-097] 2026-03-26 — codebase
+**Prediction:** REVIEW.md does NOT mention "caliber."
+**Confidence:** 85%
+**Actual:** No mention. REVIEW.md was written session 1, before caliber.
+**Result:** correct
+
+### [P-098] 2026-03-26 — codebase
+**Prediction:** .gitignore has entry for .venv or venv.
+**Confidence:** 75%
+**Actual:** `.venv/` in .gitignore.
+**Result:** correct
+
+### [P-099] 2026-03-26 — codebase
+**Prediction:** At least one TODO comment exists in the Python tools.
+**Confidence:** 60%
+**Actual:** No TODO comments in tool code. audit_claude_md.py SEARCHES for TODOs in other projects but doesn't have any itself.
+**Result:** incorrect
+**Notes:** Confused the auditor's search target with the auditor's own code. The tool checks for TODOs — it doesn't have them.
+
+### [P-100] 2026-03-26 — behavior
+**Prediction:** status.py does NOT display git commit count.
+**Confidence:** 65%
+**Actual:** No git or commit references in status.py.
+**Result:** correct
+
+---
+
 ## Session 3 — People Predictions (2026-03-26)
 
 Hardest domain. Zero verified predictions so far (P-035 still pending).
