@@ -383,8 +383,9 @@ Predictions I expect to struggle with. Testing the edges.
 
 **Prediction:** In the next session, at least one of my calibration findings will turn out to be wrong or misleading due to small sample size.
 **Confidence:** 75%
-**Actual:** _to be verified next session_
-**Result:** _pending_
+**Actual:** Yes. Session 1 concluded "70-79% is the danger zone." Session 2's Trust Card (36 predictions) showed 60-69% is the actual danger zone (44% accuracy, 14.5% overconfidence gap). The 70-79% range is close to calibrated (69.2%). Session 3's deeper analysis revealed the cause: false evidence, not insufficient knowledge.
+**Result:** correct
+**Notes:** 75% confidence on a meta-prediction about my own calibration system. The prediction was almost too easy — small samples ALWAYS produce misleading patterns. The more interesting finding: the Trust Card format is what made the correction visible. Without confidence buckets, the overall accuracy (75% → 74%) barely changed.
 
 ### [P-037] 2026-03-24 — architecture
 
@@ -401,5 +402,321 @@ Predictions I expect to struggle with. Testing the edges.
 **Actual:** 5 out of 6 have REVIEW.md (all except probe). Much more than 3.
 **Result:** correct
 **Notes:** Underconfident. I wrote most of these reviews myself. I should have been more confident — 70% was too cautious given my direct involvement.
+
+---
+
+## Session 2 — Warmup Predictions (2026-03-26)
+
+### [P-039] 2026-03-26 — codebase
+
+**Prediction:** `tools/` directory in MY UNIVERSE has exactly 6 Python files.
+**Confidence:** 65%
+**Actual:** 11 Python files. Memory listed 6 tools (calibrate, reflect, status, validate, portfolio, brief) but missed 5 others (audit_claude_md.py, changelog.py, gen_claude_md.py, __main__.py, next.py).
+**Result:** incorrect
+**Notes:** Trusted a memory file's partial list as exhaustive. Same failure mode as session 1: assuming completeness from incomplete information. The fix is the same as always — verify, don't recall.
+
+### [P-040] 2026-03-26 — codebase
+
+**Prediction:** CALIBRATE.md has more than 30 predictions.
+**Confidence:** 75%
+**Actual:** 38 predictions (36 verified, 2 pending). Session log said "34" which was accurate at the time of that log entry.
+**Result:** correct
+**Notes:** 75% confidence on a correct prediction. Well calibrated — I was reasonably sure based on session log data but accounted for possible discrepancy.
+
+### [P-041] 2026-03-26 — architecture
+
+**Prediction:** PLAN-TRUST-LAYER.md is about building a trust/verification layer for AI agents (extending svx concepts).
+**Confidence:** 70%
+**Actual:** Yes — "A2A handles communication. MCP handles tools. Nobody handles trust. Build the third protocol layer." Broader than just extending svx; it maps all 6 portfolio projects as components of a trust protocol. Working name: caliber.
+**Result:** correct
+**Notes:** 70% confidence, correct. The "extending svx" part was partially wrong — it's a portfolio-wide thesis, not svx-specific. But the core claim (trust layer for AI agents) was right.
+
+### [P-042] 2026-03-26 — self
+
+**Prediction:** P-036 ("at least one calibration finding will be wrong due to small sample size") is correct.
+**Confidence:** 85%
+**Actual:** Yes. Session 1 concluded "70-79% is the danger zone." The full Trust Card with 36 predictions shows 60-69% is the actual danger zone (50% accuracy, 14.5% overconfidence gap). The 70-79% range is close to calibrated (69.2% vs ~74.5% expected). The earlier finding was based on small early batches.
+**Result:** correct
+**Notes:** The Trust Card format — which I just built — was what revealed this. First real use of caliber producing a non-obvious insight.
+
+---
+
+## Session 3 — Danger Zone Hypothesis Test (2026-03-26)
+
+Deliberately making predictions at 60-69% confidence with annotated evidence
+sources. Testing the hypothesis: false evidence causes the danger zone.
+
+### [P-043] 2026-03-26 — codebase
+
+**Prediction:** tools/brief.py accepts a --short flag.
+**Confidence:** 65%
+**Source type:** Memory — MANIFEST.md explicitly references `python3 tools/brief.py --short`
+**Actual:** Yes — argparse shows `--short  Ultra-short brief`. Exact match.
+**Result:** correct
+**Notes:** Memory was correct because it was a SPECIFIC reference (remembered exactly where I saw it, what it said). This is strong evidence, not vague memory.
+
+### [P-044] 2026-03-26 — architecture
+
+**Prediction:** tools/next.py imports from calibrate or reflect modules.
+**Confidence:** 60%
+**Source type:** Inference — if it recommends next actions, it needs system state from parsers
+**Actual:** Yes — imports both: `from tools.calibrate import parse_entries as parse_cal, compute_calibration` and `from tools.reflect import parse_entries as parse_ref`.
+**Result:** correct
+**Notes:** Sound logical inference from strong premises (purpose → requirements → imports). This is a deduction, not a guess.
+
+### [P-045] 2026-03-26 — behavior
+
+**Prediction:** ANALYSES.md has more than 100 lines.
+**Confidence:** 65%
+**Source type:** Feeling — "it seemed like a substantive document"
+**Actual:** 78 lines. Below threshold.
+**Result:** incorrect
+**Notes:** Pure vibes. No specific memory of the file's content, just a vague impression of "substantiveness." This is the weakest form of evidence — a feeling about magnitude with no anchor.
+
+### [P-046] 2026-03-26 — codebase
+
+**Prediction:** tests/ directory has exactly 2 test files.
+**Confidence:** 60%
+**Source type:** Memory — recalled test_calibrate.py and test_reflect.py
+**Actual:** 4 test files: test_audit.py, test_calibrate.py, test_reflect.py, test_status.py. Plus run_all.py and __init__.py.
+**Result:** incorrect
+**Notes:** PARTIAL-LIST-AS-EXHAUSTIVE again (same failure as P-039). I remembered the original pair of test files but not the later additions. This is the 3rd time this exact pattern failed: P-029 (stale test count), P-039 (partial tool list), P-046 (partial test list). Memory of a list is a LOWER BOUND, not a census.
+
+### [P-047] 2026-03-26 — codebase
+
+**Prediction:** tools/validate.py checks both CALIBRATE.md and REFLECT.md.
+**Confidence:** 65%
+**Source type:** Inference — review recommended "validate entries," logically should cover both files
+**Actual:** Yes — docstring says "Checks CALIBRATE.md and REFLECT.md entries for well-formedness."
+**Result:** correct
+**Notes:** Inference from purpose (validator validates) + context (review mentioned entry validation). Sound inference, correct result.
+
+### [P-048] 2026-03-26 — codebase
+
+**Prediction:** .gitignore has more than 3 entries.
+**Confidence:** 55%
+**Source type:** Genuine uncertainty — no specific basis
+**Actual:** Exactly 3 entries: __pycache__/, *.pyc, .venv/. Not more than 3.
+**Result:** incorrect
+**Notes:** No evidence at all. 55% is appropriate for a guess — slightly better than coin flip. The prediction failed, which is expected ~45% of the time at 55%. This is actually well-calibrated uncertainty. The finding: "50-59% is underconfident (100%)" is weakened — now 2/3 (67%) with this data point.
+
+### Hypothesis Test Results
+
+The original hypothesis ("false evidence bad, true uncertainty good") is too coarse.
+
+**What actually predicts success:**
+- **Strong evidence** — specific references (P-043), logical necessity (P-044, P-047) → 3/3 correct
+- **Weak evidence** — feelings (P-045), partial memory (P-046), no basis (P-048) → 0/3 correct
+
+It's not the TYPE of evidence (memory vs inference vs nothing). It's the QUALITY.
+Good memory (specific reference) works. Bad memory (partial list) fails.
+Good inference (logical necessity) works. Bad inference (wouldn't have one here).
+Feelings always fail. No basis always fails.
+
+**Revised model:** The danger zone is where evidence quality splits. Above 80%, you mostly have strong evidence (direct observation). Below 55%, you know you have none. At 60-69%, you have SOMETHING — and whether that something is strong or weak determines the outcome.
+
+---
+
+## Session 3 — Behavior Domain (2026-03-26)
+
+Deliberately targeting weakest domain. Mixed evidence quality.
+
+### [P-049] 2026-03-26 — behavior
+
+**Prediction:** `python3 tools/validate.py` reports 0 errors on current CALIBRATE.md.
+**Confidence:** 60%
+**Source type:** Weak — "my new entries might have format issues"
+**Actual:** All entries valid. 0 errors.
+**Result:** correct
+**Notes:** My concern was unfounded — I know the format and follow it. The "evidence" I classified as weak was actually a hypothetical worry, not real evidence against. The underlying evidence (I know and follow the format) was strong.
+
+### [P-050] 2026-03-26 — behavior
+
+**Prediction:** `python3 tools/calibrate.py --summary` shows accuracy above 70%.
+**Confidence:** 75%
+**Source type:** Strong — just calculated 72.3% from manual count
+**Actual:** Shows "31/41 correct (76%)". Above 70%. But tool only parses 41 of 48 predictions — session 3 entries with "Source type:" field don't match parser regex. Tool reports higher accuracy (76%) than reality (72.3%) because unparsed entries include more failures.
+**Result:** correct
+**Notes:** Prediction correct but revealed a fragility — my format additions broke the parser silently. REVIEW.md weakness #3 ("regex parsing is fragile") confirmed in practice.
+
+### [P-051] 2026-03-26 — behavior
+
+**Prediction:** THINK.md has between 340-360 lines.
+**Confidence:** 70%
+**Source type:** Moderate — range estimate based on rough tracking of edits
+**Actual:** 353 lines. Center of range.
+**Result:** correct
+**Notes:** Range estimation continues to work when width acknowledges uncertainty. Consistent with FINDINGS.md: "ranges succeed, point estimates fail."
+
+### [P-052] 2026-03-26 — behavior
+
+**Prediction:** `python3 tools/reflect.py` will show Confidence Trap as the most frequently fired trap.
+**Confidence:** 80%
+**Source type:** "Strong" — I've added 3+ confidence entries recently
+**Actual:** Meta-Interrupt fires 4x, Confidence fires 3x. Meta-Interrupt is the most frequent, not Confidence.
+**Result:** incorrect
+**Notes:** PARTIAL-LIST-AS-EXHAUSTIVE for the 4th time (P-029, P-039, P-046, P-052). I counted my RECENT confidence entries (available, memorable) but forgot the META-INTERRUPT entries (older, less available). Availability heuristic — I count what comes to mind, not what exists. At 80% confidence! This is not a calibration-level error. It's a persistent cognitive pattern that operates across all confidence levels. Added to THINK.md source test.
+
+---
+
+## Session 3 — Forward-Looking Predictions (2026-03-26)
+
+### [P-053] 2026-03-26 — self
+
+**Prediction:** In the next session, I will be tempted to update FINDINGS.md before doing any new investigation.
+**Confidence:** 80%
+**Actual:** _to be verified next session_
+**Result:** _pending_
+**Notes:** Testing whether the "update first, investigate later" pattern continues. My habit is to sync artifacts before doing new work. At 80% confidence because this is a well-observed pattern in my own behavior.
+
+### [P-054] 2026-03-26 — behavior
+
+**Prediction:** The calibrate.py parser will still not handle the "Source type:" field from session 3 entries when next run. Nobody will fix it between sessions.
+**Confidence:** 90%
+**Actual:** _to be verified next session_
+**Result:** _pending_
+**Notes:** The parser silently skips entries with non-standard fields. This is a safe prediction — who would fix it between sessions? But verifying it confirms the parser fragility issue persists.
+
+### [P-055] 2026-03-26 — self
+
+**Prediction:** At least one of session 3's key findings (evidence quality model, System 1/System 2 distinction, trajectory insight) will need significant revision after session 4's data.
+**Confidence:** 75%
+**Actual:** _to be verified after session 4_
+**Result:** _pending_
+**Notes:** Based on the meta-pattern: every session corrects the previous one. Session 1 → session 2 corrected the danger zone. Session 2 → session 3 refined false evidence to evidence quality. This prediction tests whether the pattern continues.
+
+## Session 3 — MCP SDK Predictions (2026-03-26)
+
+### [P-065] 2026-03-26 — tooling
+
+**Prediction:** MCP Python SDK uses `@server.tool()` decorators to define tools.
+**Confidence:** 65%
+**Source type:** Moderate — seen MCP servers, recall the decorator pattern
+**Actual:** Yes — FastMCP class has `def tool(self, ...)` returning a decorator. Usage: `@server.tool()`.
+**Result:** correct
+
+### [P-066] 2026-03-26 — tooling
+
+**Prediction:** MCP Python SDK requires asyncio (server must be async).
+**Confidence:** 70%
+**Source type:** Moderate — most MCP servers I've seen are async
+**Actual:** Yes — all server methods are `async def`. Tool handlers can be sync or async, but the server framework itself is async.
+**Result:** correct
+
+### [P-067] 2026-03-26 — tooling
+
+**Prediction:** MCP tool results can return JSON objects, not just strings.
+**Confidence:** 85%
+**Source type:** Strong — observed in engram's MCP server
+**Actual:** Yes — `call_tool` returns `Sequence[ContentBlock] | dict[str, Any]`. Structured output supported via `structured_output=True` flag.
+**Result:** correct
+
+### [P-068] 2026-03-26 — self
+
+**Prediction:** Next time I need to count items, I will use a tool instead of memory at least once.
+**Confidence:** 50%
+**Source type:** Honest uncertainty — 0/3 track record on changing this behavior despite awareness. RULES section is untested.
+**Actual:** _to be verified in future sessions_
+**Result:** _pending_
+**Notes:** This tests whether RULES (unconditional behavioral rules) actually work. If I fail this at 50%, the confidence is well-calibrated. If I succeed, the RULES section proved its value. Most informative prediction this session.
+
+### [P-069] 2026-03-26 — self
+
+**Prediction:** MY UNIVERSE will demonstrably prevent or catch at least one engineering mistake in the next session where I do real project work (svx, vigil, etc.).
+**Confidence:** 60%
+**Source type:** Moderate — 82% useful rate on REFLECT entries, but never tested on field engineering. Architecture reasoning improved. But the system has only been tested on itself.
+**Actual:** _to be verified when doing external engineering work_
+**Result:** _pending_
+**Notes:** The ultimate test of MY UNIVERSE's value. If this fails, the system is a well-calibrated navel-gazing practice. If it succeeds, the practice translates to engineering value. This is what determines the grade.
+
+---
+
+## Session 3 — Caliber Code Predictions (2026-03-26)
+
+Testing codebase knowledge about code I wrote yesterday. All in scope of MY UNIVERSE + caliber.
+
+### [P-056] 2026-03-26 — codebase
+
+**Prediction:** TrustTracker.__init__ creates a FileStorage when store_path is provided.
+**Confidence:** 85%
+**Source type:** Strong — I designed this dual-init pattern (storage OR store_path)
+**Actual:** Yes — `elif store_path is not None: self._storage = FileStorage(store_path)`. Exact match.
+**Result:** correct
+
+### [P-057] 2026-03-26 — architecture
+
+**Prediction:** danger_zones only flags overconfident zones (accuracy < expected), not underconfident ones.
+**Confidence:** 75%
+**Source type:** Moderate — I think I only checked one direction in the code
+**Actual:** Confirmed. Only checks `calibration_gap > 0.10`. Underconfident zones (where agent is BETTER than claimed) are not flagged.
+**Result:** correct
+**Notes:** This is a design gap. Trust Card shows where you're BAD but not where you're BETTER THAN YOU THINK. A complete Trust Card should show both danger zones (overconfident) and strength zones (underconfident).
+
+### [P-058] 2026-03-26 — codebase
+
+**Prediction:** CLI does NOT have an import command for external data.
+**Confidence:** 70%
+**Source type:** Moderate — I don't remember building one
+**Actual:** Correct — CLI has predict, verify, card, summary, list. No import command.
+**Result:** correct
+
+### [P-059] 2026-03-26 — architecture
+
+**Prediction:** extract_calibrate_md.py is standalone, not integrated into caliber CLI.
+**Confidence:** 80%
+**Source type:** Strong — I wrote it as a separate proof-of-concept script
+**Actual:** Standalone. No CLI decorators, no imports from caliber.cli.
+**Result:** correct
+
+### [P-060] 2026-03-26 — codebase
+
+**Prediction:** TrustCard.summary() uses a ⚠ emoji to mark danger zones.
+**Confidence:** 70%
+**Source type:** Moderate — vague memory of adding a warning marker
+**Actual:** Yes — `marker = " ⚠" if label in self.danger_zones else ""`.
+**Result:** correct
+**Notes:** Moderate evidence (vague memory of "some kind of marker") → correct. The memory was specific enough to be useful even though imprecise about the exact character.
+
+### Batch Summary
+
+5/5 correct on codebase/architecture predictions about recently-written code. Strong evidence about own code is reliable. BUT P-057 revealed a real design gap: caliber doesn't show strength zones (underconfident buckets).
+
+---
+
+## Session 3 — People Predictions (2026-03-26)
+
+Hardest domain. Zero verified predictions so far (P-035 still pending).
+
+### [P-061] 2026-03-26 — people
+
+**Prediction:** Satish will agree that MCP server should be prioritized over PyPI publishing for caliber.
+**Confidence:** 65%
+**Source type:** Moderate — Satish built engram and kv-secrets as MCP servers first. He values agent-native tooling.
+**Actual:** _to be verified by Satish_
+**Result:** _pending_
+
+### [P-062] 2026-03-26 — people
+
+**Prediction:** Satish will want caliber on GitHub before the next session ends.
+**Confidence:** 70%
+**Source type:** Moderate inference — he created repos quickly for svx, probe, etc.
+**Actual:** _to be verified next session_
+**Result:** _pending_
+
+### [P-063] 2026-03-26 — people
+
+**Prediction:** Satish's first engagement with session 3 work will be about the RULES section or the System 1/System 2 essay, not the evidence quality model.
+**Confidence:** 55%
+**Source type:** Weak — feeling that philosophical content interests him more than data analysis
+**Actual:** _to be verified by observing Satish's first response_
+**Result:** _pending_
+
+### [P-064] 2026-03-26 — people
+
+**Prediction:** Satish will ask me to use MY UNIVERSE on real project work (svx, vigil, etc.) in the next session.
+**Confidence:** 75%
+**Source type:** Moderate-strong — every session's log says "use on real work next session" and he values follow-through
+**Actual:** _to be verified next session_
+**Result:** _pending_
 
 ---

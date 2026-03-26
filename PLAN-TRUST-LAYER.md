@@ -165,7 +165,32 @@ you whether to trust it.
 
 ---
 
-### Phase 3: A2A Integration + MCP Server (2-3 weeks after Phase 2)
+### Phase 1.5: MCP Server (REPRIORITIZED — session 3)
+
+**Why sooner than planned:** Category Trap analysis revealed that the
+Phase 1→2→3 sequence assumed "Python library → PyPI first" — standard
+for Python projects, but caliber's first real users are AI agents (who
+use MCP, not pip). MCP server enables dogfooding through Claude Code
+and reaches the agent-user segment directly.
+
+**What:** An MCP server wrapping TrustTracker. Tools: caliber_predict,
+caliber_verify, caliber_card, caliber_summary, caliber_list.
+
+**Design choice: passive first.** The agent explicitly calls predict/verify.
+Active calibration (observing agent actions and inferring predictions
+automatically) is the System 1 calibration idea from ESSAYS.md — too
+ambitious for v0.1.
+
+**Phase 1.5 success criteria:** Claude Code can track its own predictions
+through MCP tools and generate a Trust Card.
+
+---
+
+### Phase 2: Trust Verifier (unchanged)
+
+> See original Phase 2 below.
+
+### Phase 3: A2A Integration + Trust Card Registry (adjusted)
 
 **What:** Make trust cards discoverable in the A2A ecosystem.
 
@@ -221,6 +246,9 @@ servers — not a competing product, a trust layer that every product needs.
 | Nobody integrates | Medium | High | Dog-food it: your own agents use caliber first |
 | Spec divergence (everyone does their own) | High | Medium | Align with A2A early, not after the fact |
 | Too ambitious for solo dev | Medium | Medium | Phase 1 is a library, not a platform. Stay small. |
+| Verification subjectivity | Medium | High | Objective verification (filesystem, tests) > subjective. Phase 2 needs to define valid verifiers. |
+| Calibration ≠ capability | High | High | Difficulty metrics (Phase 2+). Without them, easy predictions inflate scores. |
+| Self-selection bias | High | Medium | Log all predictions, not just chosen ones. Active calibration (future) captures implicit predictions. |
 
 ## The Window
 

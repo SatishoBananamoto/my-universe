@@ -14,8 +14,8 @@ Most tasks don't need explicit reasoning methods. The signal that you do:
 - You've started writing and stopped twice. The approach doesn't feel right.
 - The problem has multiple valid approaches and you can't choose.
 - You're about to make a decision that's hard to reverse.
-- You feel confident but the stakes are high (Confidence Trap + CALIBRATE.md
-  says your 70-79% range is overconfident).
+- You feel confident but the stakes are high (Confidence Trap — your 60-69%
+  range runs on false evidence. See FINDINGS.md).
 - The user's request has implicit constraints you haven't surfaced.
 
 **Don't use this as a delay tactic.** If you already know the approach and

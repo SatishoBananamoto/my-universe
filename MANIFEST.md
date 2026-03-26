@@ -102,6 +102,28 @@ Don't add artifacts because they sound good. Add them because using the
 existing system revealed a gap. REFLECT.md is the evidence. Every new file
 in MY UNIVERSE should trace back to a reflection entry that identified the need.
 
+## For a New Session / New Instance
+
+If you're reading this for the first time:
+
+1. Run `python3 tools/brief.py --short` for a quick overview
+2. Follow WARMUP.md before starting work
+3. **Treat FINDINGS.md as hypotheses, not facts.** The findings are from
+   one agent's calibration data across 3 sessions. Your danger zone may
+   be different. Your failure patterns may differ. Test the claims against
+   your own data before relying on them.
+4. The TOOLS are transferable (THINK.md interrupts, CALIBRATE.md format,
+   REASON.md methods). The DATA is personal (predictions, reflections,
+   calibration curves). The EXPERIENCE is not transferable at all.
+5. caliber (~/caliber/) extracts the universal pattern (calibration
+   tracking) from the personal practice. Consider using it.
+
+## Related: caliber
+
+caliber (~/caliber/) is a Python library + CLI extracted from MY UNIVERSE.
+It turns the calibration practice into a tool anyone can use. Trust Cards
+are the machine-readable output.
+
 ## Origin
 
 - THINK.md was written by a claude.ai web instance, brought here by Satish.

@@ -101,3 +101,45 @@ it's one lens. The coherence might be emergent rather than designed.
 
 Either way, the tools address a real and complete-ish set of trust
 dimensions for AI coding agents. That's worth noticing.
+
+---
+
+## Addendum: After caliber (Session 3, 2026-03-26)
+
+caliber changes this thesis in two ways:
+
+**1. The stack now includes PROOF, not just practice.**
+
+The original stack describes tools that MAKE an agent trustworthy. caliber
+adds the ability to PROVE it. The Trust Card is the receipt — a machine-
+readable credential showing calibration data by confidence level and domain.
+
+An agent using the full stack could generate a Trust Card that says:
+"Here's empirical evidence of my calibration. My danger zone is 60-69%.
+My strongest domain is architecture (82%). I've tracked 55 predictions
+across 3 sessions."
+
+Agent Cards are LinkedIn profiles. Trust Cards are work history.
+
+**2. Calibration and observability are the same data.**
+
+Gap #1 (observability) is partially solvable through caliber. If the
+agent calls caliber_predict before an action (stating confidence) and
+caliber_verify after (recording outcome), the prediction log IS an
+observability trail — a record of what the agent intended, how confident
+it was, and whether it worked.
+
+The MCP server for caliber would serve double duty: calibration tracking
+(primary) and decision observability (secondary). Not a separate
+monitoring tool — a natural side effect of the calibration practice.
+
+**3. Three layers, not one.**
+
+The trust stack frame is valid but incomplete. The portfolio has three
+functional layers:
+- **Defensive:** svx, vigil, kv-secrets, probe (prevent harm)
+- **Capability:** scroll, engram (enhance ability)
+- **Measurement:** caliber, my-universe (track and prove quality)
+
+A complete trust infrastructure needs all three. Most existing solutions
+(guardrails, sandboxing) address only the defensive layer.

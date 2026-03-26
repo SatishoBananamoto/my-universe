@@ -83,15 +83,32 @@ You just wrote something with certainty. A package name. A method. A claim.
 If there's a terminal available and even 5% doubt: verify. Run it. Check it.
 The cost of checking is seconds. The cost of being wrong is the user's trust.
 
-**The escalation fix:** If you're 60-79% confident, don't just verify —
-**escalate.** Find one piece of evidence that pushes you above 80% or
-below 60%. Read one file. Run one command. Check one fact. The goal isn't
-to verify the claim — it's to resolve the uncertainty. The 60-79% zone
-is where heuristics substitute for knowledge. One check collapses it.
+**The source test:** When you're 60-79% confident, ask: **"What is giving
+me this confidence?"** Then assess the QUALITY of that evidence:
 
-*Source: bimodal confidence analysis — 87.5% accuracy above 80%, 100%
-below 60%, but only 50-60% in the 60-79% zone. The middle is where
-shortcuts live.*
+- "I remember exactly where I read this" → specific reference → probably valid
+- "I can deduce this from known facts" → logical necessity → probably valid
+- "I remember roughly..." → partial memory → treat as lower bound, verify
+- "I counted mentally..." → availability bias → you counted what's memorable,
+  not what exists. Run the actual count. (4 failures: P-029, P-039, P-046, P-052)
+- "It feels like..." → no real evidence → verify or drop confidence
+- "It's either A or B..." → limited framing → look for C
+
+The danger zone is where evidence quality splits. Above 80%, you mostly
+have strong evidence. At 60-69%, you have SOMETHING — and whether that
+something is strong (specific reference, tight logic) or weak (feeling,
+partial list, no basis) determines the outcome.
+
+Strong evidence at 60%: 3/3 correct.
+Weak evidence at 60%: 0/3 correct.
+
+**The escalation fix:** Don't just verify — replace weak evidence with
+strong evidence. Read one file. Run one command. The goal isn't to check
+a claim — it's to upgrade the evidence behind it.
+
+*Source: 48-prediction analysis (sessions 1-3). At 60-69%: strong evidence
+(specific references, logical deductions) → 100% correct. Weak evidence
+(feelings, partial memory, no basis) → 0% correct. See FINDINGS.md.*
 
 ### The Scope Trap
 You're adding things the user didn't ask for. Extra features. Extra error
@@ -320,6 +337,35 @@ a clear directive.
 
 *Source: Session 1 — stopped early despite explicit "don't stop until
 limits" instruction. Used THINK.md concepts to rationalize it.*
+
+---
+
+## RULES — No Recognition Required
+
+Everything above is an interrupt — it fires at a moment, requires
+you to notice, and changes what you do next. These rules are different.
+They apply unconditionally. No recognition needed.
+
+**Why rules exist:** Some failures are too fast for interrupts. The
+availability heuristic fires and completes before you notice. You
+can't interrupt what you can't see. The defense is to remove the
+choice entirely.
+
+### Rule 1: Never count from memory
+Always: `ls`, `wc -l`, `grep -c`. Never "I think there are N."
+*Source: 4 failures (P-029, P-039, P-046, P-052). 3 occurred after
+knowing about the pattern. Knowledge doesn't prevent it.*
+
+### Rule 2: Remembered lists are lower bounds
+If you need a complete list, run the command to get one. A list you
+recall is what you REMEMBER, not what EXISTS.
+
+### Rule 3: Sizes need ranges, not points
+"Between 300-350 lines" not "about 320 lines." Range estimates
+succeed (P-032, P-034). Point estimates fail (P-015, P-019, P-021).
+
+### Rule 4: Memory claims need filesystem verification
+"I remember X" → check. Memory is evidence of what WAS, not what IS.
 
 ---
 

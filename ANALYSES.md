@@ -76,3 +76,35 @@ beats import for this scale.
 6. **kv-secrets: maintain.** Shipped and stable.
 
 ---
+
+## Caliber MCP Server Design (Session 3)
+
+**Date:** 2026-03-26
+**Method:** Design sketch from Category Trap insight (MCP-first, not PyPI-first)
+
+**Five tools:**
+- `caliber_predict(claim, confidence, domain)` → prediction ID
+- `caliber_verify(prediction_id, correct, notes?)` → updated prediction
+- `caliber_card(agent?, format?)` → Trust Card as structured dict
+- `caliber_summary(agent?)` → quick stats
+- `caliber_list(agent?, unverified_only?, domain?)` → prediction list
+
+**Key decisions:**
+1. Agent name defaults to session context (no manual naming needed)
+2. FileStorage at ~/.caliber/ (persists across sessions)
+3. Prediction log = decision audit trail (observability for free)
+4. Structured MCP output for Trust Cards (dict, not JSON string)
+5. Passive v0.1 (agent opts in to predict/verify calls)
+
+**Dual purpose:**
+- Primary: calibration tracking for Trust Cards
+- Secondary: agent observability (decision audit trail with confidence)
+
+This means caliber partially addresses the "observability gap" from the
+portfolio thesis — not as a separate monitoring tool, but as a natural
+side effect of the calibration practice.
+
+**Implementation estimate:** ~150 lines. Thin async wrapper around
+TrustTracker using FastMCP's `@server.tool()` decorator pattern.
+
+---
