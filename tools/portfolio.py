@@ -42,16 +42,25 @@ PROJECTS = {
         "path": HOME / "vigil",
         "description": "Predictive risk intelligence",
         "type": "cli-tool",
+        "pypi": "vigil-risk",
     },
     "kv-secrets": {
         "path": HOME / "kv-secrets",
         "description": "Encrypted secrets management",
         "type": "mcp-server",
+        "pypi": "kv-secrets",
+    },
+    "caliber": {
+        "path": HOME / "caliber",
+        "description": "Trust protocol for AI agents",
+        "type": "cli-and-mcp",
+        "pypi": "caliber-trust",
     },
     "probe": {
         "path": HOME / "probe",
         "description": "MCP server security scanner",
         "type": "cli-tool",
+        "pypi": "mcp-probe",
     },
 }
 
