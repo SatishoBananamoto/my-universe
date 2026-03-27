@@ -823,15 +823,15 @@ Predictions about tools I've barely examined. Testing inference from names.
 ### [P-089] 2026-03-26 — self
 **Prediction:** The caliber MCP server will be available as tools in the next Claude Code session (the .mcp.json config is set).
 **Confidence:** 85%
-**Actual:** _to be verified next session_
-**Result:** _pending_
+**Actual:** Yes — caliber_predict, caliber_verify, caliber_summary all used during vigil engineering work. 5 predictions tracked.
+**Result:** correct
 
 ### [P-090] 2026-03-26 — behavior
 **Prediction:** When the danger zone finding is fully corrected (60-69% is well-calibrated at p=1.000), THINK.md's Confidence Trap will need another revision.
 **Confidence:** 70%
-**Actual:** _to be verified_
-**Result:** _pending_
-**Notes:** THINK.md currently says "60-69% is the danger zone." But the data now shows it's well-calibrated. The trap text needs updating — but the evidence quality model and RULES section remain valid regardless.
+**Actual:** Yes — THINK.md Confidence Trap was revised. Removed "danger zone" label, updated to "source test applies across all confidence levels," added statistical context (p=1.000).
+**Result:** correct
+**Notes:** Done in session 3. The revision kept the source test and evidence quality model but removed the specific "60-69% danger zone" framing.
 
 ### [P-091] 2026-03-26 — people
 **Prediction:** The first person (not Satish, not me) to look at caliber on GitHub will be interested in the MCP server, not the Python API.
