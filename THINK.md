@@ -95,19 +95,21 @@ me this confidence?"** Then assess the QUALITY of that evidence:
 - "It's either A or B..." → limited framing → look for C
 
 The source test applies across all confidence levels. Evidence quality
-matters more than the confidence number itself. With 91 predictions,
+matters more than the confidence number itself. With 94 predictions,
 no bucket shows statistically significant miscalibration (all p>0.10).
 The "danger zone" was a small-sample artifact — but the source test
 remains valuable because it catches weak evidence before you act on it.
+Behavior domain is the persistent weakness (64% accuracy at 71% confidence).
 
 **The escalation fix:** When evidence is weak (feelings, partial memory,
 no basis), don't just verify — replace weak evidence with strong evidence.
 Read one file. Run one command. Upgrade the evidence behind the claim.
 
-*Source: 91-prediction analysis (sessions 1-3). Early analysis found a
-"60-69% danger zone" — corrected with more data (64% accuracy at 64.5%
-expected, p=1.000). The source test and evidence quality model remain
-valid; the specific danger zone finding was a small-sample artifact.
+*Source: 94-prediction analysis (sessions 1-3 + reasoning audit). Early analysis
+found a "60-69% danger zone" — corrected with more data (30 predictions: 63%
+accuracy at ~65% expected, gap +0.012 — nearly perfect calibration). The source
+test and evidence quality model remain valid. Behavior domain confirmed as
+persistent weakness: 31 predictions, 64% accuracy at 71% confidence.
 (feelings, partial memory, no basis) → 0% correct. See FINDINGS.md.*
 
 ### The Scope Trap
@@ -379,14 +381,37 @@ a summary or "state of things" that made the work feel complete.*
 
 ## How to Use This File
 
-Don't read it once and absorb it. That doesn't work.
+THINK.md is the reference document — the full catalog of traps with data
+and sources. It is NOT the primary operational mechanism. Thinking is
+integrated in three layers:
 
-At the start of a task: read BEFORE.
-While building: glance at DURING when you feel yourself speeding up.
-Between steps: read BETWEEN.
-Before delivering: read AFTER.
-When stuck: read RECOVERY.
+**Layer 1 — Process Rules (CLAUDE.md, rules 7-13).** The field-validated
+rules: verify before assert, never count from memory, remembered lists
+are lower bounds, sizes need ranges, memory claims need verification,
+summaries are exit ramps. These fire automatically because they're
+binding process rules in a file that stays in context.
 
-The goal isn't to follow every step every time.
-The goal is to interrupt the default mode often enough
-that thinking becomes the default.
+**Layer 2 — Cognitive Gates (CLAUDE.md).** Lightweight checks at 4 natural
+breakpoints: before delivery, first failure, familiarity signal, smooth
+sailing. Tied to observable events, not to remembering this file.
+
+**Layer 3 — /think (manual invocation).** The deep version. Read the
+relevant section of this file. Run the full checklist. State what changed.
+
+**Use /think when:**
+- You're uncertain about a design direction
+- A task has been going suspiciously smoothly
+- You just accepted a large result without checking it
+- You're about to make a decision that's hard to reverse
+- You've been going a while and nothing has surprised you
+
+**Don't use /think for:**
+- Simple file reads, quick fixes, obvious actions
+- Tasks where you've already verified the key claims
+- Light work where the action is low-risk
+- Right after boot (boot already covers the "before" check)
+
+Layer 1 and 2 handle the routine discipline. Layer 3 is for when you
+need to break out of a rut and actually read the traps in full. If
+nothing in this file ever gets read via /think, that's fine — it means
+the gates and rules are doing their job.

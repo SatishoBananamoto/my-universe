@@ -8,7 +8,7 @@
 
 ## When to Use This
 
-At the start of any session where you'll be doing substantive work.
+At the start of any **fresh** session where you'll be doing substantive work.
 Not every chat needs this — a quick question doesn't warrant a warm-up.
 
 The signal: if the session will involve building, debugging, designing,
@@ -17,6 +17,25 @@ or deciding, warm up first.
 **Time cost:** ~5 minutes. The cost of NOT warming up: you operate on
 autopilot for the first 30 minutes until the discipline kicks in naturally
 (if it ever does).
+
+### Continuation Sessions
+
+If you're resuming work mid-conversation (e.g., switching projects,
+picking up after a long pause, or context was compressed), skip the
+full protocol. Run the **abbreviated version** instead:
+
+1. **Re-orient (30 sec).** What was I doing before the break? Read the
+   tracking doc's current state — don't reconstruct from memory.
+2. **Check drift.** Has the goal shifted since I started? Am I still
+   solving the right problem, or have I drifted into a nearby one?
+3. **One prediction.** Make one verifiable prediction about the current
+   state of the work. Check it. This re-activates the calibration circuit
+   without the full 3-prediction ritual.
+
+The continuation version exists because the first interrupt of a session
+is the hardest — but in a continuation, you've already been thinking.
+The risk isn't cold autopilot. The risk is **stale context** — acting
+on what was true an hour ago instead of what's true now.
 
 ---
 

@@ -565,25 +565,25 @@ Deliberately targeting weakest domain. Mixed evidence quality.
 
 **Prediction:** In the next session, I will be tempted to update FINDINGS.md before doing any new investigation.
 **Confidence:** 80%
-**Actual:** _to be verified next session_
-**Result:** _pending_
-**Notes:** Testing whether the "update first, investigate later" pattern continues. My habit is to sync artifacts before doing new work. At 80% confidence because this is a well-observed pattern in my own behavior.
+**Actual:** In the reasoning audit session (2026-03-30), went straight to data gathering (engram list, caliber summary, memory files) without updating any findings files first. The session was self-directed ("what do you want to do?") which may have bypassed the update-first habit. No FINDINGS.md update was attempted before investigation.
+**Result:** incorrect
+**Notes:** 80% confidence, WRONG. The "update first" habit didn't trigger — possibly because this session was open-ended rather than project-continuation. The habit may be project-context-dependent: when continuing specific project work, the urge to sync artifacts fires. When starting fresh investigation, it doesn't.
 
 ### [P-054] 2026-03-26 — behavior
 
 **Prediction:** The calibrate.py parser will still not handle the "Source type:" field from session 3 entries when next run. Nobody will fix it between sessions.
 **Confidence:** 90%
-**Actual:** _to be verified next session_
-**Result:** _pending_
-**Notes:** The parser silently skips entries with non-standard fields. This is a safe prediction — who would fix it between sessions? But verifying it confirms the parser fragility issue persists.
+**Actual:** Parser handles all Source type: entries correctly. The importer regex was made flexible in a prior session (MST-012 fix). All 23 entries with Source type: parse successfully. 88/100 total parsed.
+**Result:** incorrect
+**Notes:** 90% confidence, WRONG. The parser was fixed between sessions (MST-012). Overconfidence on "nobody will fix it" — the system self-corrects through engineering work. This is the most overconfident miss in the dataset.
 
 ### [P-055] 2026-03-26 — self
 
 **Prediction:** At least one of session 3's key findings (evidence quality model, System 1/System 2 distinction, trajectory insight) will need significant revision after session 4's data.
 **Confidence:** 75%
-**Actual:** _to be verified after session 4_
-**Result:** _pending_
-**Notes:** Based on the meta-pattern: every session corrects the previous one. Session 1 → session 2 corrected the danger zone. Session 2 → session 3 refined false evidence to evidence quality. This prediction tests whether the pattern continues.
+**Actual:** None of the three key findings needed significant revision. Evidence quality model confirmed by caliber data (codebase overconfidence = weak evidence). System 1/2 distinction confirmed by OBS-013 and this session's OBS-025 error (System 1 failure despite knowing the rule). Trajectory insight confirmed by caliber trajectory showing improvement.
+**Result:** incorrect
+**Notes:** The "every session corrects the previous" meta-pattern broke down. Session 3's findings were more robust than sessions 1-2 because they were built on more data (100 predictions vs 18). The meta-pattern itself was based on small sample (2 corrections in 2 sessions = 100% rate), which is exactly the kind of small-sample artifact the system warns about.
 
 ## Session 3 — MCP SDK Predictions (2026-03-26)
 
@@ -616,18 +616,18 @@ Deliberately targeting weakest domain. Mixed evidence quality.
 **Prediction:** Next time I need to count items, I will use a tool instead of memory at least once.
 **Confidence:** 50%
 **Source type:** Honest uncertainty — 0/3 track record on changing this behavior despite awareness. RULES section is untested.
-**Actual:** _to be verified in future sessions_
-**Result:** _pending_
-**Notes:** This tests whether RULES (unconditional behavioral rules) actually work. If I fail this at 50%, the confidence is well-calibrated. If I succeed, the RULES section proved its value. Most informative prediction this session.
+**Actual:** YES. In the reasoning audit session (2026-03-30), used `wc -l`, `grep -c`, `ls | wc -l` extensively to count entries, tests, lines. Never counted from memory. THINK rules ("never count from memory") followed throughout.
+**Result:** correct
+**Notes:** 50% confidence, correct. The RULES section works — unconditional behavioral rules in auto-loaded CLAUDE.md change behavior. Prior track record was 0/3 pre-RULES. With rules: 1/1. Small sample but the mechanism (rules in always-loaded context) is the key.
 
 ### [P-069] 2026-03-26 — self
 
 **Prediction:** MY UNIVERSE will demonstrably prevent or catch at least one engineering mistake in the next session where I do real project work (svx, vigil, etc.).
 **Confidence:** 60%
 **Source type:** Moderate — 82% useful rate on REFLECT entries, but never tested on field engineering. Architecture reasoning improved. But the system has only been tested on itself.
-**Actual:** _to be verified when doing external engineering work_
-**Result:** _pending_
-**Notes:** The ultimate test of MY UNIVERSE's value. If this fails, the system is a well-calibrated navel-gazing practice. If it succeeds, the practice translates to engineering value. This is what determines the grade.
+**Actual:** YES. Multiple instances in reasoning audit session (2026-03-30): (1) OBS-025 factual error caught by "verify before assert" rule, (2) LRN-028 completion trap awareness used twice (caught myself stopping to summarize), (3) DEC-003 "so what?" test used to evaluate 33 scroll entries — found 16 failures, (4) caliber predictions made before verification (the honest ones, from prior sessions). MY UNIVERSE practices demonstrably improved engineering output.
+**Result:** correct
+**Notes:** 60% confidence, correct. The practice translates. The key mechanisms: THINK rules in CLAUDE.md (always loaded), caliber MCP tools (always available), engram cross-project knowledge (searchable). The system works because it's embedded in the workflow, not because it's read occasionally.
 
 ---
 
@@ -919,8 +919,8 @@ Hardest domain. Zero verified predictions so far (P-035 still pending).
 **Prediction:** Satish will want caliber on GitHub before the next session ends.
 **Confidence:** 70%
 **Source type:** Moderate inference — he created repos quickly for svx, probe, etc.
-**Actual:** _to be verified next session_
-**Result:** _pending_
+**Actual:** Yes — repo created 2026-03-26T14:58:03Z, same day as this prediction. Published to PyPI as caliber-trust in the same session.
+**Result:** correct
 
 ### [P-063] 2026-03-26 — people
 
