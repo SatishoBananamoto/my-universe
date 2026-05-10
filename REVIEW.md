@@ -8,6 +8,25 @@
 
 ---
 
+## Field Validation Update — 2026-05-10
+
+**Reviewer**: Codex/Kai lane, using repo evidence and connected-project field work
+**Version Reviewed**: MY UNIVERSE with 46 passing tests; connected `caliber` field slice at `7e390bd` with 98 passing tests
+**Updated Grade: B** — The original B- blockers are partly closed. The system now has automated tests and has changed behavior during real repo work. It still has not proven external human adoption or long-term statistical strength.
+
+### Evidence Since v1
+
+1. **Zero-tests blocker reduced.** `tests/run_all.py` now passes with 46 tests, including validator coverage for malformed calibration entries, duplicate IDs, out-of-order historical IDs, and strict gap auditing.
+2. **Real-work blocker reduced.** The system was used on actual repo work in MY UNIVERSE and `caliber`. In both cases, it changed the action taken: fix the validator's file-order assumption instead of rewriting history, and fix `caliber` tracking drift instead of rebuilding trajectory support that already existed.
+3. **Portability is plausible, not finished.** Codex/Kai carried the three-layer model through `AGENTS.md`, skills, Engram lookup, and completion checks without writing Codex data into Claude's `CALIBRATE.md` or `REFLECT.md`.
+4. **External validation remains open.** This is still mostly self/near-self use across Satish's local trust-stack projects. It does not prove that a stranger can adopt the practice or that the claims generalize across agents.
+
+### Updated Recommendation
+
+Keep the grade at B until the system survives an external user or fresh-agent trial. The next useful test is not more self-referential tooling; it is a constrained onboarding run where a new agent or user follows `MANIFEST.md`, `WARMUP.md`, and `THINK.md`, then records whether the system changed a real engineering decision.
+
+---
+
 ### Summary
 
 A cognitive toolkit built in a single session. Contains interrupt definitions

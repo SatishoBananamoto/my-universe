@@ -4,7 +4,7 @@
 > This is not a fork and not a replacement for Claude's practice data.
 
 **Created**: 2026-05-10
-**Status**: Active lane bootstrap
+**Status**: Active field lane
 **Parent tracker**: PRISM.md
 
 ---
@@ -45,9 +45,11 @@ and runtime process lanes separate until evidence says they should merge.
 ## Current State
 
 - Repo state before this lane was added: `main` clean and 1 commit ahead of `origin/main`.
+- Current Codex/Kai lane state: local MY UNIVERSE branch has unpushed Codex/Kai commits; latest in-repo verification passed with 46 tests.
+- External field session state: `caliber` local branch has unpushed commit `7e390bd` with 98 tests passing.
 - Engram is available through native Codex MCP tools.
-- `PRISM.md` priority remains: field-test the three-layer THINK model during real work.
-- The next field test is now a portability test: Claude-originated MY UNIVERSE discipline running through Codex/Kai runtime surfaces.
+- `PRISM.md` priority has enough field evidence for a REVIEW update; external user validation remains a separate product/adoption question.
+- The completed field tests now cover Claude-originated MY UNIVERSE discipline running through Codex/Kai runtime surfaces inside this repo and in connected `caliber` work.
 
 ## Active Field Test
 
@@ -86,7 +88,8 @@ Success evidence:
 
 - [x] Connect Codex to Engram MCP.
 - [x] Create labeled Codex/Kai lane inside MY UNIVERSE.
-- [x] Run the first real Codex/Kai field session against a connected project.
+- [x] Run the first real Codex/Kai field session inside MY UNIVERSE.
+- [x] Run an external connected-project field session against `caliber`.
 - [x] Record whether the three-layer model actually changed behavior.
 - [x] Decide whether any result should be promoted to `PRISM.md`, Engram, or Codex runtime.
 
@@ -140,3 +143,38 @@ Success evidence:
 - Layer 3: Engram lookup happened before repo edits, and the field result was recorded here instead of being mixed into Claude's `CALIBRATE.md` or `REFLECT.md`.
 
 **Promotion decision**: Promote the validator behavior into repo docs/tests now. Do not promote to Engram yet; wait to see whether this pattern recurs outside MY UNIVERSE.
+
+### 2026-05-10 — Field Session 2: caliber Tracking Drift
+
+**Trigger**: Satish said to keep going after the MY UNIVERSE validation slice and use a connected project before updating the review.
+
+**Task**: Test whether the Codex/Kai lane improves real work outside MY UNIVERSE without turning the exercise into more self-referential process.
+
+**Engram use**: Queried Engram for prior context around connected-project field sessions. No direct entry governed the task, so current repo evidence and tracker docs governed the decision.
+
+**Seed cause**: `caliber` already exposed `caliber trajectory` in `caliber/cli.py` and `caliber_trajectory` in `caliber/mcp_server.py`, but `GAUGE.md`, `README.md`, and `REVIEW.md` still treated trajectory CLI support as missing or future work. The bug was tracking drift, not missing implementation.
+
+**Decision**: Do not reimplement trajectory. Add CLI regression coverage, fix the stale public/tracking surfaces, and commit the external repo slice separately.
+
+**Changes in `/home/satishocoin/caliber`**:
+
+- `tests/test_cli.py`: added CLI coverage for insufficient trajectory data and a successful trajectory summary.
+- `README.md`: added the trajectory CLI example, corrected the roadmap, and listed `caliber_trajectory` in MCP tools.
+- `REVIEW.md`: marked the trajectory CLI recommendation complete with regression coverage.
+- `.graft` + `GAUGE.md`: added/committed the tracking entry point and updated next-session state.
+
+**Verification**:
+
+- `pytest -q` passes with 98 tests in `caliber`.
+- `python3 -m compileall caliber tests` passes.
+- `python3 -m caliber.cli --help` lists `trajectory`.
+- `git diff --check` passes.
+- Local commit: `caliber:7e390bd` (`Verify trajectory CLI and update tracking`).
+
+**Did the three-layer model change behavior?** Yes.
+
+- Layer 1: Repo/source-of-truth inspection prevented a fake feature implementation. The code already existed.
+- Layer 2: Tracking-doc drift checks caught a contradiction between `GAUGE.md`/`REVIEW.md` and the actual CLI/MCP surfaces.
+- Layer 3: The deeper interrupt kept the result scoped: fix stale evidence surfaces and tests in `caliber`, then return to MY UNIVERSE for review promotion.
+
+**Promotion decision**: Promote this to `PRISM.md` and `REVIEW.md` as field validation evidence. Do not promote to Engram yet; this is evidence for MY UNIVERSE portability, not a durable cross-project rule beyond the existing "verify repo facts before claims" rule.

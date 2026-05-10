@@ -42,7 +42,7 @@ These come from working with Satish Patil, not from a textbook:
 |------|---------|
 | **THINK.md** | Interrupt system — 8 named traps, 6 phases, plus override check |
 | **REFLECT.md** | Feedback loop — records interrupt effectiveness (useful/performative/missed) |
-| **CALIBRATE.md** | Confidence tracker — 34+ predictions with verified outcomes |
+| **CALIBRATE.md** | Confidence tracker — 100 predictions with verified outcomes |
 | **REASON.md** | 6 structured reasoning methods for hard problems |
 | **WARMUP.md** | Session bootstrap — 5-min protocol to activate discipline |
 | **FINDINGS.md** | Empirical insights from calibration data (actionable, not theoretical) |

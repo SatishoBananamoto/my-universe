@@ -3,14 +3,24 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-10 — Added Codex/Kai lane and connected Engram MCP for portability field-testing
-**Repo**: Clean before Codex/Kai lane work; pending commit for `CODEX-PRISM.md` + this tracker update.
+**Last session**: 2026-05-10 — Completed Codex/Kai external field session in caliber and updated REVIEW evidence
+**Repo**: Main branch with local unpushed Codex/Kai commits. Last verified locally with 46 tests passing.
 
 ---
 
 ## NEXT SESSION — START HERE
 
-### What just happened (2026-04-12 — THINK Integration)
+### What just happened (2026-05-10 — Codex/Kai portability field validation)
+
+Completed the Codex/Kai portability test without mixing Codex/Kai data into Claude's `CALIBRATE.md` or `REFLECT.md`.
+
+- Engram MCP is connected and usable from Codex.
+- `CODEX-PRISM.md` is the Codex/Kai lane for field notes and promotion decisions.
+- `tools/validate.py` now treats historical ID gaps as strict-audit findings, not normal validation failures.
+- `caliber` field session fixed tracking drift around trajectory support instead of reimplementing code that already existed.
+- `REVIEW.md` now has a dated field-validation update: grade moves from B- to B, with external adoption still unproven.
+
+### Relevant prior state (2026-04-12 — THINK Integration)
 
 Diagnosed why THINK.md doesn't fire automatically during work: the activation mechanism is circular (you need the interrupt to notice you need the interrupt). Solved with a three-layer model:
 
@@ -20,9 +30,9 @@ Diagnosed why THINK.md doesn't fire automatically during work: the activation me
 
 Also fixed WARMUP.md: added continuation-session fallback (re-orient, check drift, one prediction) for mid-conversation resumptions.
 
-### #1 Priority: Field-test the three-layer model
+### #1 Priority: Fresh-agent or external-user validation
 
-Use the integrated system during real project work. Does Layer 1 (process rules) actually fire without prompting? Do the Cognitive Gates catch anything the old system missed? This is field session #2.
+Run a constrained onboarding trial where a fresh agent or external user follows `MANIFEST.md`, `WARMUP.md`, and `THINK.md`, then records whether the system changed a real engineering decision. Do not build more self-referential tooling until that evidence exists.
 
 ### Codex/Kai portability lane
 
@@ -47,8 +57,9 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Create Codex/Kai lane for portability field-testing — 2026-05-10 · `CODEX-PRISM.md`
 - [x] Connect Codex to Engram MCP for cross-project memory/context — 2026-05-10 · native `engram_*` tools available after reload
 - [x] Codex/Kai field session 1: validator false positive fixed — 2026-05-10 · `tools/validate.py --strict-ids` preserves historical gap audit without failing normal validation
-- [ ] After 3 field sessions: assess whether calibration/thinking improved outcomes (2/3 done)
-- [ ] Update REVIEW.md with field validation results
+- [x] Codex/Kai field session 2: caliber trajectory tracking drift fixed — 2026-05-10 · `caliber:7e390bd`, 98 tests passing
+- [x] After 3 field sessions: assess whether calibration/thinking improved outcomes (3/3 done; external user validation remains separate)
+- [x] Update REVIEW.md with field validation results — 2026-05-10 · added dated validation update without rewriting the original v1 review
 
 ### Calibration refinement
 
@@ -66,6 +77,7 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - [x] WARMUP.md: add fallback for continuation sessions — 2026-04-12 · added abbreviated protocol (re-orient, check drift, one prediction)
 - [x] THINK.md: integrated into CLAUDE.md process rules + cognitive gates — 2026-04-12 · three-layer model replaces separate THINK Rules section
 - [x] tools/validate.py: normal validation allows historical ID gaps; `--strict-ids` reports them — 2026-05-10 · P-070 never existed in git history
+- [x] REVIEW.md: add field validation update — 2026-05-10 · tests and real-work evidence changed original B- assessment limits
 - [ ] REFLECT.md: continue logging after field sessions
 
 ### Done
@@ -128,6 +140,13 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - **Key insight:** The activation mechanism was circular — you need the interrupt to notice you need the interrupt. Solution: put proven rules where they stay in context (CLAUDE.md), tie checks to events (gates), reserve /think for depth.
 - **Discussed:** Codex portability — Layers 1-2 transfer via AGENTS.md, Layer 3 via skills. Hooks/lifecycle automation don't port yet.
 
+### 2026-05-10 — Codex/Kai Portability Field Sessions
+
+- **Worked on:** Porting MY UNIVERSE discipline into Codex/Kai without polluting Claude's `CALIBRATE.md` or `REFLECT.md`.
+- **Completed:** Engram MCP connection, `CODEX-PRISM.md`, validator false-positive fix, and external `caliber` tracking-drift fix.
+- **Key insight:** The three-layer model changed behavior when it forced source-of-truth checks: in MY UNIVERSE it separated historical ID gaps from malformed entries; in `caliber` it prevented reimplementing a CLI command that already existed.
+- **Remaining limit:** This proves portability across Codex/Kai repo work, not external human adoption.
+
 ---
 
 ### Key reference files
@@ -142,5 +161,5 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 | FINDINGS.md | Empirical analysis from calibration data. |
 | WARMUP.md | Session bootstrap protocol. |
 | REASON.md | 6 structured reasoning methods. |
-| REVIEW.md | Self-assessment (grade B-). |
+| REVIEW.md | Self-assessment (original grade B-, field update grade B). |
 | SESSION-LOG.md | Detailed session learning records (historical). |
