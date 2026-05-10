@@ -100,6 +100,7 @@ def file_health(base: Path) -> list[tuple[str, bool, str]]:
         ("MANIFEST.md", "orientation"),
         ("THINK.md", "interrupts"),
         ("REFLECT.md", "feedback loop"),
+        ("CODEX-REFLECT.md", "Codex/Kai feedback loop"),
         ("CALIBRATE.md", "confidence tracking"),
         ("REASON.md", "reasoning methods"),
         ("WARMUP.md", "session bootstrap"),

@@ -11,12 +11,13 @@ A practice, not a framework. Each artifact addresses a specific way AI agents fa
 | **THINK.md** | 9 named cognitive traps + interrupt system |
 | **CALIBRATE.md** | Prediction tracking — 99 entries, 94 resolved, 5 pending |
 | **REFLECT.md** | Feedback loop — did the interrupts actually change behavior? |
+| **CODEX-REFLECT.md** | Codex/Kai reflection lane, separate from Claude's history |
 | **REASON.md** | 6 structured methods for hard problems |
 | **FINDINGS.md** | Empirical insights from calibration data |
 | **WARMUP.md** | Session bootstrap protocol |
 | **ONBOARDING-TRIAL.md** | Fresh-agent or external-user transfer test |
 
-Plus: Python analysis tools, 53 tests, portfolio analysis, an essay on what "trustworthy AI agent" means, and a Codex/Kai portability lane.
+Plus: Python analysis tools, 58 tests, portfolio analysis, an essay on what "trustworthy AI agent" means, and a Codex/Kai portability lane.
 
 ## Quick Start
 

@@ -23,12 +23,12 @@ from datetime import datetime
 
 REFLECT_PATH = Path(__file__).parent.parent / "REFLECT.md"
 
-# Known traps from THINK.md
-KNOWN_TRAPS = {
+# Known traps from THINK.md. Order is used for stable primary-trap selection.
+KNOWN_TRAPS = (
     "completion", "confidence", "scope", "performance",
     "delegation", "pattern-matching", "meta-interrupt",
     "category", "binary",
-}
+)
 
 # Phases from THINK.md
 KNOWN_PHASES = {"before", "during", "between", "after", "recovery"}
@@ -58,6 +58,7 @@ def parse_entries(path: Path) -> list[dict]:
 
         # Extract trap/phase from header
         header_lower = header.lower()
+        traps = []
         trap = None
         phase = None
         context = ""
@@ -65,8 +66,9 @@ def parse_entries(path: Path) -> list[dict]:
         # Check for known traps
         for t in KNOWN_TRAPS:
             if t in header_lower:
-                trap = t
-                break
+                traps.append(t)
+        if traps:
+            trap = traps[0]
 
         # Check for phases
         for p in KNOWN_PHASES:
@@ -95,6 +97,7 @@ def parse_entries(path: Path) -> list[dict]:
             "date": date_str,
             "header": header,
             "trap": trap,
+            "traps": traps,
             "phase": phase,
             "context": context,
             "verdict": verdict,
@@ -119,9 +122,10 @@ def trap_frequency(entries: list[dict]) -> str:
     trap_verdicts = defaultdict(Counter)
 
     for e in entries:
-        if e["trap"]:
-            trap_counts[e["trap"]] += 1
-            trap_verdicts[e["trap"]][e["verdict"]] += 1
+        traps = e.get("traps") or ([e["trap"]] if e.get("trap") else [])
+        for trap in traps:
+            trap_counts[trap] += 1
+            trap_verdicts[trap][e["verdict"]] += 1
 
     if not trap_counts:
         lines.append("  No trap entries found.")
@@ -150,7 +154,7 @@ def trap_frequency(entries: list[dict]) -> str:
         lines.append(f"  Missed rate:  {total_missed}/{total} ({total_missed/total*100:.0f}%)")
 
     # Traps that have never fired
-    unfired = KNOWN_TRAPS - set(trap_counts.keys())
+    unfired = set(KNOWN_TRAPS) - set(trap_counts.keys())
     if unfired:
         lines.append("")
         lines.append("  Traps never fired:")

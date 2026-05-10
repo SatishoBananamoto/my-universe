@@ -57,6 +57,7 @@ These come from working with Satish Patil, not from a textbook:
 | **REVIEW.md** | Honest self-assessment (B-, using same methodology as project reviews) |
 | **SESSION-LOG.md** | What each session learned — not a journal, a learning record |
 | **CODEX-PRISM.md** | Codex/Kai portability lane and field notes |
+| **CODEX-REFLECT.md** | Codex/Kai reflection lane, separate from Claude's REFLECT.md |
 
 ### Safety And Continuation Rules
 
@@ -83,6 +84,7 @@ These come from working with Satish Patil, not from a textbook:
 | `tests/test_reflect.py` | 7 tests for reflection analyzer |
 | `tests/test_validate.py` | Validation tests for calibration entry IDs and gaps |
 | `tests/test_onboarding_trial.py` | Transfer-validation protocol and continuation checks |
+| `tests/test_next.py` | Next-action and active reflection lane checks |
 | `tests/run_all.py` | Test runner for the full suite |
 
 ## Quick Start for New Sessions

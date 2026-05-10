@@ -26,6 +26,7 @@ core docs.
 |---------|------|------|
 | `PRISM.md` | Project source of truth | Keep it aware of this lane. |
 | `CODEX-PRISM.md` | Codex/Kai field lane | Record Codex-specific work here first. |
+| `CODEX-REFLECT.md` | Codex/Kai reflection lane | Record Codex interrupt evidence here, not in Claude's `REFLECT.md`. |
 | `CALIBRATE.md` | Claude calibration narrative | Do not add Codex predictions directly. |
 | `REFLECT.md` | Claude interrupt/reflection data | Do not add Codex reflections directly. |
 | `.archive/` | Archive lane | Use before displacing any source, doc, state, history, or user data. |
@@ -46,7 +47,7 @@ and runtime process lanes separate until evidence says they should merge.
 ## Current State
 
 - Repo state before this lane was added: `main` clean and 1 commit ahead of `origin/main`.
-- Current Codex/Kai lane state: local MY UNIVERSE branch has unpushed Codex/Kai commits; latest in-repo verification passed with 53 tests.
+- Current Codex/Kai lane state: local MY UNIVERSE branch has unpushed Codex/Kai commits; latest in-repo verification passed with 58 tests.
 - External field session state: `caliber` local branch has unpushed commit `7e390bd` with 98 tests passing.
 - Engram is available through native Codex MCP tools.
 - `PRISM.md` priority has enough field evidence for a REVIEW update; external user validation remains a separate product/adoption question.
@@ -78,10 +79,11 @@ Success evidence:
 2. Use Engram for cross-project context when the task touches prior decisions, trust stack, calibration, or connected repos.
 3. Do not write Codex predictions into `CALIBRATE.md`.
 4. Do not write Codex reflections into `REFLECT.md`.
-5. Put Codex/Kai field notes below until they are proven reusable.
-6. Do not delete source, docs, state, history, or user data; archive first if anything must move.
-7. End active task lists with a continuation task.
-8. Promote only stable lessons:
+5. Put Codex/Kai interrupt evidence in `CODEX-REFLECT.md`.
+6. Put Codex/Kai field notes below until they are proven reusable.
+7. Do not delete source, docs, state, history, or user data; archive first if anything must move.
+8. End active task lists with a continuation task.
+9. Promote only stable lessons:
    - to `PRISM.md` if they change project direction,
    - to core MY UNIVERSE docs if they change the practice,
    - to Engram if they should persist across projects/sessions,
@@ -96,6 +98,7 @@ Success evidence:
 - [x] Record whether the three-layer model actually changed behavior.
 - [x] Decide whether any result should be promoted to `PRISM.md`, Engram, or Codex runtime.
 - [x] Add no-deletion/archive-first and continuation-task constraints to the Codex/Kai lane.
+- [x] Add `CODEX-REFLECT.md` so Codex/Kai interrupt evidence stays separate from Claude's `REFLECT.md`.
 - [ ] Continue — run the next transfer or connected-project field session and record evidence here.
 
 ## Field Notes

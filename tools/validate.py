@@ -178,17 +178,21 @@ def main():
     else:
         print("  OK — no issues found")
 
-    # Validate REFLECT.md
-    print()
-    print("  REFLECT.md")
-    print("  " + "-" * 40)
-    ref_issues = validate_reflect(BASE / "REFLECT.md")
-    if ref_issues:
-        for issue in ref_issues:
-            print(f"  ! {issue}")
-        all_issues.extend(ref_issues)
-    else:
-        print("  OK — no issues found")
+    # Validate reflection files
+    for reflect_name in ("REFLECT.md", "CODEX-REFLECT.md"):
+        reflect_path = BASE / reflect_name
+        if not reflect_path.exists():
+            continue
+        print()
+        print(f"  {reflect_name}")
+        print("  " + "-" * 40)
+        ref_issues = validate_reflect(reflect_path)
+        if ref_issues:
+            for issue in ref_issues:
+                print(f"  ! {issue}")
+            all_issues.extend(ref_issues)
+        else:
+            print("  OK — no issues found")
 
     # Summary
     print()

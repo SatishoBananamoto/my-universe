@@ -65,6 +65,22 @@ def test_parse_meta_interrupt(tmp_path):
     assert entries[0]["trap"] == "meta-interrupt"
 
 
+def test_parse_multi_trap_header(tmp_path):
+    """Headers naming multiple traps should preserve all of them."""
+    p = write_temp(tmp_path, """\
+        ### 2026-03-24 — Completion Trap + Performance Trap (test)
+
+        **Trigger:** Stopping felt neat
+        **What it caught:** Used polish as evidence of completion
+        **What changed:** Continued with the next real check
+        **Verdict:** missed
+    """)
+    entries = parse_entries(p)
+    assert len(entries) == 1
+    assert entries[0]["trap"] == "completion"
+    assert entries[0]["traps"] == ["completion", "performance"]
+
+
 def test_parse_multiple_entries(tmp_path):
     """Parse multiple entries."""
     p = write_temp(tmp_path, """\

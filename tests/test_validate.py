@@ -6,7 +6,7 @@ from textwrap import dedent
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from tools.validate import validate_calibrate
+from tools.validate import validate_calibrate, validate_reflect
 
 
 def write_temp(tmp_path: Path, content: str) -> Path:
@@ -66,3 +66,18 @@ def test_validate_reports_duplicate_ids(tmp_path):
     )
     issues = validate_calibrate(p)
     assert "CALIBRATE [P-001]: Duplicate entry ID" in issues
+
+
+def test_validate_reflect_accepts_codex_reflect_format(tmp_path):
+    """The shared reflection validator should work for CODEX-REFLECT.md."""
+    p = tmp_path / "CODEX-REFLECT.md"
+    p.write_text(dedent("""\
+        ### 2026-05-10 — Binary Trap (test)
+
+        **Trigger:** A
+        **What it caught:** B
+        **What changed:** C
+        **Verdict:** useful
+    """))
+    issues = validate_reflect(p)
+    assert not issues

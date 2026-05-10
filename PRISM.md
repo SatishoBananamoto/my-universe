@@ -4,7 +4,7 @@
 > Updated before every commit. Single source of truth.
 
 **Last session**: 2026-05-10 — Added no-deletion continuation policy and onboarding trial protocol
-**Repo**: Main branch with local unpushed Codex/Kai commits. Last verified locally with 53 tests passing.
+**Repo**: Main branch with local unpushed Codex/Kai commits. Last verified locally with 58 tests passing.
 
 ---
 
@@ -88,6 +88,9 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - [x] README.md/FINDINGS.md: update public calibration snapshot — 2026-05-10 · 99 entries, 94 resolved, 5 pending
 - [ ] REFLECT.md: continue logging after field sessions
 - [x] tools/status.py: fix template verdict counted as real reflection — 2026-05-10 · status and brief now report 20 reflections; 53 tests passing
+- [x] CODEX-REFLECT.md: add separate Codex/Kai reflection lane — 2026-05-10 · binary trap recorded outside Claude `REFLECT.md`
+- [x] tools/reflect.py/tools/next.py: count multi-trap headers and active reflection lanes — 2026-05-10 · 57 tests passing
+- [x] tools/validate.py: validate `CODEX-REFLECT.md` alongside `REFLECT.md` — 2026-05-10 · 58 tests passing
 - [ ] Continue — keep docs, tools, and tests aligned after each behavior change
 
 ### Done

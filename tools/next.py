@@ -71,8 +71,21 @@ def get_unfired_traps(entries: list[dict]) -> set[str]:
     known = {"completion", "confidence", "scope", "performance",
              "delegation", "pattern-matching", "meta-interrupt",
              "category", "binary"}
-    fired = {e["trap"] for e in entries if e["trap"]}
+    fired = set()
+    for entry in entries:
+        traps = entry.get("traps") or ([entry.get("trap")] if entry.get("trap") else [])
+        fired.update(t for t in traps if t)
     return known - fired
+
+
+def get_reflection_entries() -> list[dict]:
+    """Read reflection entries from Claude and Codex/Kai lanes."""
+    entries = []
+    for name in ("REFLECT.md", "CODEX-REFLECT.md"):
+        path = BASE / name
+        if path.exists():
+            entries.extend(parse_ref(path))
+    return entries
 
 
 def suggest_actions() -> list[str]:
@@ -102,9 +115,8 @@ def suggest_actions() -> list[str]:
             actions.append(f"Be careful at {bucket[0]}-{bucket[0]+9}% confidence (overconfident by {bucket[1]:.0f}pts)")
 
     # Check reflection state
-    ref_path = BASE / "REFLECT.md"
-    if ref_path.exists():
-        ref_entries = parse_ref(ref_path)
+    ref_entries = get_reflection_entries()
+    if ref_entries:
         missed = get_missed_count(ref_entries)
         if missed > len(ref_entries) * 0.3:
             actions.append("Too many missed interrupts — review THINK.md triggers")

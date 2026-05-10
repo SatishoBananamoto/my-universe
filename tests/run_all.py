@@ -15,6 +15,7 @@ from tests import (
     test_status,
     test_validate,
     test_onboarding_trial,
+    test_next,
 )
 
 
@@ -62,6 +63,7 @@ def main():
         test_status,
         test_validate,
         test_onboarding_trial,
+        test_next,
     ]:
         p, f = run_module(module)
         total_passed += p
