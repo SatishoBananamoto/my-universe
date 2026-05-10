@@ -74,7 +74,17 @@ def reflection_summary(reflect_path: Path) -> dict:
         return {"total": 0, "useful": 0, "performative": 0, "missed": 0}
 
     text = reflect_path.read_text()
-    verdicts = re.findall(r"\*\*Verdict:\*\*\s*(useful|performative|missed)", text, re.IGNORECASE)
+    entry_bodies = re.findall(
+        r"###\s+\d{4}-\d{2}-\d{2}\s*—.*?\n"
+        r"(.*?)(?=\n###\s|\n---\s*$|\Z)",
+        text,
+        re.MULTILINE | re.DOTALL,
+    )
+    verdicts = []
+    for body in entry_bodies:
+        match = re.search(r"\*\*Verdict:\*\*\s*(useful|performative|missed)", body, re.IGNORECASE)
+        if match:
+            verdicts.append(match.group(1))
 
     return {
         "total": len(verdicts),

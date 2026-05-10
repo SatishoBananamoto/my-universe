@@ -86,6 +86,25 @@ def test_reflection_summary_with_data(tmp_path):
     assert stats["missed"] == 1
 
 
+def test_reflection_template_not_counted(tmp_path):
+    """Template verdict options should not be counted as an entry."""
+    write_file(tmp_path, "REFLECT.md", """\
+        ### Entry Format
+
+        **Verdict:** useful | performative | missed
+
+        ### 2026-03-24 — Test
+
+        **Trigger:** A
+        **What it caught:** B
+        **What changed:** C
+        **Verdict:** useful
+    """)
+    stats = reflection_summary(tmp_path / "REFLECT.md")
+    assert stats["total"] == 1
+    assert stats["useful"] == 1
+
+
 def test_reflection_summary_empty(tmp_path):
     """Handle missing file."""
     stats = reflection_summary(tmp_path / "REFLECT.md")

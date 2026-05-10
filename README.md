@@ -16,7 +16,7 @@ A practice, not a framework. Each artifact addresses a specific way AI agents fa
 | **WARMUP.md** | Session bootstrap protocol |
 | **ONBOARDING-TRIAL.md** | Fresh-agent or external-user transfer test |
 
-Plus: Python analysis tools, 52 tests, portfolio analysis, an essay on what "trustworthy AI agent" means, and a Codex/Kai portability lane.
+Plus: Python analysis tools, 53 tests, portfolio analysis, an essay on what "trustworthy AI agent" means, and a Codex/Kai portability lane.
 
 ## Quick Start
 

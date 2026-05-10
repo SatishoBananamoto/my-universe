@@ -11,12 +11,12 @@
 ## Field Validation Update — 2026-05-10
 
 **Reviewer**: Codex/Kai lane, using repo evidence and connected-project field work
-**Version Reviewed**: MY UNIVERSE with 52 passing tests; connected `caliber` field slice at `7e390bd` with 98 passing tests
+**Version Reviewed**: MY UNIVERSE with 53 passing tests; connected `caliber` field slice at `7e390bd` with 98 passing tests
 **Updated Grade: B** — The original B- blockers are partly closed. The system now has automated tests and has changed behavior during real repo work. It still has not proven external human adoption or long-term statistical strength.
 
 ### Evidence Since v1
 
-1. **Zero-tests blocker reduced.** `tests/run_all.py` now passes with 52 tests, including validator coverage for malformed calibration entries, duplicate IDs, out-of-order historical IDs, strict gap auditing, and the onboarding-trial protocol.
+1. **Zero-tests blocker reduced.** `tests/run_all.py` now passes with 53 tests, including validator coverage for malformed calibration entries, duplicate IDs, out-of-order historical IDs, strict gap auditing, status-template regression coverage, and the onboarding-trial protocol.
 2. **Real-work blocker reduced.** The system was used on actual repo work in MY UNIVERSE and `caliber`. In both cases, it changed the action taken: fix the validator's file-order assumption instead of rewriting history, and fix `caliber` tracking drift instead of rebuilding trajectory support that already existed.
 3. **Portability is plausible, not finished.** Codex/Kai carried the three-layer model through `AGENTS.md`, skills, Engram lookup, and completion checks without writing Codex data into Claude's `CALIBRATE.md` or `REFLECT.md`.
 4. **External validation remains open.** This is still mostly self/near-self use across Satish's local trust-stack projects. `ONBOARDING-TRIAL.md` now defines the transfer test, but a stranger or fresh-agent run has not happened yet.
