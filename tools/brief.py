@@ -136,9 +136,11 @@ def generate_brief() -> str:
     lines.append("  SESSION PRIORITIES")
     lines.append("  " + "-" * 45)
     lines.append("  1. Run WARMUP.md (orient → calibrate → interrupt)")
-    lines.append("  2. If working on a project: use THINK.md actively")
-    lines.append("  3. Log calibration predictions throughout the session")
-    lines.append("  4. Update REFLECT.md at session end")
+    lines.append("  2. If validating transfer: run ONBOARDING-TRIAL.md")
+    lines.append("  3. If working on a project: use THINK.md actively")
+    lines.append("  4. Log calibration predictions throughout the session")
+    lines.append("  5. Update REFLECT.md at session end")
+    lines.append("  6. Continue")
 
     lines.append("")
     lines.append("=" * 55)
@@ -169,7 +171,7 @@ def generate_short() -> str:
         f"Calibration: {cal_summary} | {trap_count} traps | {ref_count} reflections",
         f"Weakest: behavior domain (60%), 60-69% confidence zone",
         f"Rules: never count from memory, ranges not points, verify at 60-69%",
-        f"Start: run WARMUP.md",
+        f"Start: run WARMUP.md; for transfer validation use ONBOARDING-TRIAL.md; continue",
     ]
     return "\n".join(lines)
 

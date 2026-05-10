@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-10 — Completed Codex/Kai external field session in caliber and updated REVIEW evidence
-**Repo**: Main branch with local unpushed Codex/Kai commits. Last verified locally with 46 tests passing.
+**Last session**: 2026-05-10 — Added no-deletion continuation policy and onboarding trial protocol
+**Repo**: Main branch with local unpushed Codex/Kai commits. Last verified locally with 52 tests passing.
 
 ---
 
@@ -19,6 +19,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - `tools/validate.py` now treats historical ID gaps as strict-audit findings, not normal validation failures.
 - `caliber` field session fixed tracking drift around trajectory support instead of reimplementing code that already existed.
 - `REVIEW.md` now has a dated field-validation update: grade moves from B- to B, with external adoption still unproven.
+- `ONBOARDING-TRIAL.md` now defines the next transfer-validation protocol with no-deletion/archive and continuation constraints.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -43,6 +44,7 @@ Run a constrained onboarding trial where a fresh agent or external user follows 
 - Don't build more self-referential tools — the system works, USE it
 - Don't re-separate the layers — the whole point is integration into CLAUDE.md
 - Don't trust bucket-level patterns below 20 predictions per bucket
+- Don't delete source, docs, state, history, or user data. Archive first if anything must be displaced.
 
 ---
 
@@ -60,6 +62,8 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Codex/Kai field session 2: caliber trajectory tracking drift fixed — 2026-05-10 · `caliber:7e390bd`, 98 tests passing
 - [x] After 3 field sessions: assess whether calibration/thinking improved outcomes (3/3 done; external user validation remains separate)
 - [x] Update REVIEW.md with field validation results — 2026-05-10 · added dated validation update without rewriting the original v1 review
+- [ ] Run `ONBOARDING-TRIAL.md` with a fresh agent or external user
+- [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement
 
@@ -71,6 +75,7 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - [ ] Continue predictions during real work — focus on behavior domain (31 predictions, 64% accuracy)
 - [ ] Verify remaining 5 people-domain predictions with Satish (P-035, P-061, P-063, P-064, P-091)
 - [ ] Track evidence quality systematically (strong vs. weak sources)
+- [ ] Continue — keep calibration attached to real work, not standalone ritual
 
 ### System maintenance
 
@@ -78,7 +83,10 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - [x] THINK.md: integrated into CLAUDE.md process rules + cognitive gates — 2026-04-12 · three-layer model replaces separate THINK Rules section
 - [x] tools/validate.py: normal validation allows historical ID gaps; `--strict-ids` reports them — 2026-05-10 · P-070 never existed in git history
 - [x] REVIEW.md: add field validation update — 2026-05-10 · tests and real-work evidence changed original B- assessment limits
+- [x] ONBOARDING-TRIAL.md: add transfer-validation protocol — 2026-05-10 · no-deletion and continuation constraints included
+- [x] tests/test_onboarding_trial.py: guard transfer protocol and generated Continue action — 2026-05-10 · 52 tests passing
 - [ ] REFLECT.md: continue logging after field sessions
+- [ ] Continue — keep docs, tools, and tests aligned after each behavior change
 
 ### Done
 
@@ -108,6 +116,7 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 | D-001 | 2026-03-24 | Published MY UNIVERSE as public repo | Steel-Man analysis: if work can't survive being visible, the problem is the work. |
 | D-002 | 2026-03-24 | Did NOT build observability tool | Pre-Mortem: 2/3 failure stories were probable. Not every gap needs a tool. |
 | D-003 | 2026-03-26 | Extracted caliber as separate library | The calibration practice produced enough data to be useful as a standalone tool. |
+| D-004 | 2026-05-10 | No deletion; archive first | Satish made no-deletion an explicit operating constraint for MY UNIVERSE. |
 
 ---
 

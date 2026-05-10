@@ -8,7 +8,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Import all test modules
-from tests import test_calibrate, test_reflect, test_audit, test_status, test_validate
+from tests import (
+    test_calibrate,
+    test_reflect,
+    test_audit,
+    test_status,
+    test_validate,
+    test_onboarding_trial,
+)
 
 
 def run_module(module):
@@ -48,7 +55,14 @@ def main():
     total_passed = 0
     total_failed = 0
 
-    for module in [test_calibrate, test_reflect, test_audit, test_status, test_validate]:
+    for module in [
+        test_calibrate,
+        test_reflect,
+        test_audit,
+        test_status,
+        test_validate,
+        test_onboarding_trial,
+    ]:
         p, f = run_module(module)
         total_passed += p
         total_failed += f

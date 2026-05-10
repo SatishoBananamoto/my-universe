@@ -120,6 +120,11 @@ def suggest_actions() -> list[str]:
     if not any("project work" in a.lower() for a in actions):
         actions.append("Use MY UNIVERSE on real project work (not self-referential building)")
 
+    if not any("onboarding" in a.lower() for a in actions):
+        actions.append("Run ONBOARDING-TRIAL.md with a fresh agent or external user")
+
+    actions.append("Continue")
+
     return actions
 
 

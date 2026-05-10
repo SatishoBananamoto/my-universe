@@ -46,6 +46,7 @@ These come from working with Satish Patil, not from a textbook:
 | **REASON.md** | 6 structured reasoning methods for hard problems |
 | **WARMUP.md** | Session bootstrap — 5-min protocol to activate discipline |
 | **FINDINGS.md** | Empirical insights from calibration data (actionable, not theoretical) |
+| **ONBOARDING-TRIAL.md** | Fresh-agent/external-user validation protocol |
 
 ### Analysis & Context
 
@@ -56,6 +57,12 @@ These come from working with Satish Patil, not from a textbook:
 | **REVIEW.md** | Honest self-assessment (B-, using same methodology as project reviews) |
 | **SESSION-LOG.md** | What each session learned — not a journal, a learning record |
 | **CODEX-PRISM.md** | Codex/Kai portability lane and field notes |
+
+### Safety And Continuation Rules
+
+- No deletion. Archive history-bearing material instead of deleting it.
+- Use `.archive/YYYY-MM-DD/<short-reason>/MANIFEST.md` if material must be displaced.
+- Every active task list ends with a continuation task so the next step is explicit.
 
 ### Tooling
 
@@ -75,6 +82,7 @@ These come from working with Satish Patil, not from a textbook:
 | `tests/test_calibrate.py` | 10 tests for calibration parser and computation |
 | `tests/test_reflect.py` | 7 tests for reflection analyzer |
 | `tests/test_validate.py` | Validation tests for calibration entry IDs and gaps |
+| `tests/test_onboarding_trial.py` | Transfer-validation protocol and continuation checks |
 | `tests/run_all.py` | Test runner for the full suite |
 
 ## Quick Start for New Sessions

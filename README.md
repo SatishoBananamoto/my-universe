@@ -14,8 +14,9 @@ A practice, not a framework. Each artifact addresses a specific way AI agents fa
 | **REASON.md** | 6 structured methods for hard problems |
 | **FINDINGS.md** | Empirical insights from calibration data |
 | **WARMUP.md** | Session bootstrap protocol |
+| **ONBOARDING-TRIAL.md** | Fresh-agent or external-user transfer test |
 
-Plus: 6 Python analysis tools, 17 tests, portfolio analysis, an essay on what "trustworthy AI agent" means.
+Plus: Python analysis tools, 52 tests, portfolio analysis, an essay on what "trustworthy AI agent" means, and a Codex/Kai portability lane.
 
 ## Quick Start
 
@@ -31,6 +32,9 @@ python3 tools/calibrate.py
 
 # Validate all entries
 python3 tools/validate.py
+
+# Show next actions, always ending with Continue
+python3 tools/next.py
 
 # Run tests
 python3 tests/run_all.py

@@ -1,0 +1,62 @@
+"""Tests for fresh-agent onboarding trial artifacts."""
+
+import importlib
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from tools import brief
+
+next_tool = importlib.import_module("tools.next")
+
+BASE = Path(__file__).parent.parent
+
+
+def test_onboarding_trial_file_exists():
+    """The transfer-validation protocol should be a first-class artifact."""
+    assert (BASE / "ONBOARDING-TRIAL.md").exists()
+
+
+def test_onboarding_trial_has_required_sections():
+    """The protocol should be runnable without hidden context."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    required = [
+        "## Purpose",
+        "## Hard Constraints",
+        "## Trial Setup",
+        "## Required Run",
+        "## Pass / Fail Rubric",
+        "## Trial Record Template",
+        "## Continue",
+    ]
+    for section in required:
+        assert section in text
+
+
+def test_onboarding_trial_preserves_no_deletion_rule():
+    """The user's no-deletion constraint should be explicit and inspectable."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text().lower()
+    assert "no deletion" in text
+    assert ".archive/yyyy-mm-dd/<reason>/" in text
+    assert "manifest.md" in text
+
+
+def test_onboarding_trial_names_required_runtime_files():
+    """The trial must route participants through the core practice files."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    for name in ["MANIFEST.md", "PRISM.md", "WARMUP.md", "THINK.md"]:
+        assert name in text
+
+
+def test_next_actions_end_with_continue():
+    """Generated task lists should keep the continuation task last."""
+    actions = next_tool.suggest_actions()
+    assert actions[-1] == "Continue"
+
+
+def test_short_brief_points_to_onboarding_trial():
+    """Fresh-session briefs should surface the transfer-validation path."""
+    text = brief.generate_short()
+    assert "ONBOARDING-TRIAL.md" in text
+    assert "continue" in text.lower()

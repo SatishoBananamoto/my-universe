@@ -28,6 +28,7 @@ core docs.
 | `CODEX-PRISM.md` | Codex/Kai field lane | Record Codex-specific work here first. |
 | `CALIBRATE.md` | Claude calibration narrative | Do not add Codex predictions directly. |
 | `REFLECT.md` | Claude interrupt/reflection data | Do not add Codex reflections directly. |
+| `.archive/` | Archive lane | Use before displacing any source, doc, state, history, or user data. |
 | Engram | Cross-project memory/context | Query first when prior project context matters. |
 | `AGENTS.md` + Codex skills | Active Codex runtime layer | Use for Codex process rules and gates. |
 
@@ -45,7 +46,7 @@ and runtime process lanes separate until evidence says they should merge.
 ## Current State
 
 - Repo state before this lane was added: `main` clean and 1 commit ahead of `origin/main`.
-- Current Codex/Kai lane state: local MY UNIVERSE branch has unpushed Codex/Kai commits; latest in-repo verification passed with 46 tests.
+- Current Codex/Kai lane state: local MY UNIVERSE branch has unpushed Codex/Kai commits; latest in-repo verification passed with 52 tests.
 - External field session state: `caliber` local branch has unpushed commit `7e390bd` with 98 tests passing.
 - Engram is available through native Codex MCP tools.
 - `PRISM.md` priority has enough field evidence for a REVIEW update; external user validation remains a separate product/adoption question.
@@ -78,7 +79,9 @@ Success evidence:
 3. Do not write Codex predictions into `CALIBRATE.md`.
 4. Do not write Codex reflections into `REFLECT.md`.
 5. Put Codex/Kai field notes below until they are proven reusable.
-6. Promote only stable lessons:
+6. Do not delete source, docs, state, history, or user data; archive first if anything must move.
+7. End active task lists with a continuation task.
+8. Promote only stable lessons:
    - to `PRISM.md` if they change project direction,
    - to core MY UNIVERSE docs if they change the practice,
    - to Engram if they should persist across projects/sessions,
@@ -92,6 +95,8 @@ Success evidence:
 - [x] Run an external connected-project field session against `caliber`.
 - [x] Record whether the three-layer model actually changed behavior.
 - [x] Decide whether any result should be promoted to `PRISM.md`, Engram, or Codex runtime.
+- [x] Add no-deletion/archive-first and continuation-task constraints to the Codex/Kai lane.
+- [ ] Continue — run the next transfer or connected-project field session and record evidence here.
 
 ## Field Notes
 
