@@ -40,9 +40,9 @@ These come from working with Satish Patil, not from a textbook:
 
 | File | Purpose |
 |------|---------|
-| **THINK.md** | Interrupt system — 8 named traps, 6 phases, plus override check |
+| **THINK.md** | Interrupt system — 9 named traps, 6 phases, plus override check |
 | **REFLECT.md** | Feedback loop — records interrupt effectiveness (useful/performative/missed) |
-| **CALIBRATE.md** | Confidence tracker — 100 predictions with verified outcomes |
+| **CALIBRATE.md** | Confidence tracker — 99 entries, 94 resolved, 5 pending |
 | **REASON.md** | 6 structured reasoning methods for hard problems |
 | **WARMUP.md** | Session bootstrap — 5-min protocol to activate discipline |
 | **FINDINGS.md** | Empirical insights from calibration data (actionable, not theoretical) |

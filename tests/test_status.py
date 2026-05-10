@@ -115,7 +115,8 @@ def test_count_traps(tmp_path):
 def test_file_health_all_present(tmp_path):
     """All expected files present."""
     for name in ["MANIFEST.md", "THINK.md", "REFLECT.md", "CALIBRATE.md",
-                 "REASON.md", "WARMUP.md", "PORTFOLIO-THESIS.md"]:
+                 "REASON.md", "WARMUP.md", "ONBOARDING-TRIAL.md",
+                 "PORTFOLIO-THESIS.md"]:
         (tmp_path / name).write_text(f"# {name}")
 
     health = file_health(tmp_path)

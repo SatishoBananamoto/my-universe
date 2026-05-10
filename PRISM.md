@@ -85,7 +85,9 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - [x] REVIEW.md: add field validation update — 2026-05-10 · tests and real-work evidence changed original B- assessment limits
 - [x] ONBOARDING-TRIAL.md: add transfer-validation protocol — 2026-05-10 · no-deletion and continuation constraints included
 - [x] tests/test_onboarding_trial.py: guard transfer protocol and generated Continue action — 2026-05-10 · 52 tests passing
+- [x] README.md/FINDINGS.md: update public calibration snapshot — 2026-05-10 · 99 entries, 94 resolved, 5 pending
 - [ ] REFLECT.md: continue logging after field sessions
+- [ ] Investigate `tools/status.py` vs `tools/brief.py` reflection-count mismatch
 - [ ] Continue — keep docs, tools, and tests aligned after each behavior change
 
 ### Done

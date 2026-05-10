@@ -124,10 +124,10 @@ def generate_brief() -> str:
         lines.append("")
         lines.append("  KEY FINDINGS TO REMEMBER")
         lines.append("  " + "-" * 45)
-        lines.append("  1. 60-69% is the danger zone — assess evidence quality before trusting")
+        lines.append("  1. 60-69% is an evidence-quality checkpoint — ask what sources confidence")
         lines.append("  2. Architecture: reason from specifics, not categories")
-        lines.append("  3. Behavior: use ranges, not point estimates")
-        lines.append("  4. High confidence (80%+) is reliable — trust it")
+        lines.append("  3. Behavior remains weakest — use ranges, logic, or direct verification")
+        lines.append("  4. 80-89% confidence is reliable in current data")
         lines.append("  5. NEVER count from memory — always run the command (Rule 1)")
         lines.append("  NOTE: Bucket-level patterns are NOT statistically significant (all p>0.10)")
 
@@ -169,7 +169,7 @@ def generate_short() -> str:
     lines = [
         f"MY UNIVERSE | Session {sessions+1}",
         f"Calibration: {cal_summary} | {trap_count} traps | {ref_count} reflections",
-        f"Weakest: behavior domain (60%), 60-69% confidence zone",
+        f"Weakest: behavior domain (65%), 60-69% evidence-quality checkpoint",
         f"Rules: never count from memory, ranges not points, verify at 60-69%",
         f"Start: run WARMUP.md; for transfer validation use ONBOARDING-TRIAL.md; continue",
     ]

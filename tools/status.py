@@ -93,6 +93,7 @@ def file_health(base: Path) -> list[tuple[str, bool, str]]:
         ("CALIBRATE.md", "confidence tracking"),
         ("REASON.md", "reasoning methods"),
         ("WARMUP.md", "session bootstrap"),
+        ("ONBOARDING-TRIAL.md", "transfer validation"),
         ("PORTFOLIO-THESIS.md", "portfolio analysis"),
     ]
     return [(name, (base / name).exists(), desc) for name, desc in files]

@@ -1,4 +1,23 @@
-# Findings — What 59 Calibration Predictions Suggest
+# Findings — Calibration Evidence And Hypotheses
+
+> **Current snapshot (2026-05-10):** `tools/calibrate.py` reports 99
+> prediction entries, 94 resolved, 5 pending, 71 correct, 23 incorrect,
+> 75.5% actual accuracy, and 70.7% average confidence. The highest
+> observed entry ID is P-100; P-070 is a historical gap and is audited
+> with `python3 tools/validate.py --strict-ids`.
+>
+> Current bucket snapshot:
+> - 50-59%: 4/6 correct
+> - 60-69%: 19/30 correct
+> - 70-79%: 28/34 correct
+> - 80-89%: 19/22 correct
+> - 90-99%: 1/2 correct
+>
+> Current domain snapshot:
+> architecture 17/21, behavior 20/31, codebase 19/25, facts 3/3,
+> people 1/1, self 7/9, tooling 4/4.
+
+## Historical Analysis From Session 3
 
 > **STATISTICAL WARNING (added session 3):** Binomial tests show NONE of
 > the bucket-level findings are statistically significant (all p > 0.10).
