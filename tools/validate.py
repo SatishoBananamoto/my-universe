@@ -7,6 +7,7 @@ missing fields, malformed confidence values, unknown domains/traps, etc.
 
 Usage:
     python validate.py              # Validate all files
+    python validate.py --strict-ids # Also report gaps in CALIBRATE.md IDs
     python validate.py --fix        # Show suggested fixes (no auto-fix)
 """
 
@@ -31,7 +32,7 @@ VALID_TRAPS = {
 }
 
 
-def validate_calibrate(path: Path) -> list[str]:
+def validate_calibrate(path: Path, strict_ids: bool = False) -> list[str]:
     """Validate CALIBRATE.md entries."""
     if not path.exists():
         return ["CALIBRATE.md not found"]
@@ -46,7 +47,7 @@ def validate_calibrate(path: Path) -> list[str]:
     )
 
     seen_ids = set()
-    last_num = 0
+    seen_nums = set()
 
     for match in entries:
         num = int(match.group(1))
@@ -58,11 +59,7 @@ def validate_calibrate(path: Path) -> list[str]:
         if entry_id in seen_ids:
             issues.append(f"CALIBRATE [{entry_id}]: Duplicate entry ID")
         seen_ids.add(entry_id)
-
-        # Check sequential numbering
-        if num != last_num + 1:
-            issues.append(f"CALIBRATE [{entry_id}]: Non-sequential ID (expected P-{last_num+1:03d})")
-        last_num = num
+        seen_nums.add(num)
 
         # Check domain
         if domain not in VALID_DOMAINS:
@@ -97,6 +94,11 @@ def validate_calibrate(path: Path) -> list[str]:
             result = result_match.group(1).strip("_")
             if result not in ("correct", "incorrect", "pending"):
                 issues.append(f"CALIBRATE [{entry_id}]: Invalid result '{result}'")
+
+    if strict_ids and seen_nums:
+        missing = sorted(set(range(1, max(seen_nums) + 1)) - seen_nums)
+        for num in missing:
+            issues.append(f"CALIBRATE [P-{num:03d}]: Missing entry ID")
 
     return issues
 
@@ -150,6 +152,11 @@ def validate_reflect(path: Path) -> list[str]:
 def main():
     parser = argparse.ArgumentParser(description="Entry validator for MY UNIVERSE")
     parser.add_argument("--fix", action="store_true", help="Show suggested fixes")
+    parser.add_argument(
+        "--strict-ids",
+        action="store_true",
+        help="Report gaps in CALIBRATE.md prediction IDs",
+    )
     args = parser.parse_args()
 
     print()
@@ -163,7 +170,7 @@ def main():
     print()
     print("  CALIBRATE.md")
     print("  " + "-" * 40)
-    cal_issues = validate_calibrate(BASE / "CALIBRATE.md")
+    cal_issues = validate_calibrate(BASE / "CALIBRATE.md", strict_ids=args.strict_ids)
     if cal_issues:
         for issue in cal_issues:
             print(f"  ! {issue}")

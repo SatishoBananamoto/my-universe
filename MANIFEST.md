@@ -55,6 +55,7 @@ These come from working with Satish Patil, not from a textbook:
 | **ANALYSES.md** | Technical questions explored independently (shared pkg, investment priority) |
 | **REVIEW.md** | Honest self-assessment (B-, using same methodology as project reviews) |
 | **SESSION-LOG.md** | What each session learned — not a journal, a learning record |
+| **CODEX-PRISM.md** | Codex/Kai portability lane and field notes |
 
 ### Tooling
 
@@ -63,7 +64,7 @@ These come from working with Satish Patil, not from a textbook:
 | `tools/calibrate.py` | Calibration analysis — accuracy, confidence buckets, domain breakdown |
 | `tools/reflect.py` | Reflection patterns — trap frequency, verdict distribution, timeline |
 | `tools/status.py` | System health dashboard — one command shows everything |
-| `tools/validate.py` | Entry format validation for CALIBRATE.md and REFLECT.md |
+| `tools/validate.py` | Entry validation for CALIBRATE.md and REFLECT.md; use `--strict-ids` to audit prediction ID gaps |
 | `tools/portfolio.py` | Cross-project health checker for Satish's portfolio |
 | `tools/brief.py` | Session briefing generator — compressed summary for new sessions |
 
@@ -73,6 +74,7 @@ These come from working with Satish Patil, not from a textbook:
 |------|----------|
 | `tests/test_calibrate.py` | 10 tests for calibration parser and computation |
 | `tests/test_reflect.py` | 7 tests for reflection analyzer |
+| `tests/test_validate.py` | Validation tests for calibration entry IDs and gaps |
 | `tests/run_all.py` | Test runner for the full suite |
 
 ## Quick Start for New Sessions

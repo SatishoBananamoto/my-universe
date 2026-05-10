@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-04-12 — Integrated THINK into process rules, added Cognitive Gates, fixed WARMUP continuation gap
-**Repo**: Clean (pending commit).
+**Last session**: 2026-05-10 — Added Codex/Kai lane and connected Engram MCP for portability field-testing
+**Repo**: Clean before Codex/Kai lane work; pending commit for `CODEX-PRISM.md` + this tracker update.
 
 ---
 
@@ -24,6 +24,10 @@ Also fixed WARMUP.md: added continuation-session fallback (re-orient, check drif
 
 Use the integrated system during real project work. Does Layer 1 (process rules) actually fire without prompting? Do the Cognitive Gates catch anything the old system missed? This is field session #2.
 
+### Codex/Kai portability lane
+
+`CODEX-PRISM.md` is the Codex/Kai lane inside MY UNIVERSE. Use it for Codex-specific field notes, portability findings, and Engram-backed context before promoting anything into Claude's `CALIBRATE.md`, `REFLECT.md`, or core MY UNIVERSE docs.
+
 ### What NOT to do
 
 - Don't build more self-referential tools — the system works, USE it
@@ -40,7 +44,10 @@ _Does this system improve real engineering? P-069 is the existential test._
 
 - [x] Apply THINK.md during a real engineering session — reasoning audit 2026-03-30 · `caliber:P-069 correct`
 - [x] Track interrupts: completion trap (2x), verify-before-assert (1x), so-what test (33 entries), counting rules (throughout)
-- [ ] After 3 field sessions: assess whether calibration/thinking improved outcomes (1/3 done)
+- [x] Create Codex/Kai lane for portability field-testing — 2026-05-10 · `CODEX-PRISM.md`
+- [x] Connect Codex to Engram MCP for cross-project memory/context — 2026-05-10 · native `engram_*` tools available after reload
+- [x] Codex/Kai field session 1: validator false positive fixed — 2026-05-10 · `tools/validate.py --strict-ids` preserves historical gap audit without failing normal validation
+- [ ] After 3 field sessions: assess whether calibration/thinking improved outcomes (2/3 done)
 - [ ] Update REVIEW.md with field validation results
 
 ### Calibration refinement
@@ -58,6 +65,7 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 
 - [x] WARMUP.md: add fallback for continuation sessions — 2026-04-12 · added abbreviated protocol (re-orient, check drift, one prediction)
 - [x] THINK.md: integrated into CLAUDE.md process rules + cognitive gates — 2026-04-12 · three-layer model replaces separate THINK Rules section
+- [x] tools/validate.py: normal validation allows historical ID gaps; `--strict-ids` reports them — 2026-05-10 · P-070 never existed in git history
 - [ ] REFLECT.md: continue logging after field sessions
 
 ### Done
@@ -127,6 +135,7 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 | File | What it contains |
 |------|-----------------|
 | PRISM.md | This file. |
+| CODEX-PRISM.md | Codex/Kai portability lane and field notes. |
 | THINK.md | Cognitive interrupts — the core system. 393 lines. |
 | REFLECT.md | Interrupt effectiveness data. 21 entries. |
 | CALIBRATE.md | 100 predictions with outcomes. |
