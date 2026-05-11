@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-11 — Recorded scroll deposit quality-gate continuation
-**Repo**: Recording the `scroll:8c20946` connected-project continuation. Last verified locally with 80 tests passing.
+**Last session**: 2026-05-11 — Recorded probe tracking-baseline continuation
+**Repo**: Recording the `probe:7a26654` connected-project continuation. Last verified locally with 81 tests passing.
 
 ---
 
@@ -35,6 +35,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `analysis:15a563c`, which completed the README report index so all 46 `reports/*.md` files are linked with no extras.
 - Continued inside MY UNIVERSE to fix the portfolio quick table after long project and branch names exposed column drift.
 - Continued into `scroll:8c20946`, which hardened the engram deposit quality gate, separated quality skips from system errors, added `--no-quality-check`, and verified 129 scroll tests before push.
+- Continued into `probe:7a26654`, which adopted a verified DOSSIER/.graft tracking baseline after 95 probe tests and compileall passed.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -95,6 +96,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from portfolio consistency into analysis report index completion — 2026-05-11 · `analysis:15a563c`, 46/46 report links covered
 - [x] Continue from report-index completion into portfolio quick-table alignment — 2026-05-11 · dynamic project width and 30-character branch column, 79 tests passing
 - [x] Continue from portfolio quick-table alignment into scroll quality-gate hardening — 2026-05-11 · `scroll:8c20946`, 129 tests passing
+- [x] Continue from scroll quality-gate hardening into probe tracking baseline — 2026-05-11 · `probe:7a26654`, 95 tests passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

@@ -207,3 +207,12 @@ def test_onboarding_trial_records_scroll_quality_gate_result():
     assert "scroll:8c20946" in text
     assert "--no-quality-check" in text
     assert "129 tests" in text
+
+
+def test_onboarding_trial_records_probe_tracking_result():
+    """The probe continuation should record tracker verification evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: probe tracking baseline" in text
+    assert "probe:7a26654" in text
+    assert "DOSSIER.md" in text
+    assert "95 tests" in text

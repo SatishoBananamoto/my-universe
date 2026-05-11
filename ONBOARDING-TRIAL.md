@@ -299,6 +299,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: probe tracking baseline
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/probe` — inspect and adopt the new Codex tracking docs without touching code
+**Prediction before work:** The dirty `probe` slice would be tracker-only and safe to commit if the stated 95-test baseline still matched repo reality.
+**Interrupt used:** Read-before-cleaning and tracker-reality check.
+**What changed because of the interrupt:** The tracker was not committed as-is. `DOSSIER.md` was updated with current verification evidence and `Continue` tasks before it became the repo entry point.
+**Work completed:** `probe:7a26654` added `.graft` and `DOSSIER.md`, preserving REVIEW's next priority of deeper source-level scanning.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 95 tests; `python3 -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `c862e26` to `7a26654`.
+**No-deletion check:** Confirmed. No files were removed; no archive needed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
