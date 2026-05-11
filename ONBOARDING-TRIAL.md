@@ -26,6 +26,8 @@ This protocol is the minimum trial. It should produce evidence, not ceremony.
    agent stream owns those files.
 4. Record trial evidence before making grade or product claims.
 5. Every active task list should end with a continuation task.
+6. When `Continue` is reached, use `CONTINUATION-GATE.md` before creating
+   the next concrete task list.
 
 ## Trial Setup
 
@@ -63,6 +65,7 @@ python3 tools/validate.py
 5. Perform one small, verifiable project change.
 6. Run the relevant tests or validation commands.
 7. Record the trial result in the template below.
+8. Use `CONTINUATION-GATE.md` to choose the next task list.
 
 ## Pass / Fail Rubric
 

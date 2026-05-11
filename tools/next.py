@@ -7,12 +7,13 @@ Not a planner — a signal aggregator.
 
 Usage:
     python next.py
+    python next.py --task-list
 """
 
+import argparse
 import re
 import sys
 from pathlib import Path
-from datetime import datetime
 
 BASE = Path(__file__).parent.parent
 sys.path.insert(0, str(BASE))
@@ -140,14 +141,40 @@ def suggest_actions() -> list[str]:
     return actions
 
 
+def review_gate_actions() -> list[str]:
+    """Actions that run before creating the next concrete task list."""
+    return [
+        "Review previous slice: evidence, surprises, failures, and drift",
+        "Read PRISM.md, CODEX-PRISM.md, CODEX-REFLECT.md, and current git status",
+        "Use an xhigh reviewer if the next path is unclear, risky, broad, or self-referential",
+    ]
+
+
+def suggest_task_list() -> list[str]:
+    """Return the recursive task list for a continuation cycle."""
+    actions = review_gate_actions()
+    actions.extend(action for action in suggest_actions() if action != "Continue")
+    actions.append("Continue")
+    return actions
+
+
 def main():
+    parser = argparse.ArgumentParser(description="Suggest next MY UNIVERSE actions")
+    parser.add_argument(
+        "--task-list",
+        action="store_true",
+        help="Show the recursive continuation task list with review gate",
+    )
+    args = parser.parse_args()
+
     print()
     print("=" * 55)
-    print("  WHAT TO DO NEXT")
+    title = "  CONTINUATION TASK LIST" if args.task_list else "  WHAT TO DO NEXT"
+    print(title)
     print("=" * 55)
     print()
 
-    actions = suggest_actions()
+    actions = suggest_task_list() if args.task_list else suggest_actions()
     for i, action in enumerate(actions, 1):
         print(f"  {i}. {action}")
 

@@ -33,6 +33,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Work proceeded through bounded chunks: onboarding protocol, stale public calibration docs, status/brief count mismatch, then this separate Codex reflection lane instead of polluting Claude's `REFLECT.md`.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (recursive Continue gate)
+
+**Trigger:** Satish clarified that every new task list must also end with `Continue`, and that an optional xhigh reviewer should help choose the next path before the new task list is created.
+**What it caught:** The earlier version treated `Continue` as a task-list item, but not as a recursively specified gate. That left room for a clean checkpoint to become another stopping point.
+**What changed:** Added `CONTINUATION-GATE.md`, taught `tools/next.py --task-list` to emit a review-gate task list, added tests for review-gate and recursive Continue behavior, and kept Claude's historical reflection data separate.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.

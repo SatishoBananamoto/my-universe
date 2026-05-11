@@ -47,8 +47,9 @@ and runtime process lanes separate until evidence says they should merge.
 ## Current State
 
 - Repo state before this lane was added: `main` clean and 1 commit ahead of `origin/main`.
-- Current Codex/Kai lane state: local MY UNIVERSE branch has unpushed Codex/Kai commits; latest in-repo verification passed with 58 tests.
-- External field session state: `caliber` local branch has unpushed commit `7e390bd` with 98 tests passing.
+- Current Codex/Kai lane state: latest in-repo verification passed with 63 tests.
+- Current publish state before this continuation-gate slice: MY UNIVERSE `main` aligned with `origin/main`; `caliber` `master` aligned with `origin/master`.
+- External field session state: `caliber` commit `7e390bd` pushed with 98 tests passing.
 - Engram is available through native Codex MCP tools.
 - `PRISM.md` priority has enough field evidence for a REVIEW update; external user validation remains a separate product/adoption question.
 - The completed field tests now cover Claude-originated MY UNIVERSE discipline running through Codex/Kai runtime surfaces inside this repo and in connected `caliber` work.
@@ -83,7 +84,8 @@ Success evidence:
 6. Put Codex/Kai field notes below until they are proven reusable.
 7. Do not delete source, docs, state, history, or user data; archive first if anything must move.
 8. End active task lists with a continuation task.
-9. Promote only stable lessons:
+9. When `Continue` is reached, use `CONTINUATION-GATE.md`: reflect, check repo evidence, optionally ask an xhigh reviewer, create a new concrete task list, and put `Continue` at the end again.
+10. Promote only stable lessons:
    - to `PRISM.md` if they change project direction,
    - to core MY UNIVERSE docs if they change the practice,
    - to Engram if they should persist across projects/sessions,
@@ -99,6 +101,7 @@ Success evidence:
 - [x] Decide whether any result should be promoted to `PRISM.md`, Engram, or Codex runtime.
 - [x] Add no-deletion/archive-first and continuation-task constraints to the Codex/Kai lane.
 - [x] Add `CODEX-REFLECT.md` so Codex/Kai interrupt evidence stays separate from Claude's `REFLECT.md`.
+- [x] Add `CONTINUATION-GATE.md` so recursive Continue and optional xhigh review are inspectable.
 - [ ] Continue — run the next transfer or connected-project field session and record evidence here.
 
 ## Field Notes

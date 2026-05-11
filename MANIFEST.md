@@ -47,6 +47,7 @@ These come from working with Satish Patil, not from a textbook:
 | **WARMUP.md** | Session bootstrap — 5-min protocol to activate discipline |
 | **FINDINGS.md** | Empirical insights from calibration data (actionable, not theoretical) |
 | **ONBOARDING-TRIAL.md** | Fresh-agent/external-user validation protocol |
+| **CONTINUATION-GATE.md** | Recursive Continue review gate and optional xhigh reviewer path |
 
 ### Analysis & Context
 
@@ -64,6 +65,7 @@ These come from working with Satish Patil, not from a textbook:
 - No deletion. Archive history-bearing material instead of deleting it.
 - Use `.archive/YYYY-MM-DD/<short-reason>/MANIFEST.md` if material must be displaced.
 - Every active task list ends with a continuation task so the next step is explicit.
+- `Continue` means run `CONTINUATION-GATE.md`, create the next task list, and append `Continue` again.
 
 ### Tooling
 

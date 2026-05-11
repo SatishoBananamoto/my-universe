@@ -139,8 +139,8 @@ def generate_brief() -> str:
     lines.append("  2. If validating transfer: run ONBOARDING-TRIAL.md")
     lines.append("  3. If working on a project: use THINK.md actively")
     lines.append("  4. Log calibration predictions throughout the session")
-    lines.append("  5. Update REFLECT.md at session end")
-    lines.append("  6. Continue")
+    lines.append("  5. Update REFLECT.md or CODEX-REFLECT.md only for the owning lane")
+    lines.append("  6. At Continue: run CONTINUATION-GATE.md, then append Continue again")
 
     lines.append("")
     lines.append("=" * 55)
@@ -171,7 +171,7 @@ def generate_short() -> str:
         f"Calibration: {cal_summary} | {trap_count} traps | {ref_count} reflections",
         f"Weakest: behavior domain (65%), 60-69% evidence-quality checkpoint",
         f"Rules: never count from memory, ranges not points, verify at 60-69%",
-        f"Start: run WARMUP.md; for transfer validation use ONBOARDING-TRIAL.md; continue",
+        f"Start: WARMUP.md; transfer: ONBOARDING-TRIAL.md; Continue: CONTINUATION-GATE.md",
     ]
     return "\n".join(lines)
 

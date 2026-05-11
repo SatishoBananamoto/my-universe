@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-10 — Added no-deletion continuation policy and onboarding trial protocol
-**Repo**: Main branch with local unpushed Codex/Kai commits. Last verified locally with 58 tests passing.
+**Last session**: 2026-05-11 — Added recursive continuation gate and xhigh reviewer path
+**Repo**: Main branch aligned with `origin/main` before this continuation-gate slice. Last verified locally with 63 tests passing.
 
 ---
 
@@ -20,6 +20,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - `caliber` field session fixed tracking drift around trajectory support instead of reimplementing code that already existed.
 - `REVIEW.md` now has a dated field-validation update: grade moves from B- to B, with external adoption still unproven.
 - `ONBOARDING-TRIAL.md` now defines the next transfer-validation protocol with no-deletion/archive and continuation constraints.
+- `CONTINUATION-GATE.md` now defines how `Continue` becomes the next task list instead of a stopping point.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -34,6 +35,10 @@ Also fixed WARMUP.md: added continuation-session fallback (re-orient, check drif
 ### #1 Priority: Fresh-agent or external-user validation
 
 Run a constrained onboarding trial where a fresh agent or external user follows `MANIFEST.md`, `WARMUP.md`, and `THINK.md`, then records whether the system changed a real engineering decision. Do not build more self-referential tooling until that evidence exists.
+
+### Continuation gate
+
+When an active task list reaches `Continue`, use `CONTINUATION-GATE.md` before creating the next task list. The gate uses reflection, repo evidence, judgment, and an optional xhigh reviewer for unclear/risky/self-referential paths. The new task list must end with `Continue` again.
 
 ### Codex/Kai portability lane
 
@@ -91,6 +96,7 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - [x] CODEX-REFLECT.md: add separate Codex/Kai reflection lane — 2026-05-10 · binary trap recorded outside Claude `REFLECT.md`
 - [x] tools/reflect.py/tools/next.py: count multi-trap headers and active reflection lanes — 2026-05-10 · 57 tests passing
 - [x] tools/validate.py: validate `CODEX-REFLECT.md` alongside `REFLECT.md` — 2026-05-10 · 58 tests passing
+- [x] CONTINUATION-GATE.md/tools/next.py: define recursive `Continue` review gate — 2026-05-11 · optional xhigh reviewer path included; 63 tests passing
 - [ ] Continue — keep docs, tools, and tests aligned after each behavior change
 
 ### Done

@@ -35,3 +35,20 @@ def test_reflection_entries_include_codex_lane():
     entries = next_tool.get_reflection_entries()
     headers = {entry["header"] for entry in entries}
     assert any("Binary Trap" in header for header in headers)
+
+
+def test_task_list_has_review_gate_and_continue_last():
+    """Continuation task lists should review first and keep Continue last."""
+    actions = next_tool.suggest_task_list()
+    assert actions[0].startswith("Review previous slice")
+    assert any("xhigh reviewer" in action for action in actions)
+    assert actions[-1] == "Continue"
+
+
+def test_review_gate_mentions_required_state_surfaces():
+    """The review gate should route through the active Codex/Kai surfaces."""
+    actions = next_tool.review_gate_actions()
+    joined = " ".join(actions)
+    assert "PRISM.md" in joined
+    assert "CODEX-PRISM.md" in joined
+    assert "CODEX-REFLECT.md" in joined

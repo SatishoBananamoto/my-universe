@@ -49,6 +49,20 @@ def test_onboarding_trial_names_required_runtime_files():
         assert name in text
 
 
+def test_continuation_gate_file_exists():
+    """Recursive continuation should have an explicit protocol."""
+    assert (BASE / "CONTINUATION-GATE.md").exists()
+
+
+def test_continuation_gate_preserves_recursive_continue_rule():
+    """The protocol should make Continue a loop trigger, not a stop signal."""
+    text = (BASE / "CONTINUATION-GATE.md").read_text()
+    assert "`Continue` is not a normal task" in text
+    assert "append Continue again" in text
+    assert "Optional xhigh reviewer" in text
+    assert text.strip().endswith("as the final item.")
+
+
 def test_next_actions_end_with_continue():
     """Generated task lists should keep the continuation task last."""
     actions = next_tool.suggest_actions()
@@ -60,3 +74,9 @@ def test_short_brief_points_to_onboarding_trial():
     text = brief.generate_short()
     assert "ONBOARDING-TRIAL.md" in text
     assert "continue" in text.lower()
+
+
+def test_full_brief_respects_reflection_lane_boundary():
+    """Session briefs should not nudge Codex/Kai work into Claude REFLECT.md."""
+    text = brief.generate_brief()
+    assert "REFLECT.md or CODEX-REFLECT.md only for the owning lane" in text
