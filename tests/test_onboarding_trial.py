@@ -234,3 +234,12 @@ def test_onboarding_trial_records_vigil_baseline_result():
     assert "vigil:ff5f768" in text
     assert "validation/results.json" in text
     assert "115 tests" in text
+
+
+def test_onboarding_trial_records_nexus_pulse_result():
+    """The nexus continuation should record pulse guard evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: nexus pulse guard" in text
+    assert "nexus:486c2c5" in text
+    assert "zero-commit repo attention" in text
+    assert "2 tests" in text

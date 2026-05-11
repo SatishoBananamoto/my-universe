@@ -341,6 +341,20 @@ Fail if any of these happen:
 **Outcome:** partial pass: verified code/tracker slice pushed; `validation/results.json` remains intentionally uncommitted until a fresh authenticated validation run.
 **Next continuation task:** Run fresh validation for `vigil` when network/GitHub auth is available, or choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-11 — Continuation Result: nexus pulse guard
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/nexus` — inspect local runtime-source commits and harden the PULSE change
+**Prediction before work:** The dirty `tools/pulse.py` change would be useful but needed tests because it affects cross-project safety reporting.
+**Interrupt used:** Legacy-runtime source-material check and regression guard.
+**What changed because of the interrupt:** The existing local commits were inspected before push, and the uncommitted pulse behavior gained focused tests instead of being pushed as an unguarded script tweak.
+**Work completed:** `nexus:486c2c5` added tests for no-test projects and zero-commit repo attention reporting, then pushed the prior local skill commits `c94d522` and `447dc23` with it.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 2 tests; `git diff --check` passed before commit; `git push` advanced `main` from `ce00d6d` to `486c2c5`.
+**No-deletion check:** Confirmed. No source files were removed; only generated `tools/__pycache__` verification output was cleaned.
+**Historical data boundary:** Confirmed. Nexus remains legacy Claude runtime source material; live Codex runtime files were not edited.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
