@@ -89,6 +89,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Added `kvsecure.com:5e3f0b0` README with story, stale-claim cautions, local verification, and cache-busted live-check guidance while leaving the actual browser review open.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (profile stats source)
+
+**Trigger:** The clean profile README had stale-looking portfolio stats.
+**What it caught:** Public profile stats should come from observed portfolio output, not memory or rounded optimism.
+**What changed:** Used `tools/portfolio.py --quick` as the evidence source and made a one-line stats correction in `SatishoBananamoto:db4da6b`.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.

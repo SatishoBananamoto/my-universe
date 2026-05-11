@@ -144,3 +144,12 @@ def test_onboarding_trial_records_kvsecure_readme_result():
     assert "kvsecure.com:5e3f0b0" in text
     assert "stale-claim search" in text
     assert "Product-boundary and visual-verification check" in text
+
+
+def test_onboarding_trial_records_profile_stats_result():
+    """The profile continuation should record portfolio evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: profile README stats refresh" in text
+    assert "SatishoBananamoto:db4da6b" in text
+    assert "34k+ source lines" in text
+    assert "Source-of-truth check" in text
