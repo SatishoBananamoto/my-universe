@@ -145,6 +145,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: caliber MCP config helper
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/caliber` — reduce MCP config manual setup friction
+**Prediction before work:** A safe auto-apply feature should be implemented as a tested CLI helper that writes only to a chosen config path, not by modifying the live `~/.mcp.json` during development.
+**Interrupt used:** Trust-boundary check.
+**What changed because of the interrupt:** Implemented `caliber mcp-config` with print and `--install` modes, tested install against a temp `.mcp.json`, and preserved existing servers with timestamped backups.
+**Work completed:** `caliber:4c4a781` added the MCP config helper, tests, README usage, CLAUDE/GAUGE/REVIEW updates, and mcp_server docstring guidance.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 105 tests; `python3 -m compileall caliber tests` passed; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed; installer behavior creates backups before updating an existing config.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

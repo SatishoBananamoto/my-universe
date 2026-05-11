@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-11 — Consolidated caliber CALIBRATE import path
-**Repo**: Main branch aligned with `origin/main` before recording the caliber import cleanup continuation. Last verified locally with 66 tests passing.
+**Last session**: 2026-05-11 — Added caliber MCP config installer helper
+**Repo**: Main branch aligned with `origin/main` before recording the caliber MCP-config continuation. Last verified locally with 67 tests passing.
 
 ---
 
@@ -24,6 +24,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - First fresh-agent trial ran against `caliber` and produced `caliber:439b4b8`.
 - Continued from that trial into `caliber:45ea13d`, which added shared-store multi-agent CLI regression coverage and fixed storage filename collisions.
 - Continued again into `caliber:102b294`, which archived the old standalone parser and moved the active CALIBRATE import wrapper onto the shared importer.
+- Continued into `caliber:4c4a781`, which added a safe `caliber mcp-config` helper that prints or installs MCP config entries with backups.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -73,6 +74,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Run `ONBOARDING-TRIAL.md` with a fresh agent or external user — 2026-05-11 · Hypatia subagent fixed `caliber/CLAUDE.md`, `caliber:439b4b8`, 98 tests passing
 - [x] Continue from onboarding trial into `caliber` multi-agent hardening — 2026-05-11 · `caliber:45ea13d`, 101 tests passing
 - [x] Continue from multi-agent hardening into `caliber` import cleanup — 2026-05-11 · `caliber:102b294`, 103 tests passing
+- [x] Continue from import cleanup into `caliber` MCP config helper — 2026-05-11 · `caliber:4c4a781`, 105 tests passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

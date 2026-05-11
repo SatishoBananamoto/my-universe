@@ -108,3 +108,12 @@ def test_onboarding_trial_records_caliber_import_cleanup_result():
     assert "caliber:102b294" in text
     assert "103 tests" in text
     assert ".archive/2026-05-11/extract-calibrate-standalone-parser/" in text
+
+
+def test_onboarding_trial_records_caliber_mcp_config_result():
+    """The MCP config continuation should record trust-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: caliber MCP config helper" in text
+    assert "caliber:4c4a781" in text
+    assert "105 tests" in text
+    assert "Trust-boundary check" in text

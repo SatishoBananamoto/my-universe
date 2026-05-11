@@ -61,6 +61,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Archived the previous standalone parser under `caliber/.archive/2026-05-11/extract-calibrate-standalone-parser/` before committing the shared-importer wrapper in `caliber:102b294`.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (MCP config trust boundary)
+
+**Trigger:** The next `caliber` continuation task was MCP config auto-apply.
+**What it caught:** Directly editing the real `~/.mcp.json` during implementation would cross the user's live-tooling boundary. The safe product change was a tested helper that can install into a chosen path and keeps backups.
+**What changed:** Added `caliber mcp-config` with print and `--install` modes, tested install against a temp config, and did not touch the live MCP config while producing `caliber:4c4a781`.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.
