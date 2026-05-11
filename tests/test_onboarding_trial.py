@@ -198,3 +198,12 @@ def test_onboarding_trial_records_portfolio_alignment_result():
     assert "PROJECT_NAME_WIDTH" in text
     assert "BRANCH_WIDTH" in text
     assert "79 tests" in text
+
+
+def test_onboarding_trial_records_scroll_quality_gate_result():
+    """The scroll continuation should record quality-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: scroll deposit quality gate" in text
+    assert "scroll:8c20946" in text
+    assert "--no-quality-check" in text
+    assert "129 tests" in text

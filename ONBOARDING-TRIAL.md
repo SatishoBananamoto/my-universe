@@ -285,6 +285,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: scroll deposit quality gate
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/scroll` — inspect and harden the uncommitted engram deposit quality-gate slice
+**Prediction before work:** The dirty `scroll` slice would be intentional quality-gate work rather than cleanup noise, but CLI behavior would need a consequence check before committing.
+**Interrupt used:** Read-before-cleaning and CLI consequence check.
+**What changed because of the interrupt:** The slice did not blindly commit the existing diff. It separated quality rejections from real system errors, fixed misleading CLI skipped-entry output, added `scroll deposit --no-quality-check` for deliberate backfills, and normalized duplicate matching through the existing title normalizer.
+**Work completed:** `scroll:8c20946` added `CODEX.md`/`.graft`, hardened `scroll/deposit.py` and `scroll/cli.py`, updated README deposit docs, and added unit/CLI regression coverage.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 129 tests in `scroll`; `git diff --check` passed before commit; `git push` advanced `main` from `f44dea2` to `8c20946`.
+**No-deletion check:** Confirmed. No files were removed; no archive needed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
