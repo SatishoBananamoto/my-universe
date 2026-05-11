@@ -263,3 +263,13 @@ def test_onboarding_trial_records_chat_exporter_zero_commit_result():
     assert "chat-exporter:397c735" in text
     assert "exported chat markdown remains local" in text
     assert "15 tests" in text
+
+
+def test_onboarding_trial_records_claude_owns_this_audit_output_result():
+    """The Claude-owns-this continuation should record generated-output evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: Claude-owns-this audit-output hygiene" in text
+    assert "Claude-owns-this:9c94bf7" in text
+    assert ".svx-audit/" in text
+    assert "731 tests" in text
+    assert "No files were removed" in text

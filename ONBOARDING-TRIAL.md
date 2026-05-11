@@ -383,6 +383,20 @@ Fail if any of these happen:
 **Outcome:** partial pass: local baseline committed; push intentionally blocked until export privacy is decided.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-11 — Continuation Result: Claude-owns-this audit-output hygiene
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/Claude-owns-this` — inspect generated `.svx-audit/` dirt and clean repo status without deleting audit evidence
+**Prediction before work:** The untracked `.svx-audit/audit.jsonl` would be generated command-audit output and should be ignored, not committed or deleted.
+**Interrupt used:** Read-before-cleaning and no-deletion/generated-output check.
+**What changed because of the interrupt:** The audit log was read before action. The fix added `.svx-audit/` to `.gitignore`, preserving the local file while removing it from normal git status.
+**Work completed:** `Claude-owns-this:9c94bf7` added the ignore rule and pushed branch `claude/rebuild-v2` to origin.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 731 tests; `python3 -B -m compileall tools` passed; `git diff --check` passed before commit; final status had only ignored generated folders.
+**No-deletion check:** Confirmed. No files were removed; generated audit output remains local and ignored.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude-owns-this content files were not edited.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
