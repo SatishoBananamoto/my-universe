@@ -253,3 +253,13 @@ def test_onboarding_trial_records_forge_zero_commit_result():
     assert "forge:f2b3bb2" in text
     assert "no configured remote" in text
     assert "11 tests" in text
+
+
+def test_onboarding_trial_records_chat_exporter_zero_commit_result():
+    """The chat-exporter continuation should record export privacy evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: chat-exporter zero-commit rescue" in text
+    assert "chat-exporter:6bd0bdd" in text
+    assert "chat-exporter:397c735" in text
+    assert "exported chat markdown remains local" in text
+    assert "15 tests" in text
