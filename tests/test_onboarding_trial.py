@@ -153,3 +153,12 @@ def test_onboarding_trial_records_profile_stats_result():
     assert "SatishoBananamoto:db4da6b" in text
     assert "34k+ source lines" in text
     assert "Source-of-truth check" in text
+
+
+def test_onboarding_trial_records_kvsecure_live_qa_result():
+    """The kvsecure live QA continuation should record browser evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: kvsecure.com live browser QA" in text
+    assert "kvsecure.com:4b58ba5" in text
+    assert "denied-clipboard fallback" in text
+    assert "node /tmp/codex-kvsecure-live-qa/interaction-qa.js" in text
