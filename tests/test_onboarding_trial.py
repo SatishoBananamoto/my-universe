@@ -135,3 +135,12 @@ def test_onboarding_trial_records_analysis_readme_result():
     assert "analysis:fe6e352" in text
     assert "AI-agent dependency-risk reports" in text
     assert "Repo-selection and verification-boundary check" in text
+
+
+def test_onboarding_trial_records_kvsecure_readme_result():
+    """The kvsecure continuation should record product-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: kvsecure.com README orientation" in text
+    assert "kvsecure.com:5e3f0b0" in text
+    assert "stale-claim search" in text
+    assert "Product-boundary and visual-verification check" in text

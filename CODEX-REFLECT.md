@@ -82,6 +82,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Skipped dirty/high-risk/blocked repos, added a root orientation README to `analysis:fe6e352`, and verified referenced files instead of forcing a code change.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (site visual boundary)
+
+**Trigger:** `kvsecure.com` was clean and missing a root README, but `.graft` listed live browser visual review as the true open deployment check.
+**What it caught:** A docs-only slice must not claim visual QA or GitHub Pages verification. The safe work was repo orientation plus preserving product-claim boundaries.
+**What changed:** Added `kvsecure.com:5e3f0b0` README with story, stale-claim cautions, local verification, and cache-busted live-check guidance while leaving the actual browser review open.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.
