@@ -47,9 +47,9 @@ and runtime process lanes separate until evidence says they should merge.
 ## Current State
 
 - Repo state before this lane was added: `main` clean and 1 commit ahead of `origin/main`.
-- Current Codex/Kai lane state: latest in-repo verification passed with 73 tests.
+- Current Codex/Kai lane state: latest in-repo verification passed with 75 tests.
 - Current publish state before this continuation-gate slice: MY UNIVERSE `main` aligned with `origin/main`; `caliber` `master` aligned with `origin/master`.
-- External field session state: `caliber` commit `7e390bd` pushed with 98 tests passing; fresh-agent trial commit `439b4b8` pushed with 98 tests passing; multi-agent hardening commit `45ea13d` pushed with 101 tests passing; import cleanup commit `102b294` pushed with 103 tests passing; MCP config helper commit `4c4a781` pushed with 105 tests passing; first-user tutorial commit `64464ad` pushed with 105 tests passing; analysis README commit `fe6e352` pushed with link/file checks passing; kvsecure README commit `5e3f0b0` pushed with `node --check` and stale-claim checks passing; profile stats commit `db4da6b` pushed with diff hygiene passing; kvsecure live QA commits through `4b58ba5` pushed with live Chromium QA and focused interaction smoke passing; AI-Agents-Failure-Modes commit `a1ac245` pushed with 32 tests, CLI fixture smoke, and GitHub Actions run `25700134343` passing.
+- External field session state: `caliber` commit `7e390bd` pushed with 98 tests passing; fresh-agent trial commit `439b4b8` pushed with 98 tests passing; multi-agent hardening commit `45ea13d` pushed with 101 tests passing; import cleanup commit `102b294` pushed with 103 tests passing; MCP config helper commit `4c4a781` pushed with 105 tests passing; first-user tutorial commit `64464ad` pushed with 105 tests passing; analysis README commit `fe6e352` pushed with link/file checks passing; kvsecure README commit `5e3f0b0` pushed with `node --check` and stale-claim checks passing; profile stats commit `db4da6b` pushed with diff hygiene passing; kvsecure live QA commits through `4b58ba5` pushed with live Chromium QA and focused interaction smoke passing; AI-Agents-Failure-Modes commit `a1ac245` pushed with 32 tests, CLI fixture smoke, and GitHub Actions run `25700134343` passing; profile commit `ff3dc84` pushed with ICIF verifier row and refreshed 8-tool stats.
 - Engram is available through native Codex MCP tools.
 - `PRISM.md` priority has enough field evidence for a REVIEW update; external user validation remains a separate product/adoption question.
 - The completed field tests now cover Claude-originated MY UNIVERSE discipline running through Codex/Kai runtime surfaces inside this repo and in connected `caliber` work.
@@ -112,6 +112,7 @@ Success evidence:
 - [x] Continue into clean profile README stats correction and record portfolio evidence in `ONBOARDING-TRIAL.md`.
 - [x] Continue into `kvsecure.com` live browser QA and record deployment/interactivity evidence in `ONBOARDING-TRIAL.md`.
 - [x] Continue into `AI-Agents-Failure-Modes` API-test hardening and record transport-boundary evidence in `ONBOARDING-TRIAL.md`.
+- [x] Continue into MY UNIVERSE portfolio registry and profile consistency, then record the refreshed 8-tool evidence in `ONBOARDING-TRIAL.md`.
 - [ ] Continue — run the next transfer or connected-project field session and record evidence here.
 
 ## Field Notes

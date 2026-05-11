@@ -62,6 +62,11 @@ PROJECTS = {
         "type": "cli-tool",
         "pypi": "mcp-probe",
     },
+    "ai-agents-failure-modes": {
+        "path": HOME / "AI-Agents-Failure-Modes",
+        "description": "Deterministic epistemic verifier",
+        "type": "api-and-cli",
+    },
 }
 
 

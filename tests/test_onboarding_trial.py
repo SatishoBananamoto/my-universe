@@ -171,3 +171,12 @@ def test_onboarding_trial_records_ai_agents_api_test_result():
     assert "AI-Agents-Failure-Modes:a1ac245" in text
     assert "transport-independent" in text
     assert "32 tests" in text
+
+
+def test_onboarding_trial_records_portfolio_registry_result():
+    """The portfolio continuation should record source-of-truth evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: portfolio registry/profile consistency" in text
+    assert "SatishoBananamoto:ff3dc84" in text
+    assert "35,815 source lines" in text
+    assert "ai-agents-failure-modes" in text
