@@ -216,3 +216,12 @@ def test_onboarding_trial_records_probe_tracking_result():
     assert "probe:7a26654" in text
     assert "DOSSIER.md" in text
     assert "95 tests" in text
+
+
+def test_onboarding_trial_records_svx_audit_path_result():
+    """The svx continuation should record safety-layer repair evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx audit-path isolation" in text
+    assert "svx:01eb6d2" in text
+    assert "SVX_AUDIT_DIR" in text
+    assert "66 tests" in text

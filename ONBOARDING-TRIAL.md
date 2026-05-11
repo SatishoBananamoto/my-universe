@@ -313,6 +313,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: svx audit-path isolation
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx` — verify the tracker-only dirty state and repair any reality drift
+**Prediction before work:** The new `SENTINEL.md` would be stale about test health, and running tests before committing would expose whether the old flaky-test warning was still real.
+**Interrupt used:** Tracker-reality and safety-layer seed-cause check.
+**What changed because of the interrupt:** The slice moved from tracker cleanup into a real fix after `tests/test_server.py` failed because MCP assessment tools wrote audit logs to `~/.svx-audit`, which is not writable in this sandbox.
+**Work completed:** `svx:01eb6d2` added shared audit-dir resolution with `SVX_AUDIT_DIR`, `/tmp/svx-audit` fallback, server/CLI audit-path alignment, isolated MCP server tests, a package-version regression, `SENTINEL.md`, `.graft`, and docs/review updates.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 66 tests; `python3 -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `dc4f99a` to `01eb6d2`.
+**No-deletion check:** Confirmed. No files were removed; no archive needed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
