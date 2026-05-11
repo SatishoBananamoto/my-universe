@@ -30,7 +30,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `kvsecure.com:5e3f0b0`, which added a root README preserving the site story, boundaries, and verification checklist.
 - Continued into `SatishoBananamoto:db4da6b`, which refreshed profile README stats from the current portfolio health output.
 - Continued into `kvsecure.com:4b58ba5`, which completed live browser QA, fixed clipboard fallback and feedback-card heading spacing, then recorded the Pages verification evidence.
-- Continued into `AI-Agents-Failure-Modes:a1ac245`, which made API tests transport-independent after `TestClient` requests hung in this sandbox, then verified 32 tests and the CLI fixture smoke.
+- Continued into `AI-Agents-Failure-Modes:a1ac245`, which made API tests transport-independent after `TestClient` requests hung in this sandbox, then verified 32 tests, the CLI fixture smoke, and passing GitHub Actions run `25700134343`.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -86,7 +86,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from analysis into clean site docs slice — 2026-05-11 · `kvsecure.com:5e3f0b0`, `node --check` and stale-claim checks passing
 - [x] Continue from kvsecure into profile stats correction — 2026-05-11 · `SatishoBananamoto:db4da6b`, diff hygiene passing
 - [x] Continue from profile into kvsecure live browser QA — 2026-05-11 · `kvsecure.com:4b58ba5`, live Chromium QA and focused interaction smoke passing
-- [x] Continue from kvsecure QA into AI-Agents-Failure-Modes test hardening — 2026-05-11 · `AI-Agents-Failure-Modes:a1ac245`, 32 tests and CLI smoke passing
+- [x] Continue from kvsecure QA into AI-Agents-Failure-Modes test hardening — 2026-05-11 · `AI-Agents-Failure-Modes:a1ac245`, 32 tests, CLI smoke, and GitHub Actions run `25700134343` passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

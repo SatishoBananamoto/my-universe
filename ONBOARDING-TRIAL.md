@@ -167,7 +167,7 @@ Fail if any of these happen:
 **Interrupt used:** Verification-boundary and seed-cause check.
 **What changed because of the interrupt:** The slice did not touch the verifier engine. It first isolated the hang to `client.get("/healthz")`, then changed only `tests/test_api.py` to assert route registration and call `healthz()` / `verify_endpoint()` directly.
 **Work completed:** `AI-Agents-Failure-Modes:a1ac245` made the API tests transport-independent after rebasing over remote v0.3 ledger-integrity work.
-**Verification:** `timeout 25s python3 -B -m pytest -q -p no:cacheprovider` passed with 32 tests; `python3 -B -m app.cli tests/fixtures/pass_basic.json` returned `"pass": true`; `git diff --check` passed before commit.
+**Verification:** `timeout 25s python3 -B -m pytest -q -p no:cacheprovider` passed with 32 tests; `python3 -B -m app.cli tests/fixtures/pass_basic.json` returned `"pass": true`; `git diff --check` passed before commit; GitHub Actions `verifier-ci` run `25700134343` completed successfully after push.
 **No-deletion check:** Confirmed. No files were removed.
 **Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
 **Outcome:** pass.
