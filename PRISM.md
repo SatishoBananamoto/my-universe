@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-11 — Added recursive continuation gate and xhigh reviewer path
-**Repo**: Main branch aligned with `origin/main` before this continuation-gate slice. Last verified locally with 63 tests passing.
+**Last session**: 2026-05-11 — Ran first fresh-agent onboarding trial against caliber
+**Repo**: Main branch aligned with `origin/main` before recording the caliber onboarding trial. Last verified locally with 64 tests passing.
 
 ---
 
@@ -21,6 +21,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - `REVIEW.md` now has a dated field-validation update: grade moves from B- to B, with external adoption still unproven.
 - `ONBOARDING-TRIAL.md` now defines the next transfer-validation protocol with no-deletion/archive and continuation constraints.
 - `CONTINUATION-GATE.md` now defines how `Continue` becomes the next task list instead of a stopping point.
+- First fresh-agent trial ran against `caliber` and produced `caliber:439b4b8`.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -67,7 +68,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Codex/Kai field session 2: caliber trajectory tracking drift fixed — 2026-05-10 · `caliber:7e390bd`, 98 tests passing
 - [x] After 3 field sessions: assess whether calibration/thinking improved outcomes (3/3 done; external user validation remains separate)
 - [x] Update REVIEW.md with field validation results — 2026-05-10 · added dated validation update without rewriting the original v1 review
-- [ ] Run `ONBOARDING-TRIAL.md` with a fresh agent or external user
+- [x] Run `ONBOARDING-TRIAL.md` with a fresh agent or external user — 2026-05-11 · Hypatia subagent fixed `caliber/CLAUDE.md`, `caliber:439b4b8`, 98 tests passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

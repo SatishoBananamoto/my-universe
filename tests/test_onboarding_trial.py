@@ -28,6 +28,7 @@ def test_onboarding_trial_has_required_sections():
         "## Required Run",
         "## Pass / Fail Rubric",
         "## Trial Record Template",
+        "## Trial Records",
         "## Continue",
     ]
     for section in required:
@@ -80,3 +81,12 @@ def test_full_brief_respects_reflection_lane_boundary():
     """Session briefs should not nudge Codex/Kai work into Claude REFLECT.md."""
     text = brief.generate_brief()
     assert "REFLECT.md or CODEX-REFLECT.md only for the owning lane" in text
+
+
+def test_onboarding_trial_records_first_fresh_agent_trial():
+    """The first fresh-agent trial should be recorded with evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Fresh-Agent Trial: caliber CLAUDE snapshot drift" in text
+    assert "caliber:439b4b8" in text
+    assert "Next continuation task:" in text
+    assert "Continue" in text

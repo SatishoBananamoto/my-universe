@@ -40,6 +40,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Added `CONTINUATION-GATE.md`, taught `tools/next.py --task-list` to emit a review-gate task list, added tests for review-gate and recursive Continue behavior, and kept Claude's historical reflection data separate.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (unattended onboarding trial)
+
+**Trigger:** Satish said he would not be there and did not need stopping updates.
+**What it caught:** The next task list included people-domain calibration verification, but those predictions require Satish. Continuing by forcing them would fabricate evidence. The viable unattended path was a fresh-agent connected-project trial.
+**What changed:** Used the continuation gate to skip blocked people predictions, ran a fresh subagent trial against clean `caliber`, and recorded the result in `ONBOARDING-TRIAL.md` instead of Claude's historical files.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.

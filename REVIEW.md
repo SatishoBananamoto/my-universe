@@ -11,19 +11,19 @@
 ## Field Validation Update — 2026-05-10
 
 **Reviewer**: Codex/Kai lane, using repo evidence and connected-project field work
-**Version Reviewed**: MY UNIVERSE with 63 passing tests; connected `caliber` field slice at `7e390bd` with 98 passing tests
-**Updated Grade: B** — The original B- blockers are partly closed. The system now has automated tests and has changed behavior during real repo work. It still has not proven external human adoption or long-term statistical strength.
+**Version Reviewed**: MY UNIVERSE with 64 passing tests; connected `caliber` field slices at `7e390bd` and `439b4b8` with 98 passing tests
+**Updated Grade: B** — The original B- blockers are partly closed. The system now has automated tests, has changed behavior during real repo work, and has one fresh-agent transfer trial. It still has not proven external human adoption or long-term statistical strength.
 
 ### Evidence Since v1
 
-1. **Zero-tests blocker reduced.** `tests/run_all.py` now passes with 63 tests, including validator coverage for malformed calibration entries, duplicate IDs, out-of-order historical IDs, strict gap auditing, status-template regression coverage, active reflection lane coverage, Codex reflection validation, recursive continuation-gate coverage, lane-boundary brief coverage, and the onboarding-trial protocol.
+1. **Zero-tests blocker reduced.** `tests/run_all.py` now passes with 64 tests, including validator coverage for malformed calibration entries, duplicate IDs, out-of-order historical IDs, strict gap auditing, status-template regression coverage, active reflection lane coverage, Codex reflection validation, recursive continuation-gate coverage, lane-boundary brief coverage, and the onboarding-trial protocol.
 2. **Real-work blocker reduced.** The system was used on actual repo work in MY UNIVERSE and `caliber`. In both cases, it changed the action taken: fix the validator's file-order assumption instead of rewriting history, and fix `caliber` tracking drift instead of rebuilding trajectory support that already existed.
 3. **Portability is plausible, not finished.** Codex/Kai carried the three-layer model through `AGENTS.md`, skills, Engram lookup, and completion checks without writing Codex data into Claude's `CALIBRATE.md` or `REFLECT.md`.
-4. **External validation remains open.** This is still mostly self/near-self use across Satish's local trust-stack projects. `ONBOARDING-TRIAL.md` now defines the transfer test, but a stranger or fresh-agent run has not happened yet.
+4. **Transfer validation has started.** This is still mostly self/near-self use across Satish's local trust-stack projects, but `ONBOARDING-TRIAL.md` now records one fresh-agent run: Hypatia corrected stale `caliber/CLAUDE.md` state without editing Claude's historical reflection data. External human validation remains open.
 
 ### Updated Recommendation
 
-Keep the grade at B until the system survives an external user or fresh-agent trial. The next useful test is not more self-referential tooling; it is a constrained onboarding run where a new agent or user follows `MANIFEST.md`, `WARMUP.md`, and `THINK.md`, then records whether the system changed a real engineering decision.
+Keep the grade at B until the system survives repeated fresh-agent runs or an external human user. The next useful test is not more self-referential tooling; it is another constrained real-engineering run where the system must change an implementation or verification decision and leave auditable evidence.
 
 ---
 

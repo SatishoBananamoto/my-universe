@@ -101,6 +101,22 @@ Fail if any of these happen:
 **Next continuation task:** <specific next task>
 ```
 
+## Trial Records
+
+### 2026-05-11 — Fresh-Agent Trial: caliber CLAUDE snapshot drift
+
+**Participant:** Hypatia subagent
+**Target repo/task:** `/home/satishocoin/caliber` — correct stale `CLAUDE.md` project snapshot
+**Prediction before work:** `python3 -B -m pytest -q -p no:cacheprovider` would pass with 98 tests; confidence 80%; result correct.
+**Interrupt used:** THINK-style pre-edit interrupt.
+**What changed because of the interrupt:** The participant avoided code or meta-process changes and narrowed the slice to an additive doc correction preserving historical text.
+**Work completed:** `caliber:439b4b8` updated `CLAUDE.md` with a 2026-05-11 current reality check and superseded the old PyPI/local-only claim.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 98 tests; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. The caliber diff was 13 additions, 0 deletions; no archive needed.
+**Historical data boundary:** Confirmed. No edits to Claude `CALIBRATE.md` or `REFLECT.md`; Codex/Kai evidence recorded in this trial lane.
+**Outcome:** pass.
+**Next continuation task:** Add a focused multi-agent workflow regression in `caliber`, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
