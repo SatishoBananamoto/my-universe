@@ -117,6 +117,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Add a focused multi-agent workflow regression in `caliber`, then Continue.
 
+### 2026-05-11 — Continuation Result: caliber multi-agent workflow hardening
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/caliber` — add focused multi-agent workflow regression
+**Prediction before work:** A CLI shared-store regression would pass for ordinary agent names, but storage needed inspection before calling the multi-agent boundary proven.
+**Interrupt used:** THINK/Kai-SDLC seed-cause check.
+**What changed because of the interrupt:** The slice widened from test-only to causal hardening after `FileStorage` showed a lossy name sanitizer that could collide distinct agent names into the same JSON file.
+**Work completed:** `caliber:45ea13d` added URL-safe agent filenames with legacy sanitized-file load fallback, storage collision tests, and a CLI regression proving two agents in one store produce separate Trust Cards.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 101 tests; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed; legacy storage files are loaded, not deleted.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

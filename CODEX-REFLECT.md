@@ -47,6 +47,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Used the continuation gate to skip blocked people predictions, ran a fresh subagent trial against clean `caliber`, and recorded the result in `ONBOARDING-TRIAL.md` instead of Claude's historical files.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (multi-agent storage boundary)
+
+**Trigger:** The next continuation task looked like a test-only `caliber` regression.
+**What it caught:** The public CLI path could prove ordinary two-agent separation, but `FileStorage` still used a lossy sanitizer where distinct names such as space and slash variants could collide into one JSON file.
+**What changed:** Widened the slice from test-only to causal hardening: URL-safe agent filenames, legacy sanitized-file load fallback, CLI shared-store regression, and storage collision tests in `caliber:45ea13d`.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.

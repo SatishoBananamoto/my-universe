@@ -90,3 +90,12 @@ def test_onboarding_trial_records_first_fresh_agent_trial():
     assert "caliber:439b4b8" in text
     assert "Next continuation task:" in text
     assert "Continue" in text
+
+
+def test_onboarding_trial_records_caliber_continuation_result():
+    """The onboarding continuation should record the connected-project result."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: caliber multi-agent workflow hardening" in text
+    assert "caliber:45ea13d" in text
+    assert "101 tests" in text
+    assert "No-deletion check" in text
