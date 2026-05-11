@@ -225,3 +225,12 @@ def test_onboarding_trial_records_svx_audit_path_result():
     assert "svx:01eb6d2" in text
     assert "SVX_AUDIT_DIR" in text
     assert "66 tests" in text
+
+
+def test_onboarding_trial_records_vigil_baseline_result():
+    """The vigil continuation should record generated-artifact caution."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: vigil baseline triage" in text
+    assert "vigil:ff5f768" in text
+    assert "validation/results.json" in text
+    assert "115 tests" in text

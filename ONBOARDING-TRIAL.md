@@ -327,6 +327,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: vigil baseline triage
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/vigil` — inspect tracker edits and generated validation results before committing
+**Prediction before work:** The `Craft.md` tracker update would be mostly useful, but `validation/results.json` would need a separate freshness check before promotion because it is live-data output.
+**Interrupt used:** Generated-artifact boundary and source-of-truth check.
+**What changed because of the interrupt:** The generated validation file was not committed. It was identified as stale March 27 output whose colorama expectation contradicts current `validation/validate.py`, so the verified slice stayed limited to tracker adoption and version metadata.
+**Work completed:** `vigil:ff5f768` added `.graft`, updated Craft with reconstructed Session 4 and validation-artifact hygiene, synced `vigil.__version__` to `0.2.3`, and added a package-version regression test.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 115 tests; `python3 -m compileall src tests validation` passed; `git diff --check` passed before commit; `git push` advanced `main` from `67619ea` to `ff5f768`.
+**No-deletion check:** Confirmed. No files were removed; no archive needed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** partial pass: verified code/tracker slice pushed; `validation/results.json` remains intentionally uncommitted until a fresh authenticated validation run.
+**Next continuation task:** Run fresh validation for `vigil` when network/GitHub auth is available, or choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
