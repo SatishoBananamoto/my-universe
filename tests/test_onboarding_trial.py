@@ -99,3 +99,12 @@ def test_onboarding_trial_records_caliber_continuation_result():
     assert "caliber:45ea13d" in text
     assert "101 tests" in text
     assert "No-deletion check" in text
+
+
+def test_onboarding_trial_records_caliber_import_cleanup_result():
+    """The import cleanup continuation should record archive evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: caliber CALIBRATE import cleanup" in text
+    assert "caliber:102b294" in text
+    assert "103 tests" in text
+    assert ".archive/2026-05-11/extract-calibrate-standalone-parser/" in text

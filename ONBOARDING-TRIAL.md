@@ -131,6 +131,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: caliber CALIBRATE import cleanup
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/caliber` — clean up `extract_calibrate_md.py` by using the maintained import path
+**Prediction before work:** The active script duplicated parser logic that should move behind `caliber.importer`, but the old implementation should be preserved instead of discarded.
+**Interrupt used:** No-deletion/archive-first check.
+**What changed because of the interrupt:** The previous standalone parser was archived under `.archive/2026-05-11/extract-calibrate-standalone-parser/` before the active wrapper was simplified.
+**Work completed:** `caliber:102b294` converted `extract_calibrate_md.py` into a compatibility wrapper around `import_calibrate_md`, added CLI import coverage, added wrapper tests, updated README/GAUGE/CLAUDE/REVIEW, and preserved the old parser in archive.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 103 tests; `python3 -m compileall extract_calibrate_md.py caliber tests` passed; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed; the displaced parser implementation was archived with `MANIFEST.md`.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

@@ -54,6 +54,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Widened the slice from test-only to causal hardening: URL-safe agent filenames, legacy sanitized-file load fallback, CLI shared-store regression, and storage collision tests in `caliber:45ea13d`.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (archive before cleanup)
+
+**Trigger:** The next `caliber` continuation task was to clean up `extract_calibrate_md.py`.
+**What it caught:** Replacing the duplicate parser in the active script would remove history-bearing code unless the old standalone implementation was preserved elsewhere.
+**What changed:** Archived the previous standalone parser under `caliber/.archive/2026-05-11/extract-calibrate-standalone-parser/` before committing the shared-importer wrapper in `caliber:102b294`.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.

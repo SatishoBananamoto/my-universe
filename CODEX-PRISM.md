@@ -47,9 +47,9 @@ and runtime process lanes separate until evidence says they should merge.
 ## Current State
 
 - Repo state before this lane was added: `main` clean and 1 commit ahead of `origin/main`.
-- Current Codex/Kai lane state: latest in-repo verification passed with 65 tests.
+- Current Codex/Kai lane state: latest in-repo verification passed with 66 tests.
 - Current publish state before this continuation-gate slice: MY UNIVERSE `main` aligned with `origin/main`; `caliber` `master` aligned with `origin/master`.
-- External field session state: `caliber` commit `7e390bd` pushed with 98 tests passing; fresh-agent trial commit `439b4b8` pushed with 98 tests passing; multi-agent hardening commit `45ea13d` pushed with 101 tests passing.
+- External field session state: `caliber` commit `7e390bd` pushed with 98 tests passing; fresh-agent trial commit `439b4b8` pushed with 98 tests passing; multi-agent hardening commit `45ea13d` pushed with 101 tests passing; import cleanup commit `102b294` pushed with 103 tests passing.
 - Engram is available through native Codex MCP tools.
 - `PRISM.md` priority has enough field evidence for a REVIEW update; external user validation remains a separate product/adoption question.
 - The completed field tests now cover Claude-originated MY UNIVERSE discipline running through Codex/Kai runtime surfaces inside this repo and in connected `caliber` work.
@@ -104,6 +104,7 @@ Success evidence:
 - [x] Add `CONTINUATION-GATE.md` so recursive Continue and optional xhigh review are inspectable.
 - [x] Run first fresh-agent onboarding trial against `caliber` and record evidence in `ONBOARDING-TRIAL.md`.
 - [x] Continue the trial into `caliber` multi-agent CLI hardening and record evidence in `ONBOARDING-TRIAL.md`.
+- [x] Continue into `caliber` CALIBRATE import cleanup and record archive/no-deletion evidence in `ONBOARDING-TRIAL.md`.
 - [ ] Continue — run the next transfer or connected-project field session and record evidence here.
 
 ## Field Notes
