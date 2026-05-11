@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-11 — Added caliber first-user tutorial
-**Repo**: Main branch aligned with `origin/main` before recording the caliber tutorial continuation. Last verified locally with 68 tests passing.
+**Last session**: 2026-05-11 — Added analysis repo README orientation
+**Repo**: Main branch aligned with `origin/main` before recording the analysis README continuation. Last verified locally with 69 tests passing.
 
 ---
 
@@ -26,6 +26,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued again into `caliber:102b294`, which archived the old standalone parser and moved the active CALIBRATE import wrapper onto the shared importer.
 - Continued into `caliber:4c4a781`, which added a safe `caliber mcp-config` helper that prints or installs MCP config entries with backups.
 - Continued into `caliber:64464ad`, which added `GETTING_STARTED.md` for first external users and linked it from README.
+- Continued into `analysis:fe6e352`, which added a root README for the AI-agent dependency-risk report without touching dirty/high-risk repos.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -77,6 +78,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from multi-agent hardening into `caliber` import cleanup — 2026-05-11 · `caliber:102b294`, 103 tests passing
 - [x] Continue from import cleanup into `caliber` MCP config helper — 2026-05-11 · `caliber:4c4a781`, 105 tests passing
 - [x] Continue from MCP config helper into `caliber` first-user tutorial — 2026-05-11 · `caliber:64464ad`, 105 tests passing
+- [x] Continue from caliber into clean portfolio docs slice — 2026-05-11 · `analysis:fe6e352`, link/file checks passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

@@ -126,3 +126,12 @@ def test_onboarding_trial_records_caliber_tutorial_result():
     assert "caliber:64464ad" in text
     assert "GETTING_STARTED.md" in text
     assert "Account-boundary check" in text
+
+
+def test_onboarding_trial_records_analysis_readme_result():
+    """The analysis continuation should record repo-selection evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: analysis README orientation" in text
+    assert "analysis:fe6e352" in text
+    assert "AI-agent dependency-risk reports" in text
+    assert "Repo-selection and verification-boundary check" in text
