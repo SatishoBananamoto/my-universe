@@ -70,6 +70,10 @@ PROJECTS = {
 }
 
 
+PROJECT_NAME_WIDTH = max(15, *(len(name) for name in PROJECTS))
+BRANCH_WIDTH = 30
+
+
 def run_cmd(cmd: list[str], cwd: Path, timeout: int = 10) -> tuple[bool, str]:
     """Run a command and return (success, output)."""
     try:
@@ -225,15 +229,15 @@ def check_source(path: Path) -> dict:
 def format_quick(name: str, project: dict) -> str:
     """Quick one-line status."""
     if not check_exists(project):
-        return f"  {name:<15} MISSING"
+        return f"  {name:<{PROJECT_NAME_WIDTH}} MISSING"
 
     git = check_git_state(project["path"])
     if not git["is_repo"]:
-        return f"  {name:<15} exists (not a git repo)"
+        return f"  {name:<{PROJECT_NAME_WIDTH}} exists (not a git repo)"
 
     clean_marker = "clean" if git["clean"] else "DIRTY"
     days = f"{git['days_since']}d ago" if git["days_since"] is not None else "?"
-    return f"  {name:<15} {git['branch']:<10} {clean_marker:<8} {days:<10} {git['commit_count']} commits"
+    return f"  {name:<{PROJECT_NAME_WIDTH}} {git['branch']:<{BRANCH_WIDTH}} {clean_marker:<8} {days:<10} {git['commit_count']} commits"
 
 
 def format_full(name: str, project: dict) -> str:
@@ -316,8 +320,8 @@ def main():
 
     if args.quick:
         print()
-        print(f"  {'Project':<15} {'Branch':<10} {'State':<8} {'Activity':<10} Commits")
-        print(f"  {'-'*15} {'-'*10} {'-'*8} {'-'*10} {'-'*7}")
+        print(f"  {'Project':<{PROJECT_NAME_WIDTH}} {'Branch':<{BRANCH_WIDTH}} {'State':<8} {'Activity':<10} Commits")
+        print(f"  {'-'*PROJECT_NAME_WIDTH} {'-'*BRANCH_WIDTH} {'-'*8} {'-'*10} {'-'*7}")
         for name, project in PROJECTS.items():
             print(format_quick(name, project))
     else:

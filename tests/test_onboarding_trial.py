@@ -189,3 +189,12 @@ def test_onboarding_trial_records_analysis_report_index_result():
     assert "analysis:15a563c" in text
     assert "46 report files" in text
     assert "missing []" in text
+
+
+def test_onboarding_trial_records_portfolio_alignment_result():
+    """The portfolio alignment continuation should record the regression fix."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: portfolio quick-table alignment" in text
+    assert "PROJECT_NAME_WIDTH" in text
+    assert "BRANCH_WIDTH" in text
+    assert "79 tests" in text
