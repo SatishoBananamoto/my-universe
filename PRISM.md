@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-11 — Recorded Claude-owns-this audit-output hygiene
-**Repo**: Recording the `Claude-owns-this:9c94bf7` connected-project continuation. Last verified locally with 87 tests passing.
+**Last session**: 2026-05-11 — Recorded svx-playground audit-output hygiene
+**Repo**: Recording the `svx-playground:4507700` connected-project continuation. Last verified locally with 88 tests passing.
 
 ---
 
@@ -42,6 +42,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `forge:f2b3bb2`, which converted an uncommitted resume-tailoring project into a local tested baseline while blocking push until the private remote boundary is explicit.
 - Continued into `chat-exporter:397c735`, which converted an uncommitted local chat-export CLI into a tested local baseline while blocking push until exported conversation privacy is decided.
 - Continued into `Claude-owns-this:9c94bf7`, which ignored generated `.svx-audit/` output after reading it and verified the large legacy test suite before push.
+- Continued into `svx-playground:4507700`, which ignored generated `.svx-audit/` output and documented the tracked `.env` fixture caveat without deleting or untracking it.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -109,6 +110,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from nexus pulse guard into Forge zero-commit rescue — 2026-05-11 · `forge:f2b3bb2`, 11 tests passing, no remote configured
 - [x] Continue from Forge zero-commit rescue into chat-exporter zero-commit rescue — 2026-05-11 · `chat-exporter:397c735`, 15 tests passing, no remote configured
 - [x] Continue from chat-exporter into Claude-owns-this audit-output hygiene — 2026-05-11 · `Claude-owns-this:9c94bf7`, 731 tests passing
+- [x] Continue from Claude-owns-this into svx-playground audit-output hygiene — 2026-05-11 · `svx-playground:4507700`, app smoke passing, no remote configured
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

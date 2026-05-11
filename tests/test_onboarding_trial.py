@@ -273,3 +273,13 @@ def test_onboarding_trial_records_claude_owns_this_audit_output_result():
     assert ".svx-audit/" in text
     assert "731 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_svx_playground_audit_output_result():
+    """The svx-playground continuation should record fixture-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx-playground audit-output hygiene" in text
+    assert "svx-playground:4507700" in text
+    assert "tracked `.env` fixture" in text
+    assert "python3 -B app.py" in text
+    assert "No files were removed" in text

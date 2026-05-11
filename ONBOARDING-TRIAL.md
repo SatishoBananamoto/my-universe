@@ -397,6 +397,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-11 — Continuation Result: svx-playground audit-output hygiene
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx-playground` — inspect generated `.svx-audit/` dirt and preserve the tracked-fixture boundary
+**Prediction before work:** The untracked `.svx-audit/audit.jsonl` would be generated SVX audit output, but the repo would also contain existing tracked fixture data that should not be deleted or untracked as drive-by cleanup.
+**Interrupt used:** Read-before-cleaning, no-deletion check, and tracked-fixture boundary check.
+**What changed because of the interrupt:** The audit log was read before action. The fix added `.svx-audit/` and cache ignores plus `.graft`, while documenting that the tracked `.env` fixture needs an explicit separate decision.
+**Work completed:** `svx-playground:4507700` added `.gitignore` and `.graft`; no remote exists, so no push was attempted.
+**Verification:** `python3 -B app.py` ran; `python3 -B -m compileall app.py` passed; `git diff --check` passed before commit; final status had only ignored generated folders.
+**No-deletion check:** Confirmed. No files were removed; tracked `.env` was not edited, deleted, or untracked.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; playground fixture content was not changed.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
