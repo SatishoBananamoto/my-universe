@@ -162,3 +162,12 @@ def test_onboarding_trial_records_kvsecure_live_qa_result():
     assert "kvsecure.com:4b58ba5" in text
     assert "denied-clipboard fallback" in text
     assert "node /tmp/codex-kvsecure-live-qa/interaction-qa.js" in text
+
+
+def test_onboarding_trial_records_ai_agents_api_test_result():
+    """The AI-Agents continuation should record transport-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: AI-Agents-Failure-Modes API test hardening" in text
+    assert "AI-Agents-Failure-Modes:a1ac245" in text
+    assert "transport-independent" in text
+    assert "32 tests" in text

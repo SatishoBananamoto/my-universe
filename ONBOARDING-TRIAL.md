@@ -159,6 +159,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: AI-Agents-Failure-Modes API test hardening
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/AI-Agents-Failure-Modes` — bound and fix the pytest hang before editing verifier behavior
+**Prediction before work:** The deterministic verifier tests would pass, but the previous full-suite hang would localize to the FastAPI `TestClient` transport path rather than the verifier rules.
+**Interrupt used:** Verification-boundary and seed-cause check.
+**What changed because of the interrupt:** The slice did not touch the verifier engine. It first isolated the hang to `client.get("/healthz")`, then changed only `tests/test_api.py` to assert route registration and call `healthz()` / `verify_endpoint()` directly.
+**Work completed:** `AI-Agents-Failure-Modes:a1ac245` made the API tests transport-independent after rebasing over remote v0.3 ledger-integrity work.
+**Verification:** `timeout 25s python3 -B -m pytest -q -p no:cacheprovider` passed with 32 tests; `python3 -B -m app.cli tests/fixtures/pass_basic.json` returned `"pass": true`; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ### 2026-05-11 — Continuation Result: kvsecure.com README orientation
 
 **Participant:** Codex/Kai continuation
