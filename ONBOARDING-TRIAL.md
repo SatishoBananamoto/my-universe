@@ -159,6 +159,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
 
+### 2026-05-11 — Continuation Result: caliber first-user tutorial
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/caliber` — prepare the first external-user onboarding path
+**Prediction before work:** The remaining external-adoption work could not honestly post or collect feedback without Satish or another user, but a concrete tutorial could remove the next adoption blocker.
+**Interrupt used:** Account-boundary check.
+**What changed because of the interrupt:** Added a first-user guide instead of pretending external validation had happened or posting from Satish's accounts.
+**Work completed:** `caliber:64464ad` added `GETTING_STARTED.md`, linked it from README, and updated GAUGE/REVIEW to distinguish tutorial readiness from actual external feedback.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 105 tests; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; Claude `CALIBRATE.md` and `REFLECT.md` remain untouched.
+**Outcome:** pass.
+**Next continuation task:** Use the continuation gate to choose the next non-blocked connected-project or repo-maintenance slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

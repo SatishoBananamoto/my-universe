@@ -117,3 +117,12 @@ def test_onboarding_trial_records_caliber_mcp_config_result():
     assert "caliber:4c4a781" in text
     assert "105 tests" in text
     assert "Trust-boundary check" in text
+
+
+def test_onboarding_trial_records_caliber_tutorial_result():
+    """The tutorial continuation should record adoption-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: caliber first-user tutorial" in text
+    assert "caliber:64464ad" in text
+    assert "GETTING_STARTED.md" in text
+    assert "Account-boundary check" in text

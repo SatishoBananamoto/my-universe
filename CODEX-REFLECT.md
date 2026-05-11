@@ -68,6 +68,13 @@ parse this file with `python3 tools/reflect.py --file CODEX-REFLECT.md`.
 **What changed:** Added `caliber mcp-config` with print and `--install` modes, tested install against a temp config, and did not touch the live MCP config while producing `caliber:4c4a781`.
 **Verdict:** useful
 
+### 2026-05-11 — Meta-Interrupt (external adoption boundary)
+
+**Trigger:** The next `caliber` continuation task was external adoption.
+**What it caught:** Writing and posting as Satish, or claiming external validation, would cross an account/user boundary. The unattended slice could only prepare the first-user path.
+**What changed:** Added `GETTING_STARTED.md` in `caliber:64464ad` and left actual posting, use, feedback, and adoption claims open for Satish or an external user.
+**Verdict:** useful
+
 ## Continue
 
 - [ ] Continue — use this file for Codex/Kai reflections when an interrupt changes behavior, then keep working from `PRISM.md`.
