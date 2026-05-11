@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-11 — Recorded nexus pulse continuation
-**Repo**: Recording the `nexus:486c2c5` connected-project continuation. Last verified locally with 84 tests passing.
+**Last session**: 2026-05-11 — Recorded Forge zero-commit rescue
+**Repo**: Recording the `forge:f2b3bb2` connected-project continuation. Last verified locally with 85 tests passing.
 
 ---
 
@@ -39,6 +39,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `svx:01eb6d2`, which fixed MCP server audit-path isolation, synced runtime version metadata, added SENTINEL/.graft tracking, and verified 66 svx tests before push.
 - Continued into `vigil:ff5f768`, which synced runtime version metadata, adopted Craft/.graft tracking, and left stale generated `validation/results.json` uncommitted pending fresh authenticated validation.
 - Continued into `nexus:486c2c5`, which guarded PULSE zero-commit reporting and pushed the existing local Claude-skill continuation commits.
+- Continued into `forge:f2b3bb2`, which converted an uncommitted resume-tailoring project into a local tested baseline while blocking push until the private remote boundary is explicit.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -103,6 +104,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from probe tracking baseline into svx audit-path isolation — 2026-05-11 · `svx:01eb6d2`, 66 tests passing
 - [x] Continue from svx audit-path isolation into vigil baseline triage — 2026-05-11 · `vigil:ff5f768`, 115 tests passing, validation artifact held back
 - [x] Continue from vigil baseline triage into nexus pulse guard — 2026-05-11 · `nexus:486c2c5`, 2 tests passing
+- [x] Continue from nexus pulse guard into Forge zero-commit rescue — 2026-05-11 · `forge:f2b3bb2`, 11 tests passing, no remote configured
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

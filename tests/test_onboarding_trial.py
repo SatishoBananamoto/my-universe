@@ -243,3 +243,13 @@ def test_onboarding_trial_records_nexus_pulse_result():
     assert "nexus:486c2c5" in text
     assert "zero-commit repo attention" in text
     assert "2 tests" in text
+
+
+def test_onboarding_trial_records_forge_zero_commit_result():
+    """The Forge continuation should record zero-commit and privacy-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: Forge zero-commit rescue" in text
+    assert "forge:5e53ea9" in text
+    assert "forge:f2b3bb2" in text
+    assert "no configured remote" in text
+    assert "11 tests" in text
