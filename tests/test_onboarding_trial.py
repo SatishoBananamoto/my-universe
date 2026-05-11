@@ -180,3 +180,12 @@ def test_onboarding_trial_records_portfolio_registry_result():
     assert "SatishoBananamoto:ff3dc84" in text
     assert "35,815 source lines" in text
     assert "ai-agents-failure-modes" in text
+
+
+def test_onboarding_trial_records_analysis_report_index_result():
+    """The analysis continuation should record report-index coverage."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: analysis report index completion" in text
+    assert "analysis:15a563c" in text
+    assert "46 report files" in text
+    assert "missing []" in text
