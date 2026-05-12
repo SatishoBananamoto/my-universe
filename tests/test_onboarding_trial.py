@@ -303,3 +303,13 @@ def test_onboarding_trial_records_analysis_freshness_guard_result():
     assert "30-day freshness guard" in text
     assert "47 reports dated 2026-03-27" in text
     assert "3 tests" in text
+
+
+def test_onboarding_trial_records_profile_stats_refresh_result():
+    """The profile continuation should record portfolio scanner evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: profile stats refresh" in text
+    assert "SatishoBananamoto:64d607a" in text
+    assert "36,434 source lines" in text
+    assert "1,424 test functions" in text
+    assert "No files were removed" in text

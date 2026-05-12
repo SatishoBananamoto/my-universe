@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-12 — Recorded analysis freshness guard
-**Repo**: Recording the `analysis:100edfd` connected-project continuation. Last verified locally with 90 tests passing.
+**Last session**: 2026-05-12 — Recorded profile stats refresh
+**Repo**: Recording the `SatishoBananamoto:64d607a` connected-project continuation. Last verified locally with 91 tests passing.
 
 ---
 
@@ -45,6 +45,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `svx-playground:4507700`, which ignored generated `.svx-audit/` output and documented the tracked `.env` fixture caveat without deleting or untracking it.
 - Continued into `persona-engine-review:d3f5949`, which preserved the uncommitted review methodology plan, ignored generated `.svx-audit/` output, pushed the branch, and recorded that full pytest is not currently a clean validation source in that checkout.
 - Continued into `analysis:100edfd`, which added a local freshness guard so the March 27 dependency-risk reports fail closed for current security decisions once they exceed the 30-day window.
+- Continued into `SatishoBananamoto:64d607a`, which refreshed the public profile stats from the current portfolio scanner and updated the dependency-risk blurb to mention the freshness guard.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -115,6 +116,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from Claude-owns-this into svx-playground audit-output hygiene — 2026-05-11 · `svx-playground:4507700`, app smoke passing, no remote configured
 - [x] Continue from svx-playground into persona-engine-review plan provenance — 2026-05-11 · `persona-engine-review:d3f5949`, compileall/diff checks passing, baseline pytest caveat recorded
 - [x] Continue from persona-engine-review into analysis report freshness guard — 2026-05-12 · `analysis:100edfd`, 3 tests passing, stale-report check intentionally fails on 46-day-old reports
+- [x] Continue from analysis freshness guard into profile stats refresh — 2026-05-12 · `SatishoBananamoto:64d607a`, portfolio scanner shows 8 tools, 36,434 source lines, and 1,424 tests
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement
