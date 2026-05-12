@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-12 — Recorded svx pause/resume controls
-**Repo**: Recording the `svx:ffc809b` connected-project continuation. Last verified locally with 98 tests passing.
+**Last session**: 2026-05-12 — Recorded svx config-risk calibration
+**Repo**: Recording the `svx:a2953d6` connected-project continuation. Last verified locally with 93 tests passing.
 
 ---
 
@@ -53,6 +53,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `svx:71f435d`, which validated Claude Code hookSpecificOutput for allow, advisory deny, hard block, and strict-mode stdin/stdout hook flow.
 - Continued into `svx:f2716a8`, which routed Bash redirects, heredocs, and `tee` writes through `FILE_WRITE` verification and hard-blocked `.claude/settings*` self-disablement.
 - Continued into `svx:ffc809b`, which added project-local `svx pause` / `svx resume`, `SVX_DISABLED=1`, and hook config merge order for global plus project settings.
+- Continued into `svx:a2953d6`, which calibrated config-risk detection so `.gitignore` is treated as low risk while `.env` remains high risk.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -131,6 +132,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from svx hook toggles into svx hook output validation — 2026-05-12 · `svx:71f435d`, 76 tests passing and compileall/diff checks passing
 - [x] Continue from svx hook output validation into Bash file-write boundary — 2026-05-12 · `svx:f2716a8`, 86 tests passing and compileall/diff checks passing
 - [x] Continue from Bash file-write boundary into svx pause/resume controls — 2026-05-12 · `svx:ffc809b`, 92 tests passing and compileall/diff checks passing
+- [x] Continue from svx pause/resume controls into config-risk calibration — 2026-05-12 · `svx:a2953d6`, 93 tests passing and compileall checks passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

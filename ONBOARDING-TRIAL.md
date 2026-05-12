@@ -551,6 +551,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: svx config-file risk calibration
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx` — calibrate config-risk detection so `.gitignore` edits are low risk
+**Prediction before work:** `.gitignore` was intended as a low-risk housekeeping edit, but confirmation behavior had never been regression-tested against a real snapshot path.
+**Interrupt used:** False-positive calibration check with risk-source traceability.
+**What changed because of the interrupt:** No code path for sensitive files was removed; the update explicitly preserved high-risk config checks (`.env`) while proving `.gitignore` is not a config file for default confirmation risk.
+**Work completed:** `svx:a2953d6` added explicit `.gitignore` non-config coverage in `tests/test_file_edit.py` and verification check-ins in `SENTINEL.md`, `SVX-REWORK.md`, and `REVIEW.md`. `.gitignore` now resolves as non-config in real snapshot captures, while `.env` continues to route through config confirmation.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 93 tests; `python3 -B -m compileall src tests` passed; `git diff --check` passed.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; SVX still leaves session context/read-before-write as future scope.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

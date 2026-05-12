@@ -389,3 +389,14 @@ def test_onboarding_trial_records_svx_pause_resume_result():
     assert ".svx/config.yaml" in text
     assert "92 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_svx_config_file_risk_calibration_result():
+    """The svx continuation should record config-risk calibration evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx config-file risk calibration" in text
+    assert ".gitignore" in text
+    assert "non-config" in text
+    assert "test_file_edit.py" in text
+    assert "93 tests" in text
+    assert "No files were removed" in text
