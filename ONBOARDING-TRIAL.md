@@ -467,6 +467,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: probe source-scanning hardening
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/probe` — complete the next source-level scanning depth slice from `DOSSIER.md`
+**Prediction before work:** The tracker claim would be partly stale: recursive directory scanning might already exist, but source resolution and Python detection would still miss realistic nested or aliased cases.
+**Interrupt used:** Tracker-vs-repo drift check and seed-cause source-path audit.
+**What changed because of the interrupt:** The slice did not build a new scanner category. It narrowed the real source-level gap to config-relative path resolution plus AST detection for Python calls that line regex misses.
+**Work completed:** `probe:2a55fda` added config-relative source path resolution, local `python -m package.module` resolution, Python AST-backed detection for multiline/aliased dangerous calls, README notes, and DOSSIER status updates.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 101 tests; `python3 -B -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `7a26654` to `2a55fda`.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; `probe` keeps Node AST/data-flow work as future scope instead of overstating completion.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

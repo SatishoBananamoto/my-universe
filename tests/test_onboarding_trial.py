@@ -323,3 +323,14 @@ def test_onboarding_trial_records_raw_session_verifier_result():
     assert "/verify-session" in text
     assert "37 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_probe_source_scanning_result():
+    """The probe continuation should record source-resolution evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: probe source-scanning hardening" in text
+    assert "probe:2a55fda" in text
+    assert "config-relative source path resolution" in text
+    assert "Python AST-backed detection" in text
+    assert "101 tests" in text
+    assert "No files were removed" in text
