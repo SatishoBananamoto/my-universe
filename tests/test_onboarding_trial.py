@@ -334,3 +334,14 @@ def test_onboarding_trial_records_probe_source_scanning_result():
     assert "Python AST-backed detection" in text
     assert "101 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_scroll_extraction_verification_result():
+    """The scroll continuation should record source-grounding evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: scroll extraction verification" in text
+    assert "scroll:493ceab" in text
+    assert "source-ref rejection" in text
+    assert "low-overlap warnings" in text
+    assert "134 tests" in text
+    assert "No files were removed" in text

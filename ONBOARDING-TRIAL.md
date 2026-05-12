@@ -481,6 +481,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: scroll extraction verification
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/scroll` — build the first extraction-verification slice from `CODEX.md`
+**Prediction before work:** The full LLM re-prompt verifier would be too large for the first local chunk, but source-ref grounding could be verified deterministically and wired before saving entries.
+**Interrupt used:** Seed-cause check and tracker-vs-code scope narrowing.
+**What changed because of the interrupt:** The slice did not add another quality gate after deposit. It moved upstream into ingest, where fabricated commit/PR/issue refs can be rejected before entries are written.
+**Work completed:** `scroll:493ceab` added `scroll.verification`, ingest wiring for commits/PRs/issues, source-ref rejection, low-overlap warnings, README notes, and CODEX tracker updates.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 134 tests; `python3 -B -m compileall scroll tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `8c20946` to `493ceab`.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; scroll keeps live LLM re-prompt verification and existing-entry audit as future scope.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-12 — Recorded probe source-scanning hardening
-**Repo**: Recording the `probe:2a55fda` connected-project continuation. Last verified locally with 93 tests passing.
+**Last session**: 2026-05-12 — Recorded scroll extraction verification
+**Repo**: Recording the `scroll:493ceab` connected-project continuation. Last verified locally with 94 tests passing.
 
 ---
 
@@ -48,6 +48,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `SatishoBananamoto:64d607a`, which refreshed the public profile stats from the current portfolio scanner and updated the dependency-risk blurb to mention the freshness guard.
 - Continued into `AI-Agents-Failure-Modes:78d6025`, which exposed the existing raw-session consistency rules through `/verify-session` and CLI auto-detection.
 - Continued into `probe:2a55fda`, which hardened config-relative source resolution and Python AST-backed nested injection scanning.
+- Continued into `scroll:493ceab`, which added deterministic source-ref verification before extracted knowledge is saved.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -121,6 +122,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from analysis freshness guard into profile stats refresh — 2026-05-12 · `SatishoBananamoto:64d607a`, portfolio scanner shows 8 tools, 36,434 source lines, and 1,424 tests
 - [x] Continue from profile stats refresh into raw session verifier exposure — 2026-05-12 · `AI-Agents-Failure-Modes:78d6025`, 37 tests passing and CLI smoke passing
 - [x] Continue from raw session verifier exposure into probe source-scanning hardening — 2026-05-12 · `probe:2a55fda`, 101 tests passing and compileall/diff checks passing
+- [x] Continue from probe source-scanning hardening into scroll extraction verification — 2026-05-12 · `scroll:493ceab`, 134 tests passing and compileall/diff checks passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement
