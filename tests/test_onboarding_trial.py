@@ -313,3 +313,13 @@ def test_onboarding_trial_records_profile_stats_refresh_result():
     assert "36,434 source lines" in text
     assert "1,424 test functions" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_raw_session_verifier_result():
+    """The verifier continuation should record session-surface evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: raw session verifier exposure" in text
+    assert "AI-Agents-Failure-Modes:78d6025" in text
+    assert "/verify-session" in text
+    assert "37 tests" in text
+    assert "No files were removed" in text

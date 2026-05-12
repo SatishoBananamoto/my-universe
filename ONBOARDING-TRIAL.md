@@ -453,6 +453,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: raw session verifier exposure
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/AI-Agents-Failure-Modes` — wire existing raw-session consistency rules into usable verifier surfaces
+**Prediction before work:** The repo would already contain session schemas and consistency rules, but API/CLI users could not reach them.
+**Interrupt used:** Seed-cause check and surface-area verification.
+**What changed because of the interrupt:** The slice did not invent new epistemic rules. It exposed the existing rules through `verify_session`, `/verify-session`, and CLI auto-detection for payloads with a `messages` list.
+**Work completed:** `AI-Agents-Failure-Modes:78d6025` added the raw session verifier surface, route/CLI tests, session-verifier tests, README usage, and cache ignores.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 37 tests; `python3 -B -m compileall app tests` passed; `python3 -B -m app.cli tests/fixtures/pass_basic.json` returned `"pass": true`; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed; generated Python cache files are ignored.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; the verifier's existing rule semantics were preserved and surfaced.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
