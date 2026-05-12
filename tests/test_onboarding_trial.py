@@ -293,3 +293,13 @@ def test_onboarding_trial_records_persona_engine_review_plan_result():
     assert "baseline pytest follow-up" in text
     assert "missing `hypothesis`" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_analysis_freshness_guard_result():
+    """The analysis continuation should record stale-report guard evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: analysis report freshness guard" in text
+    assert "analysis:100edfd" in text
+    assert "30-day freshness guard" in text
+    assert "47 reports dated 2026-03-27" in text
+    assert "3 tests" in text

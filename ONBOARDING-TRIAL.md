@@ -425,6 +425,20 @@ Fail if any of these happen:
 **Outcome:** pass with baseline pytest follow-up.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: analysis report freshness guard
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/analysis` — prevent stale dependency-risk snapshots from being treated as current security evidence
+**Prediction before work:** The generated report dates would all be 2026-03-27, and a 30-day freshness guard should fail on 2026-05-12 without requiring a live dependency refresh.
+**Interrupt used:** Reviewer path selection, freshness-boundary check, and no-live-refresh guard.
+**What changed because of the interrupt:** The slice added a local guard instead of rerunning live dependency scans or editing report findings. The README now tells maintainers to run the guard before using the reports for current decisions.
+**Work completed:** `analysis:100edfd` added `tools/check_report_freshness.py`, focused tests, cache ignores, and README freshness guidance.
+**Verification:** `python3 -m pytest -q tests/test_check_report_freshness.py` passed with 3 tests; `python3 -m compileall tools tests` passed; `python3 tools/check_report_freshness.py --today 2026-05-12` intentionally failed across 47 reports dated 2026-03-27; `python3 tools/check_report_freshness.py --today 2026-05-12 --max-age-days 60` passed; README report-link coverage found 46 links, 46 unique, and no missing files; `git diff --check` passed before commit.
+**No-deletion check:** Confirmed. No files were removed; generated Python cache files are ignored.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; the analysis reports were not rewritten or refreshed.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
