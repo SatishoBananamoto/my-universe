@@ -356,3 +356,14 @@ def test_onboarding_trial_records_svx_hook_toggle_result():
     assert "svx disable" in text
     assert "72 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_svx_hook_output_result():
+    """The svx continuation should record hookSpecificOutput evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx hook output validation" in text
+    assert "svx:71f435d" in text
+    assert "hookSpecificOutput" in text
+    assert "strict-mode" in text
+    assert "76 tests" in text
+    assert "No files were removed" in text

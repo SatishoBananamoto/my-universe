@@ -509,6 +509,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: svx hook output validation
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx` — validate Claude Code hookSpecificOutput after hook toggles
+**Prediction before work:** The hook output formatter would already produce the right shape, but there was no regression covering allow/advisory/hard-block JSON or an actual strict-mode stdin/stdout hook run.
+**Interrupt used:** Contract-boundary check and end-to-end hook-path verification.
+**What changed because of the interrupt:** The slice did not add another setting helper. It proved the contract Claude Code receives: empty JSON for allow, deny JSON for advisory/hard-block, and a strict-mode `_cmd_hook()` run through stdin/stdout.
+**Work completed:** `svx:71f435d` added `tests/test_hook_output.py` and updated `SENTINEL.md` with hook output validation status.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 76 tests; `python3 -B -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `910bc44` to `71f435d`.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; SVX still leaves Bash file-write boundary as future scope.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
