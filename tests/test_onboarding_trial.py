@@ -283,3 +283,13 @@ def test_onboarding_trial_records_svx_playground_audit_output_result():
     assert "tracked `.env` fixture" in text
     assert "python3 -B app.py" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_persona_engine_review_plan_result():
+    """The persona-engine-review continuation should record provenance and caveats."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: persona-engine-review plan provenance" in text
+    assert "persona-engine-review:d3f5949" in text
+    assert "baseline pytest follow-up" in text
+    assert "missing `hypothesis`" in text
+    assert "No files were removed" in text

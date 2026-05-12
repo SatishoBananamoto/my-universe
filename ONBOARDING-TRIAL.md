@@ -411,6 +411,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-11 — Continuation Result: persona-engine-review plan provenance
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/persona-engine-review` — inspect untracked review methodology and generated `.svx-audit/` dirt without rewriting the review branch
+**Prediction before work:** The untracked `plan.md` would be review-methodology provenance worth preserving, while `.svx-audit/` would be generated output to ignore rather than commit or delete.
+**Interrupt used:** Read-before-cleaning, no-deletion check, and baseline-verification caveat check.
+**What changed because of the interrupt:** The plan was read and preserved with status context instead of being treated as scratch. The generated audit directory was ignored after inspection, and the test caveat was written into `plan.md` rather than hidden.
+**Work completed:** `persona-engine-review:d3f5949` added `plan.md`, ignored `.svx-audit/`, and pushed branch `claude/external-review` to origin.
+**Verification:** `python3 -B -m compileall persona_engine layer_zero tests` passed; `git diff --check` passed; isolated `tests/test_phase7_sdk.py::TestCLI::test_plan_json` passed. Full pytest is not currently clean in that checkout because collection needs missing `hypothesis`, and a broad non-server run failed on the same CLI test even though it passes isolated.
+**No-deletion check:** Confirmed. No files were removed; generated audit output remains local and ignored.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; persona-engine-review code and review findings were not rewritten in this slice.
+**Outcome:** pass with baseline pytest follow-up.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
