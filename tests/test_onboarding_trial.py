@@ -378,3 +378,14 @@ def test_onboarding_trial_records_svx_bash_boundary_result():
     assert ".claude/settings*" in text
     assert "86 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_svx_pause_resume_result():
+    """The svx continuation should record pause/resume evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx pause/resume controls" in text
+    assert "svx:ffc809b" in text
+    assert "SVX_DISABLED=1" in text
+    assert ".svx/config.yaml" in text
+    assert "92 tests" in text
+    assert "No files were removed" in text

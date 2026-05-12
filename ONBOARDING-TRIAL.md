@@ -537,6 +537,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: svx pause/resume controls
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx` — add an easy pause/resume path after hardening settings writes
+**Prediction before work:** The escape hatch should be project-local rather than another Claude settings edit, and it should not downgrade global strict mode when toggled.
+**Interrupt used:** Config-boundary check and multi-project pause check.
+**What changed because of the interrupt:** The slice did not store pause in `.claude/settings.local.json` or copy global mode into project config. It toggles only `paused` in `.svx/config.yaml`, honors `SVX_DISABLED=1`, and keeps multi-root hook calls active when any touched project is not paused.
+**Work completed:** `svx:ffc809b` added `svx pause`, `svx resume`, project config merge order, hook paused-state bypass, env bypass, README/REVIEW/SENTINEL updates, and CLI/hook regressions.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 92 tests; `python3 -B -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `f2716a8` to `ffc809b`.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; SVX still leaves session context/read-before-write and config file risk calibration as future scope.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
