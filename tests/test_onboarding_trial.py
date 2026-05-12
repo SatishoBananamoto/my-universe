@@ -367,3 +367,14 @@ def test_onboarding_trial_records_svx_hook_output_result():
     assert "strict-mode" in text
     assert "76 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_svx_bash_boundary_result():
+    """The svx continuation should record Bash write-boundary evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx Bash file-write boundary" in text
+    assert "svx:f2716a8" in text
+    assert "git push --force origin main > push.log" in text
+    assert ".claude/settings*" in text
+    assert "86 tests" in text
+    assert "No files were removed" in text

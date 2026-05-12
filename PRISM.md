@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-12 — Recorded svx hook output validation
-**Repo**: Recording the `svx:71f435d` connected-project continuation. Last verified locally with 96 tests passing.
+**Last session**: 2026-05-12 — Recorded svx Bash file-write boundary
+**Repo**: Recording the `svx:f2716a8` connected-project continuation. Last verified locally with 97 tests passing.
 
 ---
 
@@ -51,6 +51,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `scroll:493ceab`, which added deterministic source-ref verification before extracted knowledge is saved.
 - Continued into `svx:910bc44`, which added project-local Claude Code hook enable/disable helpers with backup/idempotence coverage.
 - Continued into `svx:71f435d`, which validated Claude Code hookSpecificOutput for allow, advisory deny, hard block, and strict-mode stdin/stdout hook flow.
+- Continued into `svx:f2716a8`, which routed Bash redirects, heredocs, and `tee` writes through `FILE_WRITE` verification and hard-blocked `.claude/settings*` self-disablement.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -127,6 +128,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from probe source-scanning hardening into scroll extraction verification — 2026-05-12 · `scroll:493ceab`, 134 tests passing and compileall/diff checks passing
 - [x] Continue from scroll extraction verification into svx hook toggles — 2026-05-12 · `svx:910bc44`, 72 tests passing and compileall/diff checks passing
 - [x] Continue from svx hook toggles into svx hook output validation — 2026-05-12 · `svx:71f435d`, 76 tests passing and compileall/diff checks passing
+- [x] Continue from svx hook output validation into Bash file-write boundary — 2026-05-12 · `svx:f2716a8`, 86 tests passing and compileall/diff checks passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement

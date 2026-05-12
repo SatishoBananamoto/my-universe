@@ -523,6 +523,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: svx Bash file-write boundary
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx` — close the first Bash file-write bypass slice from `SENTINEL.md` and `REVIEW.md`
+**Prediction before work:** Redirect and `tee` detection could reuse the existing `FILE_WRITE` simulator, but a naive parser patch could accidentally hide the original risky command behind its stdout redirect.
+**Interrupt used:** Security-boundary check, diff-review masking check, and no-deletion verification.
+**What changed because of the interrupt:** The slice did not create a separate Bash-only policy path. It routed Bash writes into the existing file-write verifier and added a regression proving `git push --force origin main > push.log` still parses the force-push risk separately.
+**Work completed:** `svx:f2716a8` added Bash redirect/heredoc/tee write parsing, `.claude/settings*` hard-block policy, config detection, README safety-boundary docs, REVIEW/SENTINEL updates, and parser/verifier/hook regressions.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 86 tests; `python3 -B -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `71f435d` to `f2716a8`.
+**No-deletion check:** Confirmed. No files were removed.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; SVX still leaves session context/read-before-write, pause/resume, and broader false-positive calibration as future scope.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.
