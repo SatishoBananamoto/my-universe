@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-12 — Recorded svx config-risk calibration
-**Repo**: Recording the `svx:a2953d6` connected-project continuation. Last verified locally with 93 tests passing.
+**Last session**: 2026-05-12 — Completed svx session cache maintenance slice
+**Repo**: Recording the `svx:7bfd122` connected-project continuation. Last verified locally with 105 tests passing.
 
 ---
 
@@ -54,6 +54,8 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `svx:f2716a8`, which routed Bash redirects, heredocs, and `tee` writes through `FILE_WRITE` verification and hard-blocked `.claude/settings*` self-disablement.
 - Continued into `svx:ffc809b`, which added project-local `svx pause` / `svx resume`, `SVX_DISABLED=1`, and hook config merge order for global plus project settings.
 - Continued into `svx:a2953d6`, which calibrated config-risk detection so `.gitignore` is treated as low risk while `.env` remains high risk.
+- Continued into `svx:ac5a324`, which added `svx session-prune`, stale read cleanup, and automatic hook-time pruning.
+- Continued into `svx:7bfd122`, which documented the new maintenance command in `svx/README.md`.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -133,6 +135,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from svx hook output validation into Bash file-write boundary — 2026-05-12 · `svx:f2716a8`, 86 tests passing and compileall/diff checks passing
 - [x] Continue from Bash file-write boundary into svx pause/resume controls — 2026-05-12 · `svx:ffc809b`, 92 tests passing and compileall/diff checks passing
 - [x] Continue from svx pause/resume controls into config-risk calibration — 2026-05-12 · `svx:a2953d6`, 93 tests passing and compileall checks passing
+- [x] Continue from svx config-risk calibration into session cache maintenance — 2026-05-12 · `svx:ac5a324`, 105 tests passing and `svx:7bfd122` docs updates
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement
@@ -231,6 +234,12 @@ _94 verified, 5 pending (people-domain, need Satish). Overall calibration confir
 - **Completed:** Engram MCP connection, `CODEX-PRISM.md`, validator false-positive fix, and external `caliber` tracking-drift fix.
 - **Key insight:** The three-layer model changed behavior when it forced source-of-truth checks: in MY UNIVERSE it separated historical ID gaps from malformed entries; in `caliber` it prevented reimplementing a CLI command that already existed.
 - **Remaining limit:** This proves portability across Codex/Kai repo work, not external human adoption.
+
+### 2026-05-12 — Codex/Kai SVX Maintenance Slice
+
+- **Worked on:** Stale read-cache cleanup controls in `svx` and tracker closure.
+- **Completed:** Added `svx session-prune`, auto-prune in hook flow, regression coverage, and README usage docs.
+- **State:** 105 tests passing. Next: continue to the next connected-project slice from the continuation gate.
 
 ---
 
