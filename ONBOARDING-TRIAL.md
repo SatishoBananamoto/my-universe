@@ -495,6 +495,20 @@ Fail if any of these happen:
 **Outcome:** pass.
 **Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
 
+### 2026-05-12 — Continuation Result: svx hook toggles
+
+**Participant:** Codex/Kai continuation
+**Target repo/task:** `/home/satishocoin/svx` — complete the first Claude Code hook-wiring usability slice from `SENTINEL.md`
+**Prediction before work:** The hook already emitted the right `hookSpecificOutput`, but setup friction would be in `.claude/settings.local.json` management rather than hook execution itself.
+**Interrupt used:** Official hook-schema check and local settings-boundary check.
+**What changed because of the interrupt:** The slice did not make SVX mandatory or edit real Claude settings. It added project-local `svx enable` / `svx disable` helpers that preserve existing hooks, create backups, and remove only SVX handlers.
+**Work completed:** `svx:910bc44` added `src/svx/hook_config.py`, CLI toggle commands, README setup docs, and tests for idempotence, backups, selective disable, and CLI enable wiring.
+**Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 72 tests; `python3 -B -m compileall src tests` passed; `git diff --check` passed before commit; `git push` advanced `main` from `01eb6d2` to `910bc44`.
+**No-deletion check:** Confirmed. No files were removed; settings backup behavior was explicitly tested.
+**Historical data boundary:** Confirmed. MY UNIVERSE records this as Codex/Kai field evidence; SVX still leaves end-to-end hookSpecificOutput validation and Bash file-write boundary as future scope.
+**Outcome:** pass.
+**Next continuation task:** Choose the next non-blocked connected-project slice, then Continue.
+
 ## Continue
 
 - [ ] Continue — after each trial, choose the next real engineering task, run this protocol again, and record whether the practice changed behavior.

@@ -345,3 +345,14 @@ def test_onboarding_trial_records_scroll_extraction_verification_result():
     assert "low-overlap warnings" in text
     assert "134 tests" in text
     assert "No files were removed" in text
+
+
+def test_onboarding_trial_records_svx_hook_toggle_result():
+    """The svx continuation should record hook-wiring evidence."""
+    text = (BASE / "ONBOARDING-TRIAL.md").read_text()
+    assert "Continuation Result: svx hook toggles" in text
+    assert "svx:910bc44" in text
+    assert "svx enable" in text
+    assert "svx disable" in text
+    assert "72 tests" in text
+    assert "No files were removed" in text

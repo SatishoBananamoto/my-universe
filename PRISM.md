@@ -3,8 +3,8 @@
 > Claude's cognitive workspace. Tools for thinking better, failing more usefully, and improving through use.
 > Updated before every commit. Single source of truth.
 
-**Last session**: 2026-05-12 — Recorded scroll extraction verification
-**Repo**: Recording the `scroll:493ceab` connected-project continuation. Last verified locally with 94 tests passing.
+**Last session**: 2026-05-12 — Recorded svx hook toggles
+**Repo**: Recording the `svx:910bc44` connected-project continuation. Last verified locally with 95 tests passing.
 
 ---
 
@@ -49,6 +49,7 @@ Completed the Codex/Kai portability test without mixing Codex/Kai data into Clau
 - Continued into `AI-Agents-Failure-Modes:78d6025`, which exposed the existing raw-session consistency rules through `/verify-session` and CLI auto-detection.
 - Continued into `probe:2a55fda`, which hardened config-relative source resolution and Python AST-backed nested injection scanning.
 - Continued into `scroll:493ceab`, which added deterministic source-ref verification before extracted knowledge is saved.
+- Continued into `svx:910bc44`, which added project-local Claude Code hook enable/disable helpers with backup/idempotence coverage.
 
 ### Relevant prior state (2026-04-12 — THINK Integration)
 
@@ -123,6 +124,7 @@ _Does this system improve real engineering? P-069 is the existential test._
 - [x] Continue from profile stats refresh into raw session verifier exposure — 2026-05-12 · `AI-Agents-Failure-Modes:78d6025`, 37 tests passing and CLI smoke passing
 - [x] Continue from raw session verifier exposure into probe source-scanning hardening — 2026-05-12 · `probe:2a55fda`, 101 tests passing and compileall/diff checks passing
 - [x] Continue from probe source-scanning hardening into scroll extraction verification — 2026-05-12 · `scroll:493ceab`, 134 tests passing and compileall/diff checks passing
+- [x] Continue from scroll extraction verification into svx hook toggles — 2026-05-12 · `svx:910bc44`, 72 tests passing and compileall/diff checks passing
 - [ ] Continue — pick the next real engineering task and keep the evidence loop moving
 
 ### Calibration refinement
